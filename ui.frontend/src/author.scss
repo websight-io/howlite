@@ -1,0 +1,104 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+$color-n20: #F4F5F7;
+
+.hl-main-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.hl-placeholder--image {
+  height: 50px;
+  background-color: $color-n20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 60px;
+
+  &.hl-image--featured {
+    min-height: 605px;
+  }
+}
+
+.hl-image--broken {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-n20;
+
+  &:after {
+    content: "";
+    height: 28px;
+    width: 28px;
+    background-image: url("../web_root/images/broken-image.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.hl-page-section.hl-page-section--call-to-action {
+  position: static;
+  // TODO: remove once WS-1437 is fixed
+
+  > .hl-title, 
+  > .hl-cta,
+  > .hl-container {
+    position: static;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.hl-cards-list .hl-placeholder--image.card__image {
+  padding-bottom: 0;
+  margin-bottom: 40px;
+  min-height: 120px;
+}
+
+.hl-page-section--featured-banner > .hl-placeholder--image {
+  min-height: 300px;
+}
+
+.hl-content-slider .glide__slide  {
+  list-style: none;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  + .glide__slide {
+    margin-top: 40px;
+  }
+}
+
+.hl-logos-cloud {
+  .hl-placeholder--image,
+  .hl-image--broken {
+    width: 120px;
+  }
+}
+
+.hl-page-section--featured-banner .hl-placeholder.hl-social-links {
+  margin-top: 48px !important; // overwrite websight default placeholder margin
+  min-width: 150px;
+}
