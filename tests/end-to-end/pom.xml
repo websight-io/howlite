@@ -32,6 +32,7 @@
   <properties>
     <websight.ice.version>2.0.0-SNAPSHOT</websight.ice.version>
     <howlite.version>${project.parent.version}</howlite.version>
+
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
   </properties>
 
@@ -40,7 +41,7 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-ice-distribution</artifactId>
       <version>${websight.ice.version}</version>
-      <classifier>websight_tar</classifier>
+      <classifier>wsce</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
@@ -82,7 +83,7 @@
       <plugin>
         <groupId>org.apache.sling</groupId>
         <artifactId>slingfeature-maven-plugin</artifactId>
-        <version>1.5.16</version>
+        <version>1.6.6</version>
         <extensions>true</extensions>
         <configuration>
           <replacePropertyVariables>
@@ -90,36 +91,30 @@
           </replacePropertyVariables>
           <aggregates>
             <aggregate>
-              <classifier>howlite_tests_tar</classifier>
+              <classifier>howlite-tests</classifier>
               <filesInclude>*.json</filesInclude>
               <title>Howlite with test data</title>
               <includeArtifact>
                 <groupId>pl.ds.websight</groupId>
                 <artifactId>websight-ice-distribution</artifactId>
                 <version>${websight.ice.version}</version>
-                <classifier>websight_tar</classifier>
+                <classifier>wsce</classifier>
                 <type>slingosgifeature</type>
               </includeArtifact>
             </aggregate>
           </aggregates>
           <scans>
             <scan>
-              <includeClassifier>howlite_tests_tar</includeClassifier>
+              <includeClassifier>howlite-tests</includeClassifier>
             </scan>
           </scans>
-          <archives>
-            <archive>
-              <classifier>websight_test_tars_far</classifier>
-              <includeClassifier>howlite_tests_tar</includeClassifier>
-            </archive>
-          </archives>
           <repositories>
             <repository>
-              <includeClassifier>howlite_tests_tar</includeClassifier>
+              <includeClassifier>howlite-tests</includeClassifier>
             </repository>
           </repositories>
           <outputDir>target</outputDir>
-          <selection />
+          <selection/>
           <extension/>
         </configuration>
         <executions>
@@ -130,14 +125,6 @@
               <goal>aggregate-features</goal>
               <goal>analyse-features</goal>
               <goal>attach-features</goal>
-              <goal>attach-featurearchives</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>create-repository</id>
-            <phase>package</phase>
-            <goals>
-              <goal>repository</goal>
             </goals>
           </execution>
         </executions>
@@ -161,26 +148,84 @@
         </executions>
       </plugin>
       <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>reserve-network-port</id>
+            <goals>
+              <goal>reserve-network-port</goal>
+            </goals>
+            <phase>pre-integration-test</phase>
+            <configuration>
+              <portNames>
+                <portName>wsce.port</portName>
+                <portName>mongo.port</portName>
+              </portNames>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.40.1</version>
+        <configuration>
+          <images>
+            <image>
+              <alias>mongo</alias>
+              <name>${mongo.container.image}</name>
+              <run>
+                <ports>
+                  <port>${mongo.port}:27017</port>
+                </ports>
+                <wait>
+                  <log>CONTROL</log>
+                  <time>60000</time>
+                </wait>
+              </run>
+            </image>
+          </images>
+        </configuration>
+        <executions>
+          <execution>
+            <id>start mongo</id>
+            <goals>
+              <goal>start</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>stop mongo</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>stop</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.sling</groupId>
         <artifactId>feature-launcher-maven-plugin</artifactId>
         <version>0.1.2</version>
         <configuration>
           <launches>
             <launch>
-              <id>howlite-tests-oak-tar</id>
+              <id>howlite-tests</id>
               <feature>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>${project.artifactId}</artifactId>
                 <version>${project.version}</version>
-                <classifier>howlite_tests_tar</classifier>
+                <classifier>howlite-tests</classifier>
                 <type>slingosgifeature</type>
               </feature>
               <launcherArguments>
                 <frameworkProperties>
-                  <org.osgi.service.http.port>${http.random.port}</org.osgi.service.http.port>
+                  <org.osgi.service.http.port>${wsce.port}</org.osgi.service.http.port>
                 </frameworkProperties>
               </launcherArguments>
               <environmentVariables>
+                <MONGODB_PORT>${mongo.port}</MONGODB_PORT>
                 <WS_ADMIN_USERNAME>${websight.admin.username}</WS_ADMIN_USERNAME>
                 <WS_ADMIN_PASSWORD>${websight.admin.password}</WS_ADMIN_PASSWORD>
               </environmentVariables>
@@ -197,43 +242,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- reserve network ports for the integration tests -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.3.0</version>
-        <executions>
-          <execution>
-            <id>reserve-network-port</id>
-            <goals>
-              <goal>reserve-network-port</goal>
-            </goals>
-            <phase>generate-resources</phase>
-            <configuration>
-              <portNames>
-                <portName>http.random.port</portName>
-              </portNames>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <configuration>
-              <target if="${e2e.skip}">
-                <echo>WARNING: e2e.skip is ${e2e.skip}, functional tests will not be executed.</echo>
-              </target>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
@@ -244,16 +252,45 @@
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
-            <phase>generate-resources</phase>
+            <phase>prepare-package</phase>
           </execution>
           <execution>
             <id>npm install</id>
             <goals>
               <goal>npm</goal>
             </goals>
-            <phase>generate-resources</phase>
+            <phase>prepare-package</phase>
             <configuration>
+              <skip>${e2e.skip}</skip>
               <arguments>install</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>cypress verify</id>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <phase>pre-integration-test</phase>
+            <configuration>
+              <skip>${e2e.skip}</skip>
+              <arguments>cypress verify</arguments>
+              <environmentVariables>
+                <CI>1</CI>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>cypress info</id>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <phase>pre-integration-test</phase>
+            <configuration>
+              <skip>${e2e.skip}</skip>
+              <arguments>cypress info</arguments>
+              <environmentVariables>
+                <CI>1</CI>
+              </environmentVariables>
             </configuration>
           </execution>
           <execution>
@@ -264,11 +301,13 @@
             <phase>integration-test</phase>
             <configuration>
               <skip>${e2e.skip}</skip>
-              <arguments>cypress run --browser chrome</arguments>
+              <arguments>cypress run test:ci</arguments>
               <environmentVariables>
-                <CYPRESS_baseUrl>http://localhost:${http.random.port}</CYPRESS_baseUrl>
+                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
                 <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
                 <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
+                <TERM>xterm</TERM>
+                <CI>1</CI>
               </environmentVariables>
             </configuration>
           </execution>

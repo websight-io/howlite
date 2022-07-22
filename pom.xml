@@ -59,8 +59,8 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
-    <sling.install.package.username>admin</sling.install.package.username>
-    <sling.install.package.password>admin</sling.install.package.password>
+    <sling.install.package.username>wsadmin</sling.install.package.username>
+    <sling.install.package.password>wsadmin</sling.install.package.password>
     <sling.install.package.host>localhost</sling.install.package.host>
     <sling.install.package.port>8080</sling.install.package.port>
     <sling.install.package.path>/apps/websight-package-manager-service/bin/install</sling.install.package.path>
@@ -81,10 +81,16 @@
     <!-- backend dependencies -->
     <jupiter.version>5.8.2</jupiter.version>
 
-    <!-- admin user default credentials for tests -->
-    <websight.admin.username>admin</websight.admin.username>
-    <websight.admin.password>admin</websight.admin.password>
+    <!-- admin user default credentials for tests and maven plugins -->
+    <websight.admin.username>wsadmin</websight.admin.username>
+    <websight.admin.password>wsadmin</websight.admin.password>
+
+    <sling.user>wsadmin</sling.user>
+    <sling.password>wsadmin</sling.password>
+
+    <!-- functional tests   -->
     <e2e.skip>true</e2e.skip>
+    <mongo.container.image>mongo:4.4.6</mongo.container.image>
   </properties>
 
   <build>
