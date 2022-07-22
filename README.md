@@ -24,13 +24,20 @@ mvn clean install -P e2e
 ```
 
 ### Running dev instance
-After building the project, from `tests/end-to-end` directory run:
+After building the project, start MongoDB:
 
-```
-java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-howlite_tests_tar.json
+```bash
+docker run -p 27017:27017 mongo:4.4.6
 ```
 
-Instance should start at http://localhost:8080/ in a couple of seconds.
+
+and run howlite-test feature using Sling Launcher from `tests/end-to-end` directory:
+
+```bash
+java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-howlite-tests.json
+```
+
+Instance should start at http://localhost:8080/ in a couple of seconds (default credentials: `wsadmin/wsadmin`).
 
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
