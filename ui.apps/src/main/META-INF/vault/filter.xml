@@ -16,8 +16,8 @@
 -->
 
 <workspaceFilter version="1.0">
-    <filter root="/libs/howlite/author"/>
-    <filter root="/libs/howlite/components"/>
-    <filter root="/libs/howlite/templates"/>
-    <filter root="/libs/howlite/web_root"/>
+    <filter root="/libs/howlite/author" mode="update" />
+    <filter root="/libs/howlite/components" mode="update" />
+    <filter root="/libs/howlite/templates" mode="update" />
+    <filter root="/libs/howlite/web_root" />
 </workspaceFilter>
