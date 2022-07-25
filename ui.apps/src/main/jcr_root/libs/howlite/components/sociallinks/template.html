@@ -1,0 +1,35 @@
+<!--/*
+    Copyright (C) 2022 Dynamic Solutions
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+<template data-sly-template.sociallinks="${ @ socialLinkItems, classes}">
+    <ul data-sly-test="${socialLinkItems}" class="hl-social-links ${classes @ join=' '}">
+        <div data-sly-list.item="${socialLinkItems}" data-sly-unwrap>
+            <sly data-sly-test="${item}">
+                <li>
+                    <a class="hl-social-links__link" href="${item.url}"
+                       target="_blank" aria-label="${item.title}">
+                        <i class="hl-icon ${item.icon}">
+                        </i>
+                    </a>
+                </li>
+            </sly>
+        </div>
+    </ul>
+    <sly data-sly-test="${!socialLinkItems}">
+        <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+             data-sly-call="${lib.placeholder @ classes='hl-placeholder hl-social-links'}">
+        </sly>
+    </sly>
+</template>
