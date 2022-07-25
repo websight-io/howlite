@@ -1,0 +1,411 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/tab"
+          label="Layout">
+    <smOffset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="smColStart"
+            description="In which column the component should start (contols left offset)"
+            label="Start - S breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1st Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2nd Column"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3d Column"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4th Column"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5th Column"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6th Column"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7th Column"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8th Column"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9th Column"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10th Column"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11th Column"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12th Column"
+                value="12"/>
+    </smOffset>
+    <mdOffset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="mdColStart"
+             description="In which column the component should start (contols left offset)"
+            label="Start - M breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1st Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2nd Column"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3d Column"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4th Column"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5th Column"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6th Column"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7th Column"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8th Column"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9th Column"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10th Column"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11th Column"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12th Column"
+                value="12"/>
+    </mdOffset>
+    <lgOffset
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="lgColStart"
+            description="In which column the component should start (contols left offset)"
+            label="Start - L breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1st Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2nd Column"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3d Column"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4th Column"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5th Column"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6th Column"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7th Column"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8th Column"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9th Column"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10th Column"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11th Column"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12th Column"
+                value="12"/>
+    </lgOffset>
+    <smColsize
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="smColSize"
+            label="Width - S breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1 Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2 Columns"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3 Columns"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4 Columns"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5 Columns"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6 Columns"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7 Columns"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8 Columns"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9 Columns"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10 Columns"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11 Columns"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12 Columns"
+                value="12"/>
+    </smColsize>
+    <mdColsize
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="mdColSize"
+            label="Width - M breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1 Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2 Columns"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3 Columns"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4 Columns"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5 Columns"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6 Columns"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7 Columns"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8 Columns"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9 Columns"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10 Columns"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11 Columns"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12 Columns"
+                value="12"/>
+    </mdColsize>
+    <lgColsize
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select"
+            name="lgColSize"
+            label="Width - L breakpoint">
+        <column1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="1 Column"
+                selected="true"
+                value="1"/>
+        <column2
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="2 Columns"
+                value="2"/>
+        <column3
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="3 Columns"
+                value="3"/>
+        <column4
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="4 Columns"
+                value="4"/>
+        <column5
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="5 Columns"
+                value="5"/>
+        <column6
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="6 Columns"
+                value="6"/>
+        <column7
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="7 Columns"
+                value="7"/>
+        <column8
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="8 Columns"
+                value="8"/>
+        <column9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="9 Columns"
+                value="9"/>
+        <column10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="10 Columns"
+                value="10"/>
+        <column11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="11 Columns"
+                value="11"/>
+        <column12
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="12 Columns"
+                value="12"/>
+    </lgColsize>
+</jcr:root>

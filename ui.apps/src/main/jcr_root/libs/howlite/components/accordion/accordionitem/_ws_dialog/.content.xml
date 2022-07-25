@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+    <tabs jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/tabs">
+        <generalTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="General">
+            <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="title"
+                    label="Title"/>
+            <content
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/richtext"
+                    name="content"
+                    label="Content"/>
+        </generalTab>
+    </tabs>
+</jcr:root>
