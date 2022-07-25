@@ -3,4 +3,4 @@
     jcr:description="Howlite"
     jcr:primaryType="ws:PageTemplate"
     jcr:title="Home Page"
-    allowedChildren="[]"/>
+    allowedChildren="[/libs/howlite/templates/contentpage]"/>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+    <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/tabs">
+        <generalTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="General">
+            <backgroundImageLg
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageLg"
+                    label="Background image - L breakpoint"/>
+            <backgroundImageMd
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageMd"
+                    label="Background image - M breakpoint"/>  
+            <backgroundImageSm
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageSm"
+                    label="Background image - S breakpoint"/>
+        </generalTab>
+        <styleTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Style">
+            <cssClasses
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/select"
+                    label="Style variants"
+                    name="classes">
+                <default
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
+                        label="Default"
+                        selected="true"
+                        value=""/>
+                <featuredBanner
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
+                        label="Featured Banner"
+                        value="hl-page-section--featured-banner"/>
+                <featuredContent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
+                        label="Featured Content"
+                        value="hl-page-section--featured-content"/>
+                <bleedingImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
+                        label="Bleeding Image"
+                        value="hl-page-section--bleeding-image"/>
+                <callToAction
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
+                        label="Call To Action"
+                        value="hl-page-section--call-to-action"/>
+            </cssClasses>
+        </styleTab>
+    </tabs>
+</jcr:root>

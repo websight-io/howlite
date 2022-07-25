@@ -1,0 +1,139 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'sass:map';
+@use '../../sass/abstracts';
+
+$min-button-width: 173px;
+
+.hl-cta {
+  background-color: var(--color-default);
+  min-width: $min-button-width;
+  border-radius: 40px;
+  border-width: 0;
+  color: var(--color-body-background);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: abstracts.$font-regular;
+  font-style: normal;
+  font-weight: abstracts.$font-weight-xbold;
+  justify-content: center;
+  letter-spacing: 0;
+  padding: 16px 24px;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  text-transform: var(--links-text-transform);
+  justify-self: center;
+  grid-column: 1/-1;
+  margin-top: map.get(abstracts.$spacing, 'medium-2');
+
+  @include abstracts.media-breakpoint-up(md) {
+    margin-top: map.get(abstracts.$spacing, 'medium-4');
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    background-color: var(--color-neutral-800);
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-default);
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+
+  &--small {
+    font-size: abstracts.$font-regular-small;
+    line-height: 1.5rem;
+    padding: 8px 16px;
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+
+    &:hover,
+    &:active {
+      background: var(--color-default);
+    }
+  }
+
+  &--text {
+    min-width: unset;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    line-height: 1.625rem;
+    padding: 2px 0;
+
+    &:hover,
+    &:active {
+      background-color: unset;
+      color: var(--color-default);
+
+      .hl-cta__text,
+      .hl-cta__icon {
+        color: var(--color-default);
+
+        &:after {
+          background: var(--color-default);
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline-width: 1px;
+      outline-offset: 12px;
+    }
+
+    .hl-cta__text {
+      color: var(--color-primary);
+      position: relative;
+
+      &:after {
+        background: var(--color-primary);
+        bottom: -4px;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .hl-cta__icon {
+      color: var(--color-primary);
+      padding-left: 8px;
+    }
+  }
+
+  &__icon {
+    color: var(--color-body-background);
+    padding-left: 8px;
+
+    &::before {
+      content: "\e802";
+    }
+  }
+
+  &__text {
+    color: var(--color-body-background);
+  }
+}

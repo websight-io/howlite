@@ -1,0 +1,174 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../abstracts';
+
+/* Grid types */
+.hl-grid {
+  display: grid;
+
+  @include abstracts.media-breakpoint-up(md) {
+    column-gap: 1rem;
+  }
+
+  @include abstracts.media-breakpoint-up(lg) {
+    column-gap: 1.875rem;
+  }
+}
+
+/* Grid template columns classes */
+@for $i from 1 through abstracts.$grid-columns {
+  /* same across all breakpoints */
+  .hl-grid-#{$i} {
+    grid-template-columns: repeat(#{$i}, 1fr);
+  }
+
+  /* mobile only */
+  .hl-grid-sm-#{$i} {
+    @include abstracts.media-breakpoint-down(md) {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+
+  /* tablet only */
+  .hl-grid-md-#{$i} {
+    @include abstracts.media-breakpoint-between(md, lg) {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+
+  /* desktop only */
+  .hl-grid-lg-#{$i} {
+    @include abstracts.media-breakpoint-up(lg) {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+}
+
+/* Grid column span columns classes */
+@for $i from 1 through abstracts.$grid-columns - 1 {
+  /* same across all breakpoints */
+  .hl-grid-cols-#{$i} {
+    grid-column: span $i;
+  }
+
+  /* mobile only */
+  .hl-grid-sm-cols-#{$i} {
+    @include abstracts.media-breakpoint-down(md) {
+      grid-column: span $i;
+    }
+  }
+
+  /* tablet only */
+  .hl-grid-md-cols-#{$i} {
+    @include abstracts.media-breakpoint-between(md, lg) {
+      grid-column: span $i;
+    }
+  }
+
+  /* desktop only */
+  .hl-grid-lg-cols-#{$i} {
+    @include abstracts.media-breakpoint-up(lg) {
+      grid-column: span $i;
+    }
+  }
+}
+
+/* same across all breakpoints */
+.hl-grid-cols-#{abstracts.$grid-columns} {
+  grid-column: 1 / -1;
+}
+
+/* mobile only */
+.hl-grid-sm-cols-#{abstracts.$grid-columns} {
+  @include abstracts.media-breakpoint-down(md) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* tablet only */
+.hl-grid-md-cols-#{abstracts.$grid-columns} {
+  @include abstracts.media-breakpoint-between(md, lg) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* desktop only */
+.hl-grid-lg-cols-#{abstracts.$grid-columns} {
+  @include abstracts.media-breakpoint-up(lg) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Grid column start columns classes */
+@for $i from 1 through abstracts.$grid-columns - 1 {
+  @for $j from 1 through abstracts.$grid-columns {
+    /* same across all breakpoints */
+    .hl-grid-cols-#{$j}-#{$i} {
+      grid-column: #{$j} / span #{$i};
+    }
+
+    /* mobile only */
+    .hl-grid-sm-cols-#{$j}-#{$i} {
+      @include abstracts.media-breakpoint-down(md) {
+        grid-column: #{$j} / span #{$i};
+      }
+    }
+
+    /* tablet only */
+    .hl-grid-md-cols-#{$j}-#{$i} {
+      @include abstracts.media-breakpoint-between(md, lg) {
+        grid-column: #{$j} / span #{$i};
+      }
+    }
+
+    /* desktop only */
+    .hl-grid-lg-cols-#{$j}-#{$i} {
+      @include abstracts.media-breakpoint-up(lg) {
+        grid-column: #{$j} / span #{$i};
+      }
+    }
+  }
+}
+
+/* Grid column start columns classes */
+@for $j from 1 through abstracts.$grid-columns {
+  /* same across all breakpoints */
+  .hl-grid-cols-#{$j}-#{abstracts.$grid-columns} {
+    grid-column: #{$j} / -1;
+  }
+
+  /* mobile only */
+  .hl-grid-sm-cols-#{$j}-#{abstracts.$grid-columns} {
+    @include abstracts.media-breakpoint-down(md) {
+      grid-column: #{$j} / -1;
+    }
+  }
+
+  /* tablet only */
+  .hl-grid-md-cols-#{$j}-#{abstracts.$grid-columns} {
+    @include abstracts.media-breakpoint-between(md, lg) {
+      grid-column: #{$j} / -1;
+    }
+  }
+
+  /* desktop only */
+  .hl-grid-lg-cols-#{$j}-#{abstracts.$grid-columns} {
+    @include abstracts.media-breakpoint-up(lg) {
+      grid-column: #{$j} / -1;
+    }
+  }
+}

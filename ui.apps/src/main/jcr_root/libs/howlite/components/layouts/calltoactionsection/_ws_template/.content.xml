@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          classes="hl-page-section--call-to-action"
+          jcr:primaryType="nt:unstructured">
+    <image
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/image"
+            openInNewTab="false"/>
+    <title
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/title"/>
+    <ctaslist
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/ctaslist">
+            <cta_1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/cta"
+                displayIcon="false"
+                classes="hl-cta--primary"
+                link="https://test.com"
+                label="Link"
+                openInNewTab="false"/>
+            <cta
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/cta"
+                classes="hl-cta--text"
+                displayIcon="false"
+                link="https://test.com"
+                label="Link"
+                openInNewTab="false"/>
+    </ctaslist>
+</jcr:root>

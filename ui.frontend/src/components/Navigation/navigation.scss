@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use '../../sass/abstracts';
+
+.hl-navigation__link {
+  padding: 8px 16px;
+  border-radius: 40px;
+  border-width: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: abstracts.$font-regular-small;
+  font-style: normal;
+  font-weight: abstracts.$font-weight-xbold;
+  letter-spacing: 0;
+  line-height: 1.625rem;
+  text-decoration: none;
+  text-transform: var(--links-text-transform);
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &.hl-navigation__link--active {
+    .hl-navigation__text {
+      color: var(--color-default);
+      &:after {
+        background: var(--color-default);
+        display: inherit;
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline-color: var(--color-default);
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 1px;
+
+    .hl-navigation__text {
+      color: var(--color-default);
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .hl-navigation__text {
+    position: relative;
+
+    &:after {
+      display: none;
+      background: var(--color-primary);
+      bottom: -4px;
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}

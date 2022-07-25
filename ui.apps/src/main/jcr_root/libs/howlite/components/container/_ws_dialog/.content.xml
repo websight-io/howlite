@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+    <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/tabs">
+        <generalTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="General">
+            <displayType
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/select"
+                    name="displayType"
+                    label="Display type">
+                <grid
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/selectitem"
+                        label="Grid"
+                        selected="true"
+                        value="grid"/>
+                <inline
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/selectitem"
+                        label="Inline"
+                        value="inline"/>
+            </displayType>
+            <backgroundImageLg
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageLg"
+                    label="Background image - L breakpoint"/>
+            <backgroundImageMd
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageMd"
+                    label="Background image - M breakpoint"/>
+            <backgroundImageSm
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="backgroundImageSm"
+                    label="Background image - S breakpoint"/>
+        </generalTab>
+        <gridTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/include"
+                path="/libs/howlite/components/common/gridTab"/>
+    </tabs>
+</jcr:root>

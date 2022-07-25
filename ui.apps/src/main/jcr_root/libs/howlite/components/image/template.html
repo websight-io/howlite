@@ -1,0 +1,62 @@
+<!--/*
+    Copyright (C) 2022 Dynamic Solutions
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<template data-sly-template.img="${ @ defaultImage, alt}">
+  <!--/* A workaround that allows creating img with an empty alt attribute. */-->
+    <img data-sly-test="${alt != '' && !wcmmode.isEdit}" class="hl-image__img" src="${defaultImage}" alt="${alt}">
+    <img data-sly-test="${alt == '' && !wcmmode.isEdit}" class="hl-image__img" src="${defaultImage}" alt="">
+  <!--/* End of a workaround. */-->
+    <img data-sly-test="${wcmmode.isEdit}" class="hl-image__img" src="${defaultImage}" alt="" onerror="this.closest('.hl-image').classList.add('hl-image--broken')">
+</template>
+
+<template data-sly-template.simpleImage="${ @ defaultImage, alt, showLink, url, openInNewTab, classes}">
+    <div class="hl-image ${classes @ join=' '}">
+        <a href="${url}" class="hl-image__link}" target="${openInNewTab ? '_blank' : ''}" data-sly-unwrap="${!showLink || !url || url == ''}">
+          <sly data-sly-call="${img @ defaultImage=defaultImage, alt=alt}"></sly>
+        </a>
+    </div>
+</template>
+
+<template data-sly-template.image="${ @ imagesCount, defaultImage, imageSources, alt, showLink, url, openInNewTab, classes}">
+    <sly data-sly-test="${imagesCount == 1}"
+         data-sly-test.imageClasses="${classes @ join=' '}">
+        <sly data-sly-call="${simpleImage @ defaultImage=defaultImage, showLink=showLink, alt=alt, url=url, openInNewTab=openInNewTab, classes=imageClasses}"></sly>
+    </sly>
+    <sly data-sly-test="${imagesCount > 1}"
+         data-sly-test.imageClasses="${classes @ join=' '}">
+         <div class="hl-image ${classes @ join=' '}">
+            <a href="${url}" class="hl-image__link" target="${openInNewTab ? '_blank' : ''}" data-sly-unwrap="${!showLink || !url || url == ''}">
+                <picture class="hl-image__picture">
+                    <sly data-sly-list="${imageSources}">
+                        <source media="(min-width:${item.minWidth}px)"
+                                srcset="${item.image}"/>
+                    </sly>
+                    <sly data-sly-call="${img @ defaultImage=defaultImage, alt=alt}"></sly>
+                </picture>
+            </a>
+          </div>
+    </sly>
+</template>
+
+<template data-sly-template.imagePlaceholder="${ @ classes}">
+  <div class="hl-placeholder hl-placeholder--image hl-image ${classes @ join=' '}">
+    <svg class="image-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5.5" cy="7.5" r="2.5" fill="#C1C7D0"/>
+      <path d="M5.5 12.5L11 18.5H0L5.5 12.5Z" fill="#C1C7D0"/>
+      <path d="M15 8.5L24 18.5H6L15 8.5Z" fill="#C1C7D0"/>
+    </svg>
+  </div>
+</template>

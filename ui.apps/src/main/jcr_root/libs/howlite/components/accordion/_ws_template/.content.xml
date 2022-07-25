@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured">
+    <accordionitem1
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/accordion/accordionitem"/>
+    <accordionitem2
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/accordion/accordionitem"/>
+    <accordionitem3
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/accordion/accordionitem"/>
+</jcr:root>

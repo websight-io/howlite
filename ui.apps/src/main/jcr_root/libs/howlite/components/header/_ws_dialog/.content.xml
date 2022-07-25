@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+    <tabs
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/tabs">
+        <imageTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Logo">
+            <lgImageSrc
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="image/lgImageSrc"
+                    label="Choose image"/>
+            <alt
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="image/alt"
+                    label="Alt text"/>
+             <showLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/toggle"
+                name="image/showLink"
+                label="Link"/>
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/container">
+                <url
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/pathpicker"
+                        rootPath="/content"
+                        name="image/url"
+                        label="URL"/>
+                <openInNewTab
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/toggle"
+                        name="image/openInNewTab"
+                        label="Open link in a new tab"/>
+                <ws:display
+                    jcr:primaryType="nt:unstructured">
+                    <condition
+                          jcr:primaryType="nt:unstructured"
+                          sourceName="image/showLink"
+                          values="true"/>
+                </ws:display>
+            </container>
+        </imageTab>
+        <menuTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Menu">
+            <mobileTitle jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="mobileMenuTitle"
+                    label="Mobile Menu Title"/>
+            <label1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="navigation/menuItems/1/label"
+                    label="Label"/>
+            <link1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="navigation/menuItems/1/link"
+                    label="URL"/>
+            <newtab1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/checkbox"
+                    name="navigation/menuItems/1/openInNewTab"
+                    label="Open link in a new tab"/>
+            <label2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="navigation/menuItems/2/label"
+                    label="Label"/>
+            <link2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="navigation/menuItems/2/link"
+                    label="URL"/>
+            <newtab2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/checkbox"
+                    name="navigation/menuItems/2/openInNewTab"
+                    label="Open link in a new tab"/>
+            <label3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="navigation/menuItems/3/label"
+                    label="Label"/>
+            <link3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="navigation/menuItems/3/link"
+                    label="URL"/>
+            <newtab3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/checkbox"
+                    name="navigation/menuItems/3/openInNewTab"
+                    label="Open link in a new tab"/>
+            <label4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="navigation/menuItems/4/label"
+                    label="Label"/>
+            <link4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="navigation/menuItems/4/link"
+                    label="URL"/>
+            <newtab4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/checkbox"
+                    name="navigation/menuItems/4/openInNewTab"
+                    label="Open link in a new tab"/>
+            <!--            TODO replace with multifield-->
+        </menuTab>
+        <ctaTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="CTA">
+            <label
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="cta/label"
+                    label="Display name"/>
+            <link
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="cta/link"
+                    label="URL"/>
+            <openInNewTab
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/toggle"
+                    name="cta/openInNewTab"
+                    label="Open link in a new tab"/>
+            <displayIcon
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/toggle"
+                    name="cta/displayIcon"
+                    label="Show icon"/>
+        </ctaTab>
+    </tabs>
+</jcr:root>

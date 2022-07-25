@@ -1,0 +1,46 @@
+<!--/*
+    Copyright (C) 2022 Dynamic Solutions
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+<template data-sly-template.footer="${ @ model}">
+    <sly data-sly-test.image="${model.image}"></sly>
+    <sly data-sly-test.navigation="${model.navigation}"></sly>
+    <sly data-sly-test.socialLinks="${model.socialLinks}"></sly>
+
+    <sly data-sly-test="${image || navigation || socialLinks || model.copyright}">
+        <footer class="hl-footer">
+            <div class="hl-footer__wrapper">
+                <div class="hl-footer__bar">
+                    <div class="hl-footer__site-nav">
+                        <sly data-sly-test="${image}"
+                             data-sly-use.template="/libs/howlite/components/image/template.html"
+                             data-sly-call="${template.simpleImage @ defaultImage=image.defaultImage, showLink=image.showLink,  alt=image.alt, url=image.url, openInNewTab=image.openInNewTab, classes='hl-footer__logo-image'}">
+                        </sly>
+                        <sly data-sly-test="${navigation}"
+                             data-sly-use.template="/libs/howlite/components/navigation/template.html"
+                             data-sly-call="${template.navigation @ menuItems=navigation.menuItems}">
+                        </sly>
+                    </div>
+                    <sly data-sly-test="${socialLinks}"
+                         data-sly-use.template="/libs/howlite/components/sociallinks/template.html"
+                         data-sly-call="${template.sociallinks @ socialLinkItems=socialLinks.socialLinkItems}">
+                    </sly>
+                </div>
+                <sly data-sly-test="${model.copyright}">
+                    <div class="hl-footer__copyright">${model.copyright @ context='html'}</div>
+                </sly>
+            </div>
+        </footer>
+    </sly>
+</template>

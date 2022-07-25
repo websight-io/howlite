@@ -1,0 +1,28 @@
+<!--/*
+    Copyright (C) 2022 Dynamic Solutions
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+<sly data-sly-use.model="pl.ds.howlite.components.models.PageSectionComponent">
+  <sly data-sly-test.CSSclasses="hl-page-section ${model.classes @ join=' '}"></sly>
+    <section data-sly-test="${resource.hasChildren}" class="${CSSclasses}"
+      style="--bg-image-sm:${model.backgroundImageSm @ context='text'};--height-sm:auto;--bg-image-md: ${model.backgroundImageMd @ context='text'};--height-md:auto;--bg-image-lg:${model.backgroundImageLg @ context='text'};--height-lg:auto;">
+      <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+    </section>
+
+    <sly data-sly-test="${!resource.hasChildren}">
+      <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+        data-sly-call="${lib.placeholder @ classes=CSSclasses}">
+      </sly>
+    </sly>
+</sly>

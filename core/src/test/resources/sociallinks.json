@@ -1,0 +1,32 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/sociallinks"
+  },
+
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "socialLinkItems": {
+      "1": {
+        "title": "Title linkedin",
+        "url": "http://www.linkedin.com",
+        "icon": "linkedin"
+      },
+      "2": {
+        "title": "Title facebook",
+        "url": "www.facebook.com",
+        "icon": "facebook"
+      },
+      "3": {
+        "title": "Title twitter",
+        "url": "http://www.twitter.com",
+        "icon": "twitter"
+      },
+      "4": {
+        "title": "Title instagram",
+        "url": "http://www.instagram.com",
+        "icon": "instagram"
+      }
+    }
+  }
+}
