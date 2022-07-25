@@ -1,0 +1,15 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/cta",
+    "label": "Sample CTA"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/cta",
+    "label": "Sample CTA",
+    "link": "https://www.example.com",
+    "displayIcon": "true",
+    "openInNewTab": "true"
+  }
+}

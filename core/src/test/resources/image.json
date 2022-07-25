@@ -1,0 +1,20 @@
+{
+  "lgImage": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/image",
+    "lgImageSrc": "/content/space/assets/imageLg.jpg"
+  },
+  "lgAndMdImage": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/image",
+    "lgImageSrc": "/content/space/assets/imageLg.jpg",
+    "mdImageSrc": "/content/space/assets/imageMd.jpg"
+  },
+  "lgAndMdAndSmImage": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/image",
+    "lgImageSrc": "/content/space/assets/imageLg.jpg",
+    "mdImageSrc": "/content/space/assets/imageMd.jpg",
+    "smImageSrc": "/content/space/assets/imageSm.jpg"
+  }
+}

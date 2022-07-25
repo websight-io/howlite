@@ -1,0 +1,5 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "exampleTitle": "Example title",
+  "sling:resourceType": "howlite/components/example"
+}

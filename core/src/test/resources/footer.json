@@ -1,0 +1,59 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/footer"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/footer",
+    "image": {
+      "jcr:primaryType": "nt:unstructured",
+      "lgImageSrc": "/content/space/assets/imageLg.jpg",
+      "alt": "alt test text"
+    },
+    "navigation": {
+      "jcr:primaryType": "nt:unstructured",
+      "menuItems": {
+        "jcr:primaryType": "nt:unstructured",
+        "1": {
+          "jcr:primaryType": "nt:unstructured",
+          "label": "Navigation item 1",
+          "link": "http://www.navigate-to-link-1.com",
+          "openInNewTab": "true"
+        },
+        "2": {
+          "jcr:primaryType": "nt:unstructured",
+          "label": "Navigation item 2",
+          "link": "www.navigate-to-link-2.com",
+          "openInNewTab": "false"
+        }
+      }
+    },
+    "socialLinks": {
+      "jcr:primaryType": "nt:unstructured",
+      "socialLinkItems": {
+        "1": {
+          "title": "Title linkedin",
+          "url": "http://www.linkedin.com",
+          "icon": "linkedin"
+        },
+        "2": {
+          "title": "Title facebook",
+          "url": "www.facebook.com",
+          "icon": "facebook"
+        },
+        "3": {
+          "title": "Title twitter",
+          "url": "http://www.twitter.com",
+          "icon": "twitter"
+        },
+        "4": {
+          "title": "Title instagram",
+          "url": "http://www.instagram.com",
+          "icon": "instagram"
+        }
+      }
+    },
+    "copyright": "copyrights test"
+  }
+}
