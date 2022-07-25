@@ -14,8 +14,18 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+body {
+  --color-primary: #0F154A;
+
+  --color-default: #1D1F31;
+  --color-body-background: #FFFFFF;
+  --color-neutral-800: #151515;
+  --color-neutral-500: #727272;
+  --color-neutral-200: #F0F0F0;
+
+  --font-headings: 'Jost', 'Montserrat', sans-serif;
+  --font-body: 'Avenir', 'Montserrat', sans-serif;
+  --links-text-transform: uppercase;
+}

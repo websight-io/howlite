@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+@forward 'hl-page-section--call-to-action';
+@forward 'hl-page-section--featured-banner';
+@forward 'hl-page-section--featured-content';
+@forward 'hl-page-section--contact-form';
+@forward 'hl-page-section--bleeding-image';

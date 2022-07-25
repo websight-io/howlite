@@ -14,8 +14,19 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+@import './Accordion/index';
+@import './CardsList/index';
+@import './Container/index';
+@import './CTA/index';
+@import './CTAsList/index';
+@import './Footer/index';
+@import './Image/index';
+@import './MainContainer/index';
+@import './Navigation/index';
+@import './Header/index';
+@import './Quote/index';
+@import './RichText/index';
+@import './SocialLinks/index';
+@import './Title/index';
+@import './PageSection/index';
+@import './LogosCloud/index';

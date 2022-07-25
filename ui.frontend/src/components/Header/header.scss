@@ -1,0 +1,268 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'sass:map';
+
+@use '../../sass/abstracts';
+
+$navbar-height: 72px;
+$icon-size: 24px;
+
+.hl-header {
+  z-index: map.get(abstracts.$z-index, 'first-floor');
+  margin-top: map.get(abstracts.$spacing, 'medium');
+
+  position: sticky;
+  top: 0;
+  background-color: var(--color-body-background);
+
+  &.mobile-menu-opened {
+    .hl-header__mobile-menu {
+      visibility: visible;
+      max-height: 100vh;
+    }
+
+    .hl-header__hamburger-open-icon {
+      display: none;
+    }
+
+    .hl-header__hamburger-close-icon {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-right: abstracts.$page-padding-horizontal;
+    padding-left: abstracts.$page-padding-horizontal;
+
+    @include abstracts.media-breakpoint-up(md) {
+      max-width: map.get(abstracts.$container-max-widths, 'md');
+    }
+
+    @include abstracts.media-breakpoint-up(lg) {
+      max-width: map.get(abstracts.$container-max-widths, 'lg');
+    }
+  }
+
+  &__top-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: $navbar-height;
+
+    position: relative;
+    width: 100%;
+  }
+
+  .hl-header__mobile-menu {
+    background-color: var(--color-body-background);
+    position: absolute;
+    overflow: auto;
+    height: calc(100vh - $navbar-height);
+    max-height: 0;
+    width: 100vw;
+    margin-left: -1 * abstracts.$page-padding-horizontal;
+    padding-left: abstracts.$page-padding-horizontal;
+    padding-right: abstracts.$page-padding-horizontal;
+    transition: max-height 0.5s ease-in-out;
+    visibility: hidden;
+
+    .hl-navigation {
+      padding-top: map.get(abstracts.$spacing, 'large');
+      padding-bottom: map.get(abstracts.$spacing, 'large');
+      display: flex;
+      flex-direction: column;
+      gap: map.get(abstracts.$spacing, 'small-3');
+
+      &__link {
+        font-weight: abstracts.$font-weight-xxbold;
+        font-size: abstracts.$font-size-h1-md;
+        line-height: 3.5rem;
+        padding-left: 0;
+        display: inline-block;
+
+        &:focus-visible .hl-navigation__text:after {
+          display: none;
+        }
+      }
+    }
+
+    @include abstracts.media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  &__logo-image {
+    max-width: 200px;
+
+    img {
+      max-height: 40px;
+    }
+  }
+
+  .hl-navigation {
+    gap: map.get(abstracts.$spacing, 'small-2');
+    display: none;
+
+    @include abstracts.media-breakpoint-up(lg) {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+      padding-right: map.get(abstracts.$spacing, 'medium-3');
+    }
+
+    &__link {
+      @include abstracts.font-body-s(abstracts.$font-weight-xbold);
+    }
+  }
+
+  $featured-nav-cta-bg-color-transition: background-color 0.3s ease-out;
+
+  .hl-cta--nav {
+    display: none;
+    
+    @include abstracts.media-breakpoint-up(lg) {
+      display: inline-flex;
+    }
+
+    padding: 8px 16px;
+    background-color: transparent;
+    border-radius: 40px;
+    border-width: 0;
+    cursor: pointer;
+    align-items: center;
+    font-size: abstracts.$font-regular-small;
+    font-style: normal;
+    font-weight: abstracts.$font-weight-xbold;
+    letter-spacing: 0;
+    line-height: 1.625rem;
+    transition: $featured-nav-cta-bg-color-transition;
+    margin: 0;
+
+    &:hover,
+    &--active:not(.scrolled) {
+      .hl-cta__text {
+        color: var(--color-default);
+
+        &:after {
+          background: var(--color-default);
+          display: block;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline-color: var(--color-default);
+      outline-offset: 2px;
+      outline-style: solid;
+      outline-width: 1px;
+
+      .hl-cta__text {
+        color: var(--color-default);
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    &.scrolled {
+      border-radius: 40px;
+      background-color: var(--color-primary);
+      transition: $featured-nav-cta-bg-color-transition;
+
+      &:hover,
+      &:active {
+        transition: none;
+        background-color: var(--color-default);
+      }
+
+      .hl-cta__text,
+      .hl-cta__icon {
+        color: var(--color-body-background);
+      }
+    }
+
+    .hl-cta__text {
+      position: relative;
+      color: var(--color-default);
+  
+      &:after {
+        display: none;
+        background: var(--color-primary);
+        bottom: -4px;
+        content: '';
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  
+    .hl-cta__icon {
+      color: var(--color-default);
+      padding-left: 4px;
+    }
+  }
+
+  &__hamburger {
+    font-size: $icon-size;
+    cursor: pointer;
+    @include abstracts.media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  &__hamburger-close-icon {
+    display: none;
+    font-size: $icon-size;
+  }
+
+  &__mobile-menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: map.get(abstracts.$spacing, 'medium-3');
+  }
+
+  &__ds-tag {
+    padding-top: map.get(abstracts.$spacing, 'medium');
+    font-size: abstracts.$font-regular-small;
+    line-height: 1.5rem;
+    font-weight: abstracts.$font-weight-xbold;
+
+    @include abstracts.media-breakpoint-up(md) {
+      font-size: abstracts.$font-regular;
+      line-height: 1.625rem;
+    }
+  }
+
+  .hl-navigation__text {
+    @include abstracts.media-breakpoint-up(lg) {
+      color: var(--color-neutral-800);
+    }
+  }
+
+  .hl-social-links {
+    padding-bottom: map.get(abstracts.$spacing, 'large-2');
+  }
+
+  .hl-cta--primary {
+    margin-bottom: map.get(abstracts.$spacing, 'medium-2');
+  }
+}

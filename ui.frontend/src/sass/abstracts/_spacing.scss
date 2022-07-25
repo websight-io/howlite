@@ -14,8 +14,30 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+$spacing: (
+  // the px values are listed with assumption that
+  // rem is calculated based on the 16px
+  //
+  // 4px
+  'small': 0.25rem,
+  // 8px
+  'small-2': 0.5rem,
+  // 16px
+  'small-3': 1rem,
+  // 24px
+  'medium': 1.5rem,
+  // 32px
+  'medium-2': 2rem,
+  // 40px
+  'medium-3': 2.5rem,
+  // 48px
+  'medium-4': 3rem,
+  // 56px
+  'large': 3.5rem,
+  // 64px
+  'large-2': 4rem,
+  // 80px
+  'large-3': 5rem,
+  // 128px
+  'large-4': 8rem
+);

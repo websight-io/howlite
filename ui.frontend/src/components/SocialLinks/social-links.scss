@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use 'sass:map';
+@use '../../sass/abstracts';
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+
+$social-media-icon-padding: 10px;
+
+.hl-social-links {
+  display: flex;
+  gap: map.get(abstracts.$spacing, 'medium');
+
+  &__link {
+    @include abstracts.social-icon;
+  }
+}

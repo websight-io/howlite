@@ -14,8 +14,20 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use 'sass:map';
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+@use '../../sass/abstracts';
+
+.hl-image {
+  &__link {
+    width: fit-content;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+}
+
+.hl-image.hl-image--featured {
+  margin-top: map.get(abstracts.$spacing, 'large');
+}

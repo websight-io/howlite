@@ -14,8 +14,29 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use 'sass:map';
+@use '../../sass/abstracts';
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+
+.hl-title {
+  .subtitle {
+    color: var(--color-default);
+    line-height: 1.5rem;
+    font-weight: abstracts.$font-weight-xbold;
+    font-size: abstracts.$font-regular-small;
+    padding-bottom: map.get(abstracts.$spacing, 'small-2');
+
+    @include abstracts.media-breakpoint-up(md) {
+      font-size: abstracts.$font-regular;
+      padding-bottom: map.get(abstracts.$spacing, 'small-3');
+    }
+  }
+
+  .hl-main-container &.hl-title--centered {
+    text-align: center;
+  }
+}
+
+.hl-container > .hl-title {
+  text-align: center;
+}

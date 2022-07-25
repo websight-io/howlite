@@ -14,8 +14,32 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use 'sass:map';
+@use '../../../sass/abstracts';
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+.hl-page-section--featured-content {
+  .hl-image {
+    margin-bottom: map.get(abstracts.$spacing, 'large');
+  }
+
+  .hl-title {
+    padding-bottom: map.get(abstracts.$spacing, 'medium');
+    @include abstracts.media-breakpoint-up(lg) {
+      padding-bottom: 0;
+      padding-right: map.get(abstracts.$spacing, 'medium');
+    }
+  }
+
+  .hl-main-container > &.hl-page-section .hl-title {
+    text-align: left;
+    align-self: start;
+
+    + * {
+      margin-top: 0;
+    }
+  }
+
+  .hl-rich-text {
+    align-self: start;
+  }
+}

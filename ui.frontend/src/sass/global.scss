@@ -14,8 +14,37 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use './abstracts';
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+// CSS reset
+@import './base/reset';
+
+* {
+  box-sizing: border-box;
+  color: var(--color-default);
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+// global styles
+body {
+  background-color: var(--color-body-background);
+  min-height: 100vh;
+  
+  @include abstracts.font-body;
+
+  &.primary-color {
+    @each $name, $color in abstracts.$primary-colors {
+      &--#{$name} {
+        --color-primary: #{$color};
+      }
+    }
+  }
+}

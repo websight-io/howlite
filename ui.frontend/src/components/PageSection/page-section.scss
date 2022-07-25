@@ -1,0 +1,78 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'sass:map';
+
+@use '../../sass/abstracts';
+
+.hl-page-section {
+  align-items: center;
+  padding-top: map.get(abstracts.$spacing, 'large-3');
+  padding-bottom: map.get(abstracts.$spacing, 'large-3');
+
+  background-image: var(--bg-image-sm);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include abstracts.media-breakpoint-up(md) {
+    background-image: var(--bg-image-md);
+    padding-top: map.get(abstracts.$spacing, 'large-4');
+    padding-bottom: map.get(abstracts.$spacing, 'large-4');
+  }
+
+  @include abstracts.media-breakpoint-up(lg) {
+    background-image: var(--bg-image-lg);
+  }
+
+  &:first-of-type {
+    padding-top: map.get(abstracts.$spacing, 'medium-2');
+
+    @include abstracts.media-breakpoint-up(md) {
+      padding-top: map.get(abstracts.$spacing, 'large-3');
+    }
+  }
+
+  .hl-title + .hl-rich-text {
+    margin-top: map.get(abstracts.$spacing, 'medium');
+  }
+
+  > .hl-title {
+    @include abstracts.media-breakpoint-up(lg) {
+      text-align: center;
+    }
+
+    & + * {
+      margin-top: map.get(abstracts.$spacing, 'large');
+    }
+
+    & + .hl-rich-text {
+      margin-bottom: map.get(abstracts.$spacing, 'large');
+
+      @include abstracts.media-breakpoint-up(md) {
+        margin-top: map.get(abstracts.$spacing, 'medium');
+      }
+
+      @include abstracts.media-breakpoint-up(lg) {
+        text-align: center;
+      }
+    }
+  }
+
+  > .hl-quote {
+    margin-top: map.get(abstracts.$spacing, 'large');
+  }
+}

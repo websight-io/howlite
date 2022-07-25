@@ -14,8 +14,22 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+export const getScrollbarWidth = () => {
+  return window.innerWidth - document.documentElement.clientWidth;
+};
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+
+const initScrollbarCssVariable = () => {
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      document.documentElement.style.setProperty(
+        '--scrollbar-width',
+        `${getScrollbarWidth()}px`,
+      );
+    },
+    { once: true },
+  );
+};
+
+initScrollbarCssVariable();

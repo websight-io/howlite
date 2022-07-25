@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+export const breakpoints = {
+  sm: 0,
+  md: 768,
+  lg: 970
+};

@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+@forward 'colors';
+@forward 'custom-bootstrap';
+@forward 'fonts';
+@forward 'icons';
+@forward 'negative-margins';
+@forward 'spacing';
+@forward 'variables';
+@forward 'zindex';

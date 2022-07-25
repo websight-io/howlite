@@ -1,0 +1,70 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'sass:map';
+@use '../../../sass/abstracts';
+
+.hl-page-section--bleeding-image {
+  align-items: center;
+
+ > .hl-title {
+    @include abstracts.media-breakpoint-up(lg) {
+      text-align: center;
+    }
+
+    & + .hl-rich-text {
+      @include abstracts.media-breakpoint-up(lg) {
+        text-align: center;
+        justify-self: center;
+      }
+    }
+  }
+
+  > .hl-container {
+    align-items: inherit;
+  }
+
+  .hl-image {
+    text-align: center;
+
+    @include abstracts.media-breakpoint-only(sm) {
+      order: -1;
+      margin-bottom: map.get(abstracts.$spacing, 'large');
+    }
+
+    @include abstracts.media-breakpoint-only(md) {
+      width: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .hl-image:nth-child(1) {
+    @include abstracts.media-breakpoint-only(md) {
+      margin-left: -1 * abstracts.$page-padding-horizontal;
+      margin-right: abstracts.$page-padding-horizontal;
+    }
+  }
+
+  .hl-image:nth-child(2) {
+    @include abstracts.media-breakpoint-only(md) {
+      margin-left: abstracts.$page-padding-horizontal;
+      margin-right: -1 * abstracts.$page-padding-horizontal;
+    }
+  }
+}

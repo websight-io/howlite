@@ -54,22 +54,6 @@ $color-n20: #F4F5F7;
   }
 }
 
-.hl-page-section.hl-page-section--call-to-action {
-  position: static;
-  // TODO: remove once WS-1437 is fixed
-
-  > .hl-title, 
-  > .hl-cta,
-  > .hl-container {
-    position: static;
-
-    &:before,
-    &:after {
-      display: none;
-    }
-  }
-}
-
 .hl-cards-list .hl-placeholder--image.card__image {
   padding-bottom: 0;
   margin-bottom: 40px;
@@ -78,17 +62,6 @@ $color-n20: #F4F5F7;
 
 .hl-page-section--featured-banner > .hl-placeholder--image {
   min-height: 300px;
-}
-
-.hl-content-slider .glide__slide  {
-  list-style: none;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-
-  + .glide__slide {
-    margin-top: 40px;
-  }
 }
 
 .hl-logos-cloud {

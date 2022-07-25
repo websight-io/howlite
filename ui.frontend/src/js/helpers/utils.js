@@ -14,8 +14,26 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+export const throttle = (fn, limit = 25) => {
+  let isBusy = false;
+  return (...args) => {
+    if (!isBusy) {
+      fn.apply(this, args);
+      isBusy = true;
+      setTimeout(() => {
+        isBusy = false;
+      }, limit);
+    }
+  };
+};
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+export const debounce = (fn, timeout = 50) => {
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn.apply(this, args);
+    }, timeout);
+  };
+};

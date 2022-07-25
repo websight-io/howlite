@@ -1,0 +1,127 @@
+/*
+ * Copyright (C) 2022 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'sass:map';
+
+@use '../../sass/abstracts';
+
+.hl-rich-text {
+  text-align: left;
+
+  + .hl-rich-text {
+    margin-top: map.get(abstracts.$spacing, 'medium-3');
+  }
+
+  p {
+    + p, + ul, + ol {
+      margin-top: map.get(abstracts.$spacing, 'medium');
+    }
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  b {
+    margin-bottom: map.get(abstracts.$spacing, 'small-3');
+    display: block;
+  }
+
+  ul, ol {
+    padding-left: map.get(abstracts.$spacing, 'medium-3');
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+
+    ol {
+      list-style: lower-alpha;
+    }
+  }
+
+  li {
+    color: var(--color-neutral-800);
+    vertical-align: top;
+    line-height: 1.44;
+
+    + li {
+      margin-top: map.get(abstracts.$spacing, 'small-3');
+    }
+
+    p {
+      display: inline-block;
+      vertical-align: inherit;
+      line-height: inherit;
+    }
+  }
+
+  h2 {
+    @include abstracts.font-h2-content;
+  }
+
+  h3 {
+    @include abstracts.font-h3-content;
+  }
+
+  h4 {
+    @include abstracts.font-h4-content;
+  }
+
+  h5 {
+    @include abstracts.font-h5-content;
+  }
+
+  h6 {
+    @include abstracts.font-h6-content;
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-bottom: map.get(abstracts.$spacing, 'medium');
+
+    &:not(:first-child) {
+      margin-top: map.get(abstracts.$spacing, 'medium-3');
+    }
+  }
+
+  &--checked-bullet-points {
+    ul li {
+      list-style: none;
+      position: relative;
+
+      &::before {
+        font-family: 'ds-iconfonts';
+        color: var(--color-primary);
+        margin-right: map.get(abstracts.$spacing, 'small-3');
+        content: '\e803';
+        position: absolute;
+        top: 0;
+        left: -2rem;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: map.get(abstracts.$spacing, 'medium');
+        @include abstracts.media-breakpoint-up(md) {
+          padding-bottom: map.get(abstracts.$spacing, 'medium-3');
+        }
+      }
+    }
+  }
+}

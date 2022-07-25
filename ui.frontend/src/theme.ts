@@ -14,3 +14,4 @@
  * limitations under the License.
  */
 
+import "./sass/theme/demo-content-theme.scss";

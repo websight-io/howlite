@@ -14,8 +14,18 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+$neutral-50: #151515;
+$neutral-200: #313131;
+$neutral-500: #818181;
+$neutral-800: #cfcfcf;
 
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+$primary-colors: (
+  'blue': #39d1fe,
+  'purple': #9875e3,
+  'green': #1ce3a4,
+  'red': #fb6991,
+  'yellow': #e3d339,
+);
+
+$shades-0: #000000;
+$shades-100: #ffffff;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-@use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
-
-@import './sass/global';
-@import './sass/base/index';
-@import './components/index';
+$z-index: (
+  'second-floor': 2,
+  'first-floor': 1,
+  'basement': -1,
+);
