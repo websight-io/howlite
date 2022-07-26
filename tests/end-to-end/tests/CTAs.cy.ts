@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-describe('Page Editor', function () {
-  it('example test', function () {
+describe('CTA components and CTA list component', function () {
+  it('renders correctly in preview mode', function () {
     cy.login();
 
     cy.visit(
-      '/apps/websight/index.html/content/tests-space/pages/Simple-Test-Page::editor'
+      '/content/howlite-test/pages/CTAs-list-and-CTA.html'
     );
 
     cy.percySnapshot();
