@@ -48,7 +48,7 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/image"
-                        lgImageSrc="/content/howlite-test-content/assets/non-existent.jpg"
+                        lgImageSrc="/content/howlite-test/assets/non-existent.jpg"
                         showLink="false"/>
                 </pagesection_1>
                 <pagesection_1_1
@@ -74,7 +74,7 @@
                         sling:resourceType="howlite/components/image"
                         lgColSize="2"
                         lgColStart="6"
-                        lgImageSrc="/content/howlite-test-content/assets/landscape.jpg"
+                        lgImageSrc="/content/howlite-test/assets/landscape.jpg"
                         mdColSize="2"
                         mdColStart="6"
                         showLink="false"
@@ -104,7 +104,7 @@
                         sling:resourceType="howlite/components/image"
                         lgColSize="12"
                         lgColStart="1"
-                        lgImageSrc="/content/howlite-test-content/assets/portrait.jpg"
+                        lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                         mdColSize="12"
                         mdColStart="1"
                         showLink="false"
@@ -132,7 +132,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/image"
                         lgColSize="12"
-                        lgImageSrc="/content/howlite-test-content/assets/portrait.jpg"
+                        lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                         mdColSize="12"
                         openInNewTab="false"
                         showLink="true"

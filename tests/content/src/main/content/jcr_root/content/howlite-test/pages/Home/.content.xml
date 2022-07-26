@@ -20,14 +20,14 @@
                 Text="Test Button">
                 <image
                     jcr:primaryType="nt:unstructured"
-                    lgImageSrc="/content/howlite-test-content/assets/landscape.jpg"
+                    lgImageSrc="/content/howlite-test/assets/landscape.jpg"
                     showLink="false"/>
                 <navigation jcr:primaryType="nt:unstructured">
                     <menuItems jcr:primaryType="nt:unstructured">
                         <_x0031_
                             jcr:primaryType="nt:unstructured"
                             label="Home"
-                            link="/content/howlite-test-content/pages/Home"
+                            link="/content/howlite-test/pages/Home"
                             openInNewTab="false"/>
                         <_x0032_
                             jcr:primaryType="nt:unstructured"
@@ -70,14 +70,14 @@
                 copyright="Test Copyrights">
                 <image
                     jcr:primaryType="nt:unstructured"
-                    lgImageSrc="/content/howlite-test-content/assets/portrait.jpg"
+                    lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                     showLink="false"/>
                 <navigation jcr:primaryType="nt:unstructured">
                     <menuItems jcr:primaryType="nt:unstructured">
                         <_x0031_
                             jcr:primaryType="nt:unstructured"
                             label="Home"
-                            link="/content/howlite-test-content/pages/Home"
+                            link="/content/howlite-test/pages/Home"
                             openInNewTab="false"/>
                         <_x0032_
                             jcr:primaryType="nt:unstructured"
