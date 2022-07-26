@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="ws:Page">
+    <jcr:content
+        jcr:lastModified="{Date}2022-07-20T12:28:36.264Z"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="ws:PageContent"
+        jcr:title="CTAs list and CTA"
+        sling:resourceType="howlite/components/page"
+        ws:lastModified="{Date}2022-07-20T12:37:41.154Z"
+        ws:lastModifiedBy="admin"
+        ws:template="/libs/howlite/templates/contentpage">
+        <rootcontainer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/rootcontainer/fixedrootcontainer">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/headerreference"/>
+            <maincontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/maincontainer">
+                <pagesection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/title"
+                        headingLevel="h2"
+                        headingSize="hl-title__heading--size-4"
+                        showSubtitle="false"
+                        title="CTA components added directly to page section"/>
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/richtext"
+                        lgColSize="8"
+                        lgColStart="3"
+                        mdColSize="8"
+                        mdColStart="3"
+                        text="&lt;p>CTA component should not have grid options. The width of CTA depends on its text width, and is not aligned to grid.&lt;/p>&lt;p>If multiple CTAs are added directly to page section, they will stack one below another. &lt;br>In order to align buttons in one row use CTA list component.&lt;/p>"/>
+                    <cta_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/cta"
+                        displayIcon="false"
+                        label="A Button added directly to page section"
+                        openInNewTab="false"/>
+                    <cta
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/cta"
+                        displayIcon="false"
+                        label="A Button added directly to page section"
+                        openInNewTab="false"/>
+                    <ctaslist
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/ctaslist">
+                        <cta1_1_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="A button within CTA list"
+                            openInNewTab="false"/>
+                        <cta1_2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="A button within CTA list"
+                            openInNewTab="false"/>
+                        <cta1_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="short"
+                            openInNewTab="false"/>
+                        <cta1_3_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="A button within CTA list"
+                            openInNewTab="false"/>
+                        <cta1_3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="A button within CTA list"
+                            openInNewTab="false"/>
+                        <cta1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            displayIcon="false"
+                            label="A button within CTA list"
+                            openInNewTab="false"/>
+                    </ctaslist>
+                </pagesection>
+            </maincontainer>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/footerreference"/>
+        </rootcontainer>
+    </jcr:content>
+</jcr:root>
