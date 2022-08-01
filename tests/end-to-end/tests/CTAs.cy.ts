@@ -31,9 +31,9 @@ describe('CTA components and CTA list component', function () {
     );
 
     cy.intercept(
-      'POST',
-      '**/ctaslist/cta1.websight-dialogs-service.save-properties.action'
-    ).as('saveCTA');
+      'GET',
+      '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
+    ).as('contentRendered');
 
     cy.getByTestId('ComponentOverlay_CTAsList')
       .click()
@@ -55,7 +55,7 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId('Input_Showicon').click();
     cy.getByTestId('Button_Submit').click();
 
-    cy.wait('@saveCTA');
+    cy.wait('@contentRendered');
     cy.getPageIframe().find('.hl-cta').last().should('contain', ' changed');
   });
 });
