@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Pull request checks
+name: Build checks
 
 on:
   pull_request:
-    
+
+  schedule:
+    - cron:  '0 5 * * 1-5'
+
 env:
   AWS_REGION: "eu-central-1"
 
