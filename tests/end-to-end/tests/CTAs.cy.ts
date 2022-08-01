@@ -56,6 +56,7 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId('Button_Submit').click();
 
     cy.wait('@contentRendered');
+    cy.wait(1000);
     cy.getPageIframe().find('.hl-cta').last().should('contain', ' changed');
   });
 });
