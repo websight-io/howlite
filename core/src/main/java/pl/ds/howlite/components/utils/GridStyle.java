@@ -35,6 +35,10 @@ public class GridStyle {
   private static final String MD_CLASS_PART = "-md";
   private static final String LG_CLASS_PART = "-lg";
 
+  private static final Integer DEFAULT_COL_START = 1;
+
+  private static final Integer DEFAULT_COL_SIZE = 12;
+
   private final Grid gridComponent;
   private final GridDisplayType displayType;
 
@@ -106,8 +110,8 @@ public class GridStyle {
   }
 
   private Collection<String> getGridColumnClassesWithColStart() {
-    Integer defaultColStart = getDefaultColStart();
-    if (defaultColStart != null) {
+    if (hasSameColStarts()) {
+      Integer defaultColStart = getCollStarts().iterator().next();
       return getGridColumnClassesWithColStart(defaultColStart);
     } else {
       return prepareGridColumnClassesWithColStart();
@@ -148,33 +152,15 @@ public class GridStyle {
 
   private Collection<String> prepareGridColumnClassesWithColStart() {
     Set<String> classes = new LinkedHashSet<>();
-    if (gridComponent.getSmColSize() != null) {
-      if (gridComponent.getSmColStart() != null) {
-        classes.add(GRID_CLASS_PREFIX + SM_CLASS_PART + COLS_CLASS_PART + "-"
-            + gridComponent.getSmColStart() + "-" + gridComponent.getSmColSize());
-      } else {
-        classes.add(GRID_CLASS_PREFIX + SM_CLASS_PART + COLS_CLASS_PART + "-"
-            + gridComponent.getSmColSize());
-      }
-    }
-    if (gridComponent.getMdColSize() != null) {
-      if (gridComponent.getMdColStart() != null) {
-        classes.add(GRID_CLASS_PREFIX + MD_CLASS_PART + COLS_CLASS_PART + "-"
-            + gridComponent.getMdColStart() + "-" + gridComponent.getMdColSize());
-      } else {
-        classes.add(GRID_CLASS_PREFIX + MD_CLASS_PART + COLS_CLASS_PART + "-"
-            + gridComponent.getMdColSize());
-      }
-    }
-    if (gridComponent.getLgColSize() != null) {
-      if (gridComponent.getLgColStart() != null) {
-        classes.add(GRID_CLASS_PREFIX + LG_CLASS_PART + COLS_CLASS_PART + "-"
-            + gridComponent.getLgColStart() + "-" + gridComponent.getLgColSize());
-      } else {
-        classes.add(
-            GRID_CLASS_PREFIX + LG_CLASS_PART + COLS_CLASS_PART + gridComponent.getLgColSize());
-      }
-    }
+    classes.add(GRID_CLASS_PREFIX + SM_CLASS_PART + COLS_CLASS_PART + "-"
+            + getOrDefault(gridComponent.getSmColStart(), DEFAULT_COL_START) + "-"
+            + getOrDefault(gridComponent.getSmColSize(), DEFAULT_COL_SIZE));
+    classes.add(GRID_CLASS_PREFIX + MD_CLASS_PART + COLS_CLASS_PART + "-"
+            + getOrDefault(gridComponent.getMdColStart(), DEFAULT_COL_START) + "-"
+            + getOrDefault(gridComponent.getMdColSize(), DEFAULT_COL_SIZE));
+    classes.add(GRID_CLASS_PREFIX + LG_CLASS_PART + COLS_CLASS_PART + "-"
+            + getOrDefault(gridComponent.getLgColStart(), DEFAULT_COL_START) + "-"
+            + getOrDefault(gridComponent.getLgColSize(), DEFAULT_COL_SIZE));
     return classes;
   }
 
@@ -230,19 +216,22 @@ public class GridStyle {
         .isEmpty();
   }
 
-  private Integer getDefaultColStart() {
-    Set<Integer> colStarts = getCollStarts().collect(Collectors.toSet());
+  private boolean hasSameColStarts() {
+    Set<Integer> colStarts = Stream.of(gridComponent.getSmColStart(), gridComponent.getMdColStart(),
+            gridComponent.getLgColStart())
+            .collect(Collectors.toSet());
 
-    if (colStarts.size() == 1) {
-      return colStarts.iterator().next();
-    }
-    return null;
+    return colStarts.size() == 1 && colStarts.iterator().next() != null;
   }
 
   private Stream<Integer> getCollStarts() {
     return Stream.of(gridComponent.getSmColStart(), gridComponent.getMdColStart(),
             gridComponent.getLgColStart())
         .filter(Objects::nonNull);
+  }
+
+  private Integer getOrDefault(Integer value, Integer defaultValue) {
+    return value != null ? value : defaultValue;
   }
 
 }
