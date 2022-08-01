@@ -17,8 +17,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-  loginUsername: 'admin',
-  loginPassword: 'admin',
+  chromeWebSecurity: false,
   screenshotsFolder: 'build/screenshots',
   videosFolder: 'build/video',
   fixturesFolder: false,

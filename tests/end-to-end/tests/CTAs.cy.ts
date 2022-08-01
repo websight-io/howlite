@@ -24,4 +24,29 @@ describe('CTA components and CTA list component', function () {
 
     cy.percySnapshot();
   });
+
+  it('renders correctly in edit mode', function () {
+    cy.login();
+
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/CTAs-list-and-CTA::editor'
+    );
+
+    cy.intercept('POST', '**/ctaslist/cta1.websight-dialogs-service.save-properties.action').as('saveCTA');
+
+
+    cy.getByTestId('ComponentOverlay_CTAsList').click().get('.name').should('be.visible');
+
+    cy.percySnapshot();
+
+    cy.getByTestId('ComponentOverlay_CTAsList').getByTestId('ComponentOverlay_CTA').last().click().get('.name').should('be.visible');
+    cy.getByTestId('ToolbarOption_Edit').click();
+    cy.getByTestId('Input_Text').type(' changed');
+    cy.getByTestId('Input_Openinnewtab').click();
+    cy.getByTestId('Input_Showicon').click();
+    cy.getByTestId('Button_Submit').click();
+
+    cy.wait('@saveCTA');
+    cy.getPageIframe().find('.hl-cta').last().should("contain", " changed");
+  });
 });
