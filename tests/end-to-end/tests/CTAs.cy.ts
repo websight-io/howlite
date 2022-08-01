@@ -18,28 +18,37 @@ describe('CTA components and CTA list component', function () {
   it('renders correctly in preview mode', function () {
     cy.login();
 
-    cy.visit(
-      '/content/howlite-test/pages/CTAs-list-and-CTA.html'
-    );
+    cy.visit('/content/howlite-test/pages/CTAs-list-and-CTA.html');
 
     cy.percySnapshot();
   });
 
-  it('renders correctly in edit mode', function () {
+  it('renders correctly in edit mode and saves a text property', function () {
     cy.login();
 
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/CTAs-list-and-CTA::editor'
     );
 
-    cy.intercept('POST', '**/ctaslist/cta1.websight-dialogs-service.save-properties.action').as('saveCTA');
+    cy.intercept(
+      'POST',
+      '**/ctaslist/cta1.websight-dialogs-service.save-properties.action'
+    ).as('saveCTA');
 
-
-    cy.getByTestId('ComponentOverlay_CTAsList').click().get('.name').should('be.visible');
+    cy.getByTestId('ComponentOverlay_CTAsList')
+      .click()
+      .get('.name')
+      .should('be.visible');
 
     cy.percySnapshot();
 
-    cy.getByTestId('ComponentOverlay_CTAsList').getByTestId('ComponentOverlay_CTA').last().click().get('.name').should('be.visible');
+    cy.getByTestId('ComponentOverlay_CTAsList')
+      .getByTestId('ComponentOverlay_CTA')
+      .last()
+      .click()
+      .get('.name')
+      .should('be.visible');
+
     cy.getByTestId('ToolbarOption_Edit').click();
     cy.getByTestId('Input_Text').type(' changed');
     cy.getByTestId('Input_Openinnewtab').click();
@@ -47,6 +56,6 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId('Button_Submit').click();
 
     cy.wait('@saveCTA');
-    cy.getPageIframe().find('.hl-cta').last().should("contain", " changed");
+    cy.getPageIframe().find('.hl-cta').last().should('contain', ' changed');
   });
 });

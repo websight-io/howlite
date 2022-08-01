@@ -26,9 +26,13 @@ Cypress.Commands.add('getByTestId', (testId) => {
 });
 
 Cypress.Commands.add('getPageIframe', () => {
-  return cy.get(`iframe`)
-  .its('0.contentDocument').should('exist')
-  .its('body').should('not.be.undefined').then(cy.wrap);
+  return cy
+    .get(`iframe`)
+    .its('0.contentDocument')
+    .should('exist')
+    .its('body')
+    .should('not.be.undefined')
+    .then(cy.wrap);
 });
 
 Cypress.Commands.add(
