@@ -82,17 +82,15 @@
                         <_x0032_
                             jcr:primaryType="nt:unstructured"
                             label="Sample footer menu item 1"
-                            link="\0"
+                            link=""
                             openInNewTab="false"/>
                         <_x0033_
                             jcr:primaryType="nt:unstructured"
                             label="Sample footer menu item 2"
-                            link="\0"
+                            link=""
                             openInNewTab="false"/>
                         <_x0034_
                             jcr:primaryType="nt:unstructured"
-                            label="\0"
-                            link="\0"
                             openInNewTab="false"/>
                         <_x0035_
                             jcr:primaryType="nt:unstructured"
@@ -107,16 +105,16 @@
                         <_x0031_
                             jcr:primaryType="nt:unstructured"
                             icon="icon-linkedin"
-                            title="aaa"
+                            title="linkedin"
                             url="https://www.linkedin.com"/>
                         <_x0032_
                             jcr:primaryType="nt:unstructured"
                             icon="icon-facebook"
-                            title="aaa"/>
+                            title="facebook"/>
                         <_x0033_
                             jcr:primaryType="nt:unstructured"
                             icon="icon-twitter"
-                            title="aa"/>
+                            title="twitter"/>
                         <_x0034_
                             jcr:primaryType="nt:unstructured"
                             icon="icon-instagram"/>
