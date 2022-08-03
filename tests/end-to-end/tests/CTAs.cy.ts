@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+const testIds = {
+  ctasList: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/ctaslist',
+  cta: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/ctaslist/cta1'
+};
+
 describe('CTA components and CTA list component', function () {
   it('renders correctly in preview mode', function () {
     cy.login();
@@ -35,16 +40,12 @@ describe('CTA components and CTA list component', function () {
       '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
     ).as('contentRendered');
 
-    cy.getByTestId('ComponentOverlay_CTAsList')
-      .click()
-      .get('.name')
-      .should('be.visible');
+    cy.getByTestId(testIds.ctasList).click().get('.name').should('be.visible');
 
     cy.percySnapshot();
 
-    cy.getByTestId('ComponentOverlay_CTAsList')
-      .getByTestId('ComponentOverlay_CTA')
-      .last()
+    cy.getByTestId(testIds.ctasList)
+      .getByTestId(testIds.cta)
       .click()
       .get('.name')
       .should('be.visible');
@@ -52,11 +53,14 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId('ToolbarOption_Edit').click();
     cy.getByTestId('Input_Text').type(' changed');
     cy.getByTestId('Input_Openinnewtab').click();
-    cy.getByTestId('Input_Showicon').click();
     cy.getByTestId('Button_Submit').click();
 
     cy.wait('@contentRendered');
     cy.wait(1000);
-    cy.getPageIframe().find('.hl-cta').last().should('contain', ' changed');
+    cy.getPageIframe()
+      .find('.hl-cta')
+      .last()
+      .should('contain', ' changed')
+      .should('have.attr', 'target', '_blank');
   });
 });
