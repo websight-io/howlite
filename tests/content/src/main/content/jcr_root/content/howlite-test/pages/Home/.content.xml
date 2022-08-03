@@ -2,13 +2,9 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="ws:Page">
     <jcr:content
-        jcr:lastModified="{Date}2022-07-19T10:03:49.932Z"
-        jcr:lastModifiedBy="admin"
         jcr:primaryType="ws:PageContent"
         jcr:title="Home"
         sling:resourceType="howlite/components/page"
-        ws:lastModified="{Date}2022-07-20T12:28:08.320Z"
-        ws:lastModifiedBy="admin"
         ws:template="/libs/howlite/templates/homepage">
         <rootcontainer
             jcr:primaryType="nt:unstructured"
