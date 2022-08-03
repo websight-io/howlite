@@ -94,10 +94,6 @@
 
     <dependencies>
         <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.annotation.versioning</artifactId>
-    </dependency>
-        <dependency>
             <groupId>javax.jcr</groupId>
             <artifactId>jcr</artifactId>
         </dependency>
