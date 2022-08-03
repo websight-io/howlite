@@ -28,7 +28,7 @@ describe('CTA components and CTA list component', function () {
     cy.percySnapshot();
   });
 
-  it('renders correctly in edit mode and saves a text property', function () {
+  it('renders correctly in edit mode and saves a text and checkbox property', function () {
     cy.login();
 
     cy.visit(
@@ -40,15 +40,15 @@ describe('CTA components and CTA list component', function () {
       '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
     ).as('contentRendered');
 
-    cy.getByTestId(testIds.ctasList).click().get('.name').should('be.visible');
+    cy.getByTestId(testIds.ctasList).click().find('span.name').should('have.text', 'CTAs List');
 
     cy.percySnapshot();
 
     cy.getByTestId(testIds.ctasList)
       .getByTestId(testIds.cta)
       .click()
-      .get('.name')
-      .should('be.visible');
+      .find('span.name')
+      .should('have.text', 'CTA');
 
     cy.getByTestId('ToolbarOption_Edit').click();
     cy.getByTestId('Input_Text').type(' changed');
@@ -57,6 +57,7 @@ describe('CTA components and CTA list component', function () {
 
     cy.wait('@contentRendered');
     cy.wait(1000);
+
     cy.getPageIframe()
       .find('.hl-cta')
       .last()
