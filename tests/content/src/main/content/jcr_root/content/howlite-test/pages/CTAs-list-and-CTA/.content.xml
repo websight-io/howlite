@@ -83,6 +83,7 @@
                             sling:resourceType="howlite/components/cta"
                             displayIcon="false"
                             label="A button within CTA list"
+                            classes="hl-cta--text"
                             openInNewTab="false"/>
                     </ctaslist>
                 </pagesection>
