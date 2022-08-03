@@ -43,6 +43,7 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId(testIds.ctasList).click().find('span.name').should('have.text', 'CTAs List');
 
     cy.percySnapshot();
+    cy.wait(1000);
 
     cy.getByTestId(testIds.ctasList)
       .getByTestId(testIds.cta)
@@ -52,6 +53,23 @@ describe('CTA components and CTA list component', function () {
 
     cy.getByTestId('ToolbarOption_Edit').click();
     cy.getByTestId('Input_Text').type(' changed');
+
+    cy.get('input[placeholder="Choose a path"').type('/')
+      .get('.autosuggestion-options')
+      .find('div').contains('content')
+      .click()
+      .get('.autosuggestion-options')
+      .find('div').contains('howlite-test')
+      .click()
+      .get('.autosuggestion-options')
+      .find('div').contains('pages')
+      .click()
+      .get('.autosuggestion-options')
+      .find('div').contains('Home')
+      .click();
+    
+    cy.get('input[placeholder="Choose a path"').should('have.value', '/content/howlite-test/pages/Home/').blur();
+
     cy.getByTestId('Input_Openinnewtab').click();
     cy.getByTestId('Button_Submit').click();
 
@@ -62,6 +80,7 @@ describe('CTA components and CTA list component', function () {
       .find('.hl-cta')
       .last()
       .should('contain', ' changed')
-      .should('have.attr', 'target', '_blank');
+      .should('have.attr', 'href', '/content/howlite-test/pages/Home.html')
+      .should('have.attr', 'target', '_blank')
   });
 });
