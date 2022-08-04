@@ -27,7 +27,7 @@ Cypress.Commands.add('getByTestId', (testId) => {
 
 Cypress.Commands.add('getPageIframe', () => {
   return cy
-    .get(`iframe`)
+    .get(`.page-editor iframe`)
     .its('0.contentDocument')
     .should('exist')
     .its('body')
