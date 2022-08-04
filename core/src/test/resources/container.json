@@ -59,6 +59,18 @@
       "mdColStart": 3,
       "lgColStart": 3
     },
+    "gridWithDifferentSizeAndOnlyLgStart": {
+      "displayType": "grid",
+      "smColSize": 4,
+      "mdColSize": 5,
+      "lgColSize": 6,
+      "lgColStart": 3
+    },
+    "gridWithLgBreakpoint": {
+      "displayType": "grid",
+      "lgColSize": 6,
+      "lgColStart": 3
+    },
     "inlineWithSameSize": {
       "displayType": "inline",
       "smColSize": 6,
