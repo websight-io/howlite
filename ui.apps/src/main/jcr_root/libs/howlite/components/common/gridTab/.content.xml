@@ -216,7 +216,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="1 Column"
-                selected="true"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
@@ -272,6 +271,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="12 Columns"
+                selected="true"
                 value="12"/>
     </smColsize>
     <mdColsize
@@ -283,7 +283,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="1 Column"
-                selected="true"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
@@ -339,6 +338,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="12 Columns"
+                selected="true"
                 value="12"/>
     </mdColsize>
     <lgColsize
@@ -350,7 +350,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="1 Column"
-                selected="true"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
@@ -406,6 +405,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="12 Columns"
+                selected="true"
                 value="12"/>
     </lgColsize>
 </jcr:root>
