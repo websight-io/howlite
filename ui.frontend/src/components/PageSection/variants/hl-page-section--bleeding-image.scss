@@ -35,6 +35,10 @@
 
   > .hl-container {
     align-items: inherit;
+
+    .hl-title {
+      text-align: left;
+    }
   }
 
   .hl-image {
