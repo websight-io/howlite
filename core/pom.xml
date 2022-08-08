@@ -53,7 +53,7 @@
                                         WebSight-Apps-WebRoot: /libs/howlite/web_root
 
                                         -exportcontents: \
-                                            pl.ds.howlite.components,pl.ds.howlite.components.models \
+                                            pl.ds.howlite.components,pl.ds.howlite.components.models,pl.ds.howlite.components.utils \
                                             ${removeall;${packages;VERSIONED};${packages;CONDITIONAL}}
                                         -noextraheaders: true
                                         -snapshot: SNAPSHOT
