@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="ws:Page">
+    <jcr:content
+        jcr:primaryType="ws:PageContent"
+        jcr:title="Home"
+        sling:resourceType="howlite/components/page"
+        ws:template="/libs/howlite/templates/homepage">
+        <rootcontainer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/rootcontainer">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/header"
+                mobileMenuTitle="Mobile Menu Title"
+                Text="Test Button">
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    lgImageSrc="/content/howlite-test/assets/landscape.jpg"
+                    showLink="false"/>
+                <navigation jcr:primaryType="nt:unstructured">
+                    <menuItems jcr:primaryType="nt:unstructured">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            label="Home"
+                            link="/content/howlite-test/pages/Home"
+                            openInNewTab="false"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            label="Sample Menu Item 1"
+                            openInNewTab="false"/>
+                        <_x0033_
+                            jcr:primaryType="nt:unstructured"
+                            label="Sample Menu Item 2"
+                            openInNewTab="false"/>
+                        <_x0034_
+                            jcr:primaryType="nt:unstructured"
+                            openInNewTab="false"/>
+                    </menuItems>
+                </navigation>
+                <cta
+                    jcr:primaryType="nt:unstructured"
+                    displayIcon="true"
+                    label="Test Button"
+                    link="https://google.com"
+                    openInNewTab="false"/>
+            </header>
+            <maincontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/maincontainer">
+                <pagesection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/title"
+                        headingLevel="h1"
+                        headingSize="hl-title__heading--size-4"
+                        showSubtitle="false"
+                        title="Homepage with editable header &amp; footer. Logo images should be shrinked to header/footer max-height and custom max-width."/>
+                </pagesection>
+            </maincontainer>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/footer"
+                copyright="Test Copyrights">
+                <image
+                    jcr:primaryType="nt:unstructured"
+                    lgImageSrc="/content/howlite-test/assets/portrait.jpg"
+                    showLink="false"/>
+                <navigation jcr:primaryType="nt:unstructured">
+                    <menuItems jcr:primaryType="nt:unstructured">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            label="Home"
+                            link="/content/howlite-test/pages/Home"
+                            openInNewTab="false"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            label="Sample footer menu item 1"
+                            link=""
+                            openInNewTab="false"/>
+                        <_x0033_
+                            jcr:primaryType="nt:unstructured"
+                            label="Sample footer menu item 2"
+                            link=""
+                            openInNewTab="false"/>
+                        <_x0034_
+                            jcr:primaryType="nt:unstructured"
+                            openInNewTab="false"/>
+                        <_x0035_
+                            jcr:primaryType="nt:unstructured"
+                            openInNewTab="false"/>
+                        <_x0036_
+                            jcr:primaryType="nt:unstructured"
+                            openInNewTab="false"/>
+                    </menuItems>
+                </navigation>
+                <socialLinks jcr:primaryType="nt:unstructured">
+                    <socialLinkItems jcr:primaryType="nt:unstructured">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            icon="icon-linkedin"
+                            title="linkedin"
+                            url="https://www.linkedin.com"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            icon="icon-facebook"
+                            title="facebook"/>
+                        <_x0033_
+                            jcr:primaryType="nt:unstructured"
+                            icon="icon-twitter"
+                            title="twitter"/>
+                        <_x0034_
+                            jcr:primaryType="nt:unstructured"
+                            icon="icon-instagram"/>
+                    </socialLinkItems>
+                </socialLinks>
+            </footer>
+        </rootcontainer>
+    </jcr:content>
+</jcr:root>

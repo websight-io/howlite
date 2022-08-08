@@ -14,14 +14,24 @@
  * limitations under the License.
  */
 
-describe('Page Editor', function () {
-  it('example test', function () {
+describe('Image component', function () {
+  it('renders correctly in preview mode', function () {
+    cy.login();
+
+    cy.visit('/content/howlite-test/pages/Image.html');
+
+    cy.percySnapshot();
+  });
+
+  it('renders correctly in edit mode', function () {
     cy.login();
 
     cy.visit(
-      '/apps/websight/index.html/content/tests-space/pages/Simple-Test-Page::editor'
+      '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
     );
 
     cy.percySnapshot();
+
+    // TO DO: HL-257
   });
 });

@@ -15,7 +15,6 @@
  */
 
 import '@4tw/cypress-drag-drop';
-import { ExecutableOperation, WebSightAction } from './ws-action';
 
 /**
  * Adds support for '/' in testId
@@ -24,6 +23,16 @@ const prepareTestId = (testId: string) => testId.replaceAll('/', '\\/');
 
 Cypress.Commands.add('getByTestId', (testId) => {
   return cy.get(`[data-testid=${prepareTestId(testId)}]`);
+});
+
+Cypress.Commands.add('getPageIframe', () => {
+  return cy
+    .get(`.page-editor iframe`)
+    .its('0.contentDocument')
+    .should('exist')
+    .its('body')
+    .should('not.be.undefined')
+    .then(cy.wrap);
 });
 
 Cypress.Commands.add(

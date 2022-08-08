@@ -47,22 +47,22 @@
                 <featuredBanner
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Featured Banner"
+                        label="Hero with mouse icon"
                         value="hl-page-section--featured-banner"/>
                 <featuredContent
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Featured Content"
+                        label="Full Width Image Section"
                         value="hl-page-section--featured-content"/>
                 <bleedingImage
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Bleeding Image"
+                        label="Bleeding Image Section"
                         value="hl-page-section--bleeding-image"/>
                 <callToAction
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Call To Action"
+                        label="Call To Action Section"
                         value="hl-page-section--call-to-action"/>
             </cssClasses>
         </styleTab>

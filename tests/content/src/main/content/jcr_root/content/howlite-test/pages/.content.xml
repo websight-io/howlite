@@ -2,4 +2,7 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
     jcr:primaryType="ws:Pages"
     ws:template="/libs/howlite/templates/pagesspace">
+    <Home/>
+    <Image/>
+    <CTAs-list-and-CTA/>
 </jcr:root>
