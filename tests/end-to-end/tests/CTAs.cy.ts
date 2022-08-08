@@ -60,9 +60,10 @@ describe('CTA components and CTA list component', function () {
       .should('have.text', 'CTA');
 
     cy.getByTestId(testIds.editIcon).click();
-    cy.getByTestId('Input_Text').type(' changed');
+    cy.getByTestId('Input_Text').clear().type('new value');
 
     cy.get(pathpickerInput)
+      .clear()
       .type('/')
       .get(selectors.autosuggestionsBox)
       .find('div')
@@ -93,8 +94,9 @@ describe('CTA components and CTA list component', function () {
 
     cy.getPageIframe()
       .find('.hl-cta.hl-cta--text')
-      .should('contain', ' changed')
       .should('have.attr', 'href', '/content/howlite-test/pages/Home.html')
-      .should('have.attr', 'target', '_blank');
+      .should('have.attr', 'target', '_blank')
+      .find('span')
+      .should('have.text', 'new value');
   });
 });
