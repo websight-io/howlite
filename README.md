@@ -41,3 +41,6 @@ Instance should start at http://localhost:8080/ in a couple of seconds (default 
 
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## Authoring Guides
+Description of all Howlite components can be found on [websight.io](https://www.websight.io/guides/authoring/howlite/)
