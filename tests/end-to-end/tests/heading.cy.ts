@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  title: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/title',
+  title: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/title'
 };
 
 describe('Heading component', function () {
@@ -47,5 +47,25 @@ describe('Heading component', function () {
 
     cy.percySnapshot();
 
+    cy.getByTestId('RadioElement_h1').click();
+    cy.getByTestId('RadioElement_hl-title__heading--size-2').click();
+    cy.getByTestId('Input_Headingtext').clear().type('New heading');
+    cy.getByTestId('Input_Addanoverline').click();
+    cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
+    cy.getByTestId(testIds.dialogSubmitButton).click();
+
+    cy.request(
+      '/content/howlite-test/pages/Heading/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
+    )
+      .its('body')
+      .should('deep.eq', {
+        'sling:resourceType': 'howlite/components/title',
+        title: 'New heading',
+        showSubtitle: 'true',
+        subtitle: 'New overline text',
+        'jcr:primaryType': 'nt:unstructured',
+        headingLevel: 'h1',
+        headingSize: 'hl-title__heading--size-2'
+      });
   });
 });
