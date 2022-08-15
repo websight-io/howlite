@@ -60,6 +60,9 @@ describe('CTA components and CTA list component', function () {
       .should('have.text', 'CTA');
 
     cy.getByTestId(testIds.editIcon).click();
+
+    cy.percySnapshot();
+
     cy.getByTestId('Input_Text').clear().type('new value');
 
     cy.get(pathpickerInput)

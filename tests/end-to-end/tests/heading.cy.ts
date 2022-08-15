@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-describe('Image component', function () {
+import { selectors, testIds } from '../support/consts';
+
+const paths = {
+  title: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/title',
+};
+
+describe('Heading component', function () {
   it('renders correctly in preview mode', function () {
     cy.login();
 
-    cy.visit('/content/howlite-test/pages/Image.html');
+    cy.visit('/content/howlite-test/pages/Heading.html');
 
     cy.percySnapshot();
   });
@@ -27,11 +33,19 @@ describe('Image component', function () {
     cy.login();
 
     cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
+      '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
     );
 
     cy.percySnapshot();
 
-    // TO DO: check dialog - changing properties
+    cy.getByTestId(paths.title)
+      .click()
+      .find(selectors.overlayName)
+      .should('have.text', 'Heading');
+
+    cy.getByTestId(testIds.editIcon).click();
+
+    cy.percySnapshot();
+
   });
 });
