@@ -42,13 +42,201 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/title"
                         headingLevel="h2"
-                        headingSize="hl-title__heading--size-1"
+                        headingSize="hl-title__heading--size-3"
                         lgColSize="6"
                         lgColStart="4"
                         showSubtitle="true"
                         subtitle="Page Section with a background image (S &amp; M)"
                         title="Image should NOT be visible on L breakpoint"/>
                 </pagesection_1_1>
+                <herosection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection"
+                    classes="hl-page-section--featured-banner">
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/container"
+                        lgColSize="6"
+                        mdColSize="12"
+                        smColSize="12">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/title"
+                            headingLevel="h1"
+                            headingSize="hl-title__heading--size-4"
+                            showSubtitle="true"
+                            subtitle="Add your subtitle here"
+                            title="Hero Page Section"/>
+                        <ctaslist
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/ctaslist">
+                            <cta1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="howlite/components/cta"
+                                classes="hl-cta--primary"
+                                label="Link"
+                                link="https://test.com"/>
+                            <cta2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="howlite/components/cta"
+                                classes="hl-cta--text"
+                                label="Link"
+                                link="https://test.com"/>
+                        </ctaslist>
+                    </container>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/image"
+                        lgColSize="6"
+                        mdColSize="12"
+                        smColSize="12"/>
+                </herosection>
+                <calltoactionsection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection"
+                    classes="hl-page-section--call-to-action">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/image"
+                        openInNewTab="false"/>
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/title"
+                        headingLevel="h2"
+                        headingSize="hl-title__heading--size-4"
+                        showSubtitle="false"
+                        title="Call To Action Page Section"/>
+                    <ctaslist
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/ctaslist">
+                        <cta_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            classes="hl-cta--primary"
+                            displayIcon="false"
+                            label="Link"
+                            link="https://test.com"
+                            openInNewTab="false"/>
+                        <cta
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            classes="hl-cta--text"
+                            displayIcon="false"
+                            label="Link"
+                            link="https://test.com"
+                            openInNewTab="false"/>
+                    </ctaslist>
+                </calltoactionsection>
+                <contentimagefullwidth
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection"
+                    classes="hl-page-section--featured-content">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/image"/>
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/container">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/title"
+                            headingLevel="h2"
+                            headingSize="hl-title__heading--size-4"
+                            lgColSize="5"
+                            lgColStart="2"
+                            mdColSize="12"
+                            mdColStart="1"
+                            showSubtitle="true"
+                            smColSize="12"
+                            smColStart="1"
+                            subtitle="Add your subtitle here"
+                            title="Full Width Image Page Section"/>
+                        <richtext
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/richtext"
+                            lgColSize="6"
+                            mdColSize="12"
+                            smColSize="12"/>
+                    </container>
+                </contentimagefullwidth>
+                <imageleftsection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection"
+                    classes="hl-page-section--bleeding-image">
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/image"
+                        lgColSize="6"
+                        mdColSize="6"
+                        smColSize="12"/>
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/container"
+                        lgColSize="5"
+                        lgColStart="8"
+                        mdColSize="6"
+                        mdColStart="7"
+                        smColSize="12"
+                        smColStart="1">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/title"
+                            headingLevel="h2"
+                            headingSize="hl-title__heading--size-4"
+                            showSubtitle="false"
+                            title="Image Left Page Section"/>
+                        <richtext
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/richtext"/>
+                        <cta
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            classes="hl-cta--text"
+                            displayIcon="true"
+                            label="Link"
+                            link="https://test.com"
+                            openInNewTab="true"/>
+                    </container>
+                </imageleftsection>
+                <imagerightsection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection"
+                    classes="hl-page-section--bleeding-image">
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/container"
+                        lgColSize="5"
+                        mdColSize="6"
+                        smColSize="12">
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/title"
+                            headingLevel="h2"
+                            headingSize="hl-title__heading--size-4"
+                            showSubtitle="false"
+                            title="Image Right Page Section"/>
+                        <richtext
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/richtext"/>
+                        <cta
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cta"
+                            classes="hl-cta--text"
+                            displayIcon="true"
+                            label="Link"
+                            link="https://test.com"
+                            openInNewTab="true"/>
+                    </container>
+                    <image
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/image"
+                        lgColSize="6"
+                        lgColStart="7"
+                        mdColSize="6"
+                        mdColStart="7"
+                        smColSize="12"
+                        smColStart="1"/>
+                </imagerightsection>
             </maincontainer>
             <footer
                 jcr:primaryType="nt:unstructured"
