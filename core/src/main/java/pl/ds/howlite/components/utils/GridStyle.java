@@ -29,6 +29,7 @@ import pl.ds.howlite.components.Grid;
 
 public class GridStyle {
 
+  private static final String GRID_COMPONENT_CLASS = "hl-grid-component";
   private static final String GRID_CLASS_PREFIX = "hl-grid";
   private static final String COLS_CLASS_PART = "-cols";
   private static final String SM_CLASS_PART = "-sm";
@@ -53,9 +54,15 @@ public class GridStyle {
 
   public Collection<String> getClasses() {
     List<String> classes = new LinkedList<>();
+
     if (displayType != null) {
       classes.addAll(getGridDisplayClasses());
     }
+
+    if (displayType == null) {
+      classes.add(GRID_COMPONENT_CLASS);
+    }
+
     classes.addAll(getGridColumnClasses());
 
     return classes;
