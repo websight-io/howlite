@@ -46,5 +46,7 @@ describe('Heading component', function () {
     cy.getByTestId(testIds.editIcon).click();
 
     cy.percySnapshot();
+
+    // TO DO: add test for saving background image properties
   });
 });

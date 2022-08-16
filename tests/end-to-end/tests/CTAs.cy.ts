@@ -43,18 +43,7 @@ describe('CTA components and CTA list component', function () {
       '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
     ).as('contentRendered');
 
-    // uncomment the code below to recreate the WS-1841 bug
-
-    // cy.getByTestId(paths.ctasList)
-    //   .click()
-    //   .find(selectors.overlayName)
-    //   .should('have.text', 'CTAs List');
-
-    // cy.percySnapshot();
-    // cy.wait(1000);
-
-    cy.getByTestId(paths.ctasList)
-      .getByTestId(paths.cta)
+    cy.getByTestId(paths.cta)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'CTA');
