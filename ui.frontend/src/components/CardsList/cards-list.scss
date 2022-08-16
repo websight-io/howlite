@@ -20,6 +20,46 @@
 .hl-cards-list {
   counter-reset: cards-list;
 
+  &.hl-cards-list--slider {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  
+  &.hl-grid {
+    display: grid;
+    width: 100%;
+  }
+
+  @for $i from 1 through abstracts.$grid-columns {
+    /* same across all breakpoints */
+    &.hl-grid-#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  
+    /* mobile only */
+    &.hl-grid-sm-#{$i} {
+      @include abstracts.media-breakpoint-down(md) {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  
+    /* tablet only */
+    &.hl-grid-md-#{$i} {
+      @include abstracts.media-breakpoint-between(md, lg) {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  
+    /* desktop only */
+    &.hl-grid-lg-#{$i} {
+      @include abstracts.media-breakpoint-up(lg) {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  }
+
   .card {
     &__image {
       padding-bottom: map.get(abstracts.$spacing, 'medium-2');
