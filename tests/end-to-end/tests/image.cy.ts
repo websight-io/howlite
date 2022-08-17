@@ -32,6 +32,6 @@ describe('Image component', function () {
 
     cy.percySnapshot();
 
-    // TO DO: check dialog - changing properties
+    // TODO: check dialog - changing properties
   });
 });

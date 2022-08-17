@@ -47,6 +47,6 @@ describe('Heading component', function () {
 
     cy.percySnapshot();
 
-    // TO DO: add test for saving background image properties
+    // TODO: add test for saving background image properties
   });
 });
