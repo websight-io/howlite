@@ -26,7 +26,7 @@ describe('Heading component', function () {
 
     cy.visit('/content/howlite-test/pages/Heading.html');
 
-    cy.percySnapshot();
+    cy.percySnapshot("Heading preview");
   });
 
   it('renders correctly in edit mode', function () {
@@ -36,7 +36,7 @@ describe('Heading component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
     );
 
-    cy.percySnapshot();
+    cy.percySnapshot("Heading editor");
 
     cy.getByTestId(paths.title)
       .click()
@@ -45,7 +45,7 @@ describe('Heading component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot();
+    cy.percySnapshot("Heading dialog");
 
     cy.getByTestId('RadioElement_h1').click();
     cy.getByTestId('RadioElement_hl-title__heading--size-2').click();
