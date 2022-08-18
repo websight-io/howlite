@@ -21,22 +21,21 @@ const paths = {
 };
 
 describe('Heading component', function () {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Heading.html');
-
-    cy.percySnapshot("Heading preview");
+    cy.percySnapshotWithAuth("Heading preview")
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
     );
 
-    cy.percySnapshot("Heading editor");
+    cy.percySnapshotWithAuth("Heading editor");
 
     cy.getByTestId(paths.title)
       .click()
@@ -45,7 +44,7 @@ describe('Heading component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot("Heading dialog");
+    cy.percySnapshotWithAuth("Heading dialog");
 
     cy.getByTestId('RadioElement_h1').click();
     cy.getByTestId('RadioElement_hl-title__heading--size-2').click();
