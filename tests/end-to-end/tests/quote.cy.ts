@@ -36,6 +36,11 @@ describe('Quote component', () => {
       '/apps/websight/index.html/content/howlite-test/pages/Quote::editor'
     );
 
+    cy.intercept(
+      'POST',
+      '**/pagesection/quote.websight-dialogs-service.save-properties.action'
+    ).as('saveProperties');
+
     cy.percySnapshot();
 
     cy.getByTestId(paths.quote)
@@ -60,6 +65,8 @@ describe('Quote component', () => {
     cy.getByTestId('Input_Alttext').clear().type('Image from John Doe');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
+
+    cy.wait('@saveProperties');
 
     cy.request(
       '/content/howlite-test/pages/Quote/jcr:content/rootcontainer/maincontainer/pagesection/quote.json'
