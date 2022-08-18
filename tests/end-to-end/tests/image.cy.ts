@@ -21,7 +21,6 @@ describe('Image component', function () {
 
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Image.html');
-
     cy.percySnapshotWithAuth('Image preview');
   });
 

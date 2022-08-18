@@ -31,11 +31,19 @@ describe('Heading component', function () {
   });
 
   it('renders correctly in edit mode', function () {
+    cy.login();
+
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
     );
 
     cy.percySnapshotWithAuth('Heading editor');
+
+    cy.intercept(
+      'POST',
+      '**/pagesection/title.websight-dialogs-service.save-properties.action'
+    ).as('saveProperties');
+
 
     cy.getByTestId(paths.title)
       .click()
@@ -52,6 +60,9 @@ describe('Heading component', function () {
     cy.getByTestId('Input_Addanoverline').click();
     cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
     cy.getByTestId(testIds.dialogSubmitButton).click();
+
+
+    cy.wait('@saveProperties');
 
     cy.request(
       '/content/howlite-test/pages/Heading/jcr:content/rootcontainer/maincontainer/pagesection/title.json'

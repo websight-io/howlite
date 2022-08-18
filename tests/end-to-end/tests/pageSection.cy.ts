@@ -27,7 +27,6 @@ describe('Page Section component', function () {
 
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Page-Section.html');
-
     cy.percySnapshotWithAuth('Page Section preview');
   });
 
