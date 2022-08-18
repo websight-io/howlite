@@ -22,7 +22,7 @@ describe('Image component', function () {
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Image.html');
 
-    cy.percySnapshotWithAuth("Image preview");
+    cy.percySnapshotWithAuth('Image preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -30,7 +30,7 @@ describe('Image component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
     );
 
-    cy.percySnapshotWithAuth("Image editor");
+    cy.percySnapshotWithAuth('Image editor');
 
     // TODO: check dialog - changing properties
   });

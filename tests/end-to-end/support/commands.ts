@@ -101,18 +101,20 @@ Cypress.Commands.add('login', () => {
         resource: `/apps${spacesUrl}`,
         _charset_: 'UTF-8'
       }
-    })
-  })
+    });
+  });
 });
 
 Cypress.Commands.add('percySnapshotWithAuth', (name: string) => {
-  cy.getCookie('websight.auth').then(authCookie => {
-    cy.percySnapshot(name, { discovery: { 
-      requestHeaders: {
-        cookie: `${authCookie.name}=${authCookie.value}`
+  cy.getCookie('websight.auth').then((authCookie) => {
+    cy.percySnapshot(name, {
+      discovery: {
+        requestHeaders: {
+          cookie: `${authCookie.name}=${authCookie.value}`
+        }
       }
-    }});
-   });
+    });
+  });
 });
 
 Cypress.Commands.add('submitLoginFormWithAdmin', () => {

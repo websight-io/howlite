@@ -30,7 +30,7 @@ describe('CTA components and CTA list component', function () {
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/CTAs-list-and-CTA.html');
 
-    cy.percySnapshotWithAuth("CTA preview");
+    cy.percySnapshotWithAuth('CTA preview');
   });
 
   it('renders correctly in edit mode and saves a text, path and checkbox property', function () {
@@ -50,7 +50,7 @@ describe('CTA components and CTA list component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshotWithAuth("CTA dialog");
+    cy.percySnapshotWithAuth('CTA dialog');
 
     cy.getByTestId('Input_Text').clear().type('new value');
 
