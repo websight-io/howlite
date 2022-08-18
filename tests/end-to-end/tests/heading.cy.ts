@@ -44,7 +44,6 @@ describe('Heading component', function () {
       '**/pagesection/title.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-
     cy.getByTestId(paths.title)
       .click()
       .find(selectors.overlayName)
@@ -60,7 +59,6 @@ describe('Heading component', function () {
     cy.getByTestId('Input_Addanoverline').click();
     cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
     cy.getByTestId(testIds.dialogSubmitButton).click();
-
 
     cy.wait('@saveProperties');
 
