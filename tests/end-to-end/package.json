@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cypress open --browser chrome",
-    "test": "cypress run --browser chrome",
+    "test": "jest && cypress run --browser chrome",
     "test:formatting": "prettier --check . && eslint **/*.ts",
     "test:visual": "percy exec -- cypress run",
     "format": "prettier --write .",
