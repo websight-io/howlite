@@ -27,7 +27,7 @@ mvn clean install -P e2e
 After building the project, start MongoDB:
 
 ```bash
-docker run -p 27017:27017 mongo:4.4.6
+docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=mongoadmin mongo:4.4.6
 ```
 
 
