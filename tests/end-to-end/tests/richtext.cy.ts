@@ -43,38 +43,10 @@ describe('Rich text editor component', () => {
       '/apps/websight/index.html/content/howlite-test/pages/Rich-text::editor'
     );
 
-    cy.percySnapshot('Rich text editor');
-
-    cy.getByTestId(paths.richtext)
-      .click()
-      .find(selectors.overlayName)
-      .should('have.text', 'Rich text editor');
-
-    cy.getByTestId(testIds.editIcon).click();
-
-    cy.percySnapshot('Rich text dialog');
-
-    cy.get('.ProseMirror').should('have.text', LOREM_IPSUM);
-
-    cy.getByTestId(testIds.dialogSubmitButton).click();
-
-    cy.request(
-      '/content/howlite-test/pages/Rich-text/jcr:content/rootcontainer/maincontainer/pagesection/richtext.json'
-    )
-      .its('body')
-      .should('deep.eq', {
-        'sling:resourceType': 'howlite/components/richtext',
-        'jcr:primaryType': 'nt:unstructured',
-        text: `<p>${LOREM_IPSUM}</p>`
-      });
-  });
-
-  it('renders check lists correctly in edit mode', function () {
-    cy.login();
-
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Rich-text::editor'
-    );
+    cy.intercept(
+      'POST',
+      '**/pagesection_1/richtext.websight-dialogs-service.save-properties.action'
+    ).as('saveProperties');
 
     cy.percySnapshot('Rich text editor');
 
@@ -87,24 +59,21 @@ describe('Rich text editor component', () => {
 
     cy.percySnapshot('Rich text dialog');
 
-    cy.get('.ProseMirror').should('have.html', LIST);
-
-    cy.get('#undefined-1').click();
-    cy.get('div input[name="classes"]').get(
-      '[value="hl-rich-text--checked-bullet-points"]'
-    );
+    cy.get('.ProseMirror').type('\n\n').type(LOREM_IPSUM);
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
+
+    cy.wait('@saveProperties');
 
     cy.request(
       '/content/howlite-test/pages/Rich-text/jcr:content/rootcontainer/maincontainer/pagesection_1/richtext.json'
     )
       .its('body')
       .should('deep.eq', {
+        classes: 'hl-rich-text--checked-bullet-points',
         'sling:resourceType': 'howlite/components/richtext',
         'jcr:primaryType': 'nt:unstructured',
-        classes: 'hl-rich-text--checked-bullet-points',
-        text: LIST
+        text: `${LIST}<p>${LOREM_IPSUM}</p>`
       });
   });
 });
