@@ -42,12 +42,12 @@ public class DefaultGridComponent implements Grid {
   private Integer lgColSize;
 
   @Inject
-  private Integer smColStart;
+  private Integer smOffset;
 
   @Inject
-  private Integer mdColStart;
+  private Integer mdOffset;
 
   @Inject
-  private Integer lgColStart;
+  private Integer lgOffset;
 
 }

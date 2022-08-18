@@ -24,10 +24,10 @@ public interface Grid {
 
   Integer getLgColSize();
 
-  Integer getSmColStart();
+  Integer getSmOffset();
 
-  Integer getMdColStart();
+  Integer getMdOffset();
 
-  Integer getLgColStart();
+  Integer getLgOffset();
 
 }

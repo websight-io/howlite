@@ -31,10 +31,10 @@ public class GridImpl implements Grid {
 
   private final Integer lgColSize;
 
-  private final Integer smColStart;
+  private final Integer smOffset;
 
-  private final Integer mdColStart;
+  private final Integer mdOffset;
 
-  private final Integer lgColStart;
+  private final Integer lgOffset;
 
 }
