@@ -42,8 +42,9 @@
                     <cta
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/cta"
-                        displayIcon="false"
-                        label="A Button added directly to page section"
+                        displayIcon="true"
+                        label="A Button with icon"
+                        link="www.test.com"
                         openInNewTab="false"/>
                     <ctaslist
                         jcr:primaryType="nt:unstructured"
