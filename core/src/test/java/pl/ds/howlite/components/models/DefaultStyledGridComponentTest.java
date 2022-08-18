@@ -60,22 +60,22 @@ class DefaultStyledGridComponentTest {
 
   private static Stream<Arguments> styleClasses() {
     return Stream.of(
-            Arguments.of(PATH + "/noDisplayTypeWithSameSize",
-                    new String[]{"hl-grid-component", "hl-cols-6"}),
-            Arguments.of(PATH + "/noDisplayTypeWithDifferentSize",
-                    new String[]{"hl-grid-component", "hl-cols-sm-4", "hl-cols-md-5",
-                            "hl-cols-lg-6"}),
-            Arguments.of(PATH + "/noDisplayTypeWithSameSizeAndSameOffset",
-                    new String[]{"hl-grid-component", "hl-offset-3", "hl-cols-6"}),
-            Arguments.of(PATH + "/noDisplayTypeWithSameSizeAndDifferentOffset",
-                    new String[]{"hl-grid-component", "hl-offset-sm-1",
-                            "hl-offset-md-2", "hl-cols-6", "hl-offset-lg-3" }),
-            Arguments.of(PATH + "/noDisplayTypeWithDifferentSizeAndOffset",
-                    new String[]{"hl-grid-component", "hl-offset-sm-1", "hl-cols-sm-4",
-                            "hl-offset-md-2", "hl-cols-md-5", "hl-offset-lg-3", "hl-cols-lg-6"}),
-            Arguments.of(PATH + "/noDisplayTypeWithDifferentSizeAndSameOffset",
-                    new String[]{"hl-grid-component", "hl-offset-3", "hl-cols-sm-4",
-                            "hl-cols-md-5", "hl-cols-lg-6"})
+        Arguments.of(PATH + "/noDisplayTypeWithSameSize",
+            new String[]{"hl-grid-component", "hl-cols-6"}),
+        Arguments.of(PATH + "/noDisplayTypeWithDifferentSize",
+            new String[]{"hl-grid-component", "hl-cols-sm-4", "hl-cols-md-5",
+                "hl-cols-lg-6"}),
+        Arguments.of(PATH + "/noDisplayTypeWithSameSizeAndSameOffset",
+            new String[]{"hl-grid-component", "hl-offset-3", "hl-cols-6"}),
+        Arguments.of(PATH + "/noDisplayTypeWithSameSizeAndDifferentOffset",
+            new String[]{"hl-grid-component", "hl-offset-sm-1",
+                "hl-offset-md-2", "hl-cols-6", "hl-offset-lg-3"}),
+        Arguments.of(PATH + "/noDisplayTypeWithDifferentSizeAndOffset",
+            new String[]{"hl-grid-component", "hl-offset-sm-1", "hl-cols-sm-4",
+                "hl-offset-md-2", "hl-cols-md-5", "hl-offset-lg-3", "hl-cols-lg-6"}),
+        Arguments.of(PATH + "/noDisplayTypeWithDifferentSizeAndSameOffset",
+            new String[]{"hl-grid-component", "hl-offset-3", "hl-cols-sm-4",
+                "hl-cols-md-5", "hl-cols-lg-6"})
     );
   }
 

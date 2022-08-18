@@ -16,8 +16,6 @@
 
 package pl.ds.howlite.components.utils;
 
-import pl.ds.howlite.components.Grid;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -27,6 +25,8 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import pl.ds.howlite.components.Grid;
+
 
 public class GridStyle {
 
@@ -84,7 +84,7 @@ public class GridStyle {
   }
 
   private Collection<String> prepareDefaultGridColSizeClass() {
-    return Collections.singleton( GRID_COLS_PREFIX + "-" + getDefaultColSize());
+    return Collections.singleton(GRID_COLS_PREFIX + "-" + getDefaultColSize());
   }
 
   private Collection<String> prepareGridColSizeClasses() {
@@ -106,9 +106,9 @@ public class GridStyle {
   private Collection<String> getGridOffsetClasses() {
     if (!hasAnyOffset()) {
       return Collections.emptyList();
-    } else if(hasSameOffset()){
+    } else if (hasSameOffset()) {
       return prepareDefaultGridOffsetClass();
-    }else {
+    } else {
       return prepareGridOffsetClasses();
     }
   }
@@ -124,26 +124,27 @@ public class GridStyle {
     }
 
     if (gridComponent.getMdOffset() != null) {
-      classes.add(GRID_OFFSET_PREFIX + MD_CLASS_PART  + "-" + gridComponent.getMdOffset());
+      classes.add(GRID_OFFSET_PREFIX + MD_CLASS_PART + "-" + gridComponent.getMdOffset());
     }
 
     if (gridComponent.getLgOffset() != null) {
-      classes.add(GRID_OFFSET_PREFIX + LG_CLASS_PART  + "-" + gridComponent.getLgOffset());
+      classes.add(GRID_OFFSET_PREFIX + LG_CLASS_PART + "-" + gridComponent.getLgOffset());
     }
     return classes;
   }
 
   private boolean hasAnyColSize() {
     return !getCollSizes()
-            .collect(Collectors.toSet())
-            .isEmpty();
+        .collect(Collectors.toSet())
+        .isEmpty();
   }
 
   private boolean hasSameColSizes() {
     Set<Integer> colSizes = getCollSizes()
-            .collect(Collectors.toSet());
+        .collect(Collectors.toSet());
 
-    return getCollSizes().count() == 3L && colSizes.size() == 1 && colSizes.iterator().next() != null;
+    return getCollSizes().count() == 3L && colSizes.size() == 1
+        && colSizes.iterator().next() != null;
   }
 
   private Integer getDefaultColSize() {
@@ -157,19 +158,19 @@ public class GridStyle {
 
   private Stream<Integer> getCollSizes() {
     return Stream.of(gridComponent.getSmColSize(), gridComponent.getMdColSize(),
-                    gridComponent.getLgColSize())
-            .filter(Objects::nonNull);
+            gridComponent.getLgColSize())
+        .filter(Objects::nonNull);
   }
 
   private boolean hasAnyOffset() {
     return !getOffset()
-            .collect(Collectors.toSet())
-            .isEmpty();
+        .collect(Collectors.toSet())
+        .isEmpty();
   }
 
   private boolean hasSameOffset() {
     Set<Integer> offsets = getOffset()
-            .collect(Collectors.toSet());
+        .collect(Collectors.toSet());
 
     return getOffset().count() == 3L && offsets.size() == 1 && offsets.iterator().next() != null;
   }
@@ -185,8 +186,8 @@ public class GridStyle {
 
   private Stream<Integer> getOffset() {
     return Stream.of(gridComponent.getSmOffset(), gridComponent.getMdOffset(),
-                    gridComponent.getLgOffset())
-            .filter(Objects::nonNull);
+            gridComponent.getLgOffset())
+        .filter(Objects::nonNull);
   }
 
 }
