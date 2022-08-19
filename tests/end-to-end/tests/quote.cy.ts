@@ -41,7 +41,7 @@ describe('Quote component', () => {
       '**/pagesection/quote.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshot();
+    cy.percySnapshot('Quote editor');
 
     cy.getByTestId(paths.quote)
       .click()
@@ -50,7 +50,7 @@ describe('Quote component', () => {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot('Quote editor');
+    cy.percySnapshot('Quote dialog');
 
     cy.get('.ProseMirror').should('have.text', 'Default quote component.');
     cy.getByTestId('Input_Author’sname').clear().type('John Doe');
