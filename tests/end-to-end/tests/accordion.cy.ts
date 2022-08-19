@@ -18,7 +18,9 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   accordionItem:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/accordion/accordionitem1'
+    'ComponentOverlay_rootcontainer/maincontainer/pagesection/accordion/accordionitem1',
+  emptyAccordion:
+    'ComponentOverlay_rootcontainer/maincontainer/pagesection_1/accordion'
 };
 
 describe('Accordion component', function () {
@@ -42,7 +44,7 @@ describe('Accordion component', function () {
       '**/pagesection/accordion/accordionitem1.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshot('Heading editor');
+    cy.percySnapshot('Accordion editor');
 
     cy.getByTestId(paths.accordionItem)
       .click()
@@ -70,4 +72,21 @@ describe('Accordion component', function () {
         content: '<p>Text</p>'
       });
   });
+
+  it('renders empty accordion correctly in edit mode', function () {
+    cy.login();
+
+    cy.visit(
+        '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
+    );
+
+    cy.percySnapshot('Accordion editor');
+
+    cy.getByTestId(paths.emptyAccordion)
+        .click()
+        .find(selectors.overlayName)
+        .should('have.text', 'Accordion');
+
+  });
+
 });

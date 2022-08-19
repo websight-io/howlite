@@ -23,7 +23,9 @@
                         sling:resourceType="howlite/components/accordion">
                         <accordionitem1
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="howlite/components/accordion/accordionitem"/>
+                            sling:resourceType="howlite/components/accordion/accordionitem"
+                            content="&lt;p>Sample text&lt;/p>"
+                            title="Sample title"/>
                         <accordionitem2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/accordion/accordionitem"/>
@@ -32,6 +34,13 @@
                             sling:resourceType="howlite/components/accordion/accordionitem"/>
                     </accordion>
                 </pagesection>
+                <pagesection_1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <accordion
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/accordion"/>
+                </pagesection_1>
             </maincontainer>
             <footer
                 jcr:primaryType="nt:unstructured"
