@@ -33,7 +33,7 @@ describe('Rich text editor component', () => {
 
     cy.visit('/content/howlite-test/pages/Rich-text.html');
 
-    cy.percySnapshot('Rich text preview');
+    cy.percySnapshotWithAuth('Rich text preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -48,7 +48,7 @@ describe('Rich text editor component', () => {
       '**/pagesection_1/richtext.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshot('Rich text editor');
+    cy.percySnapshotWithAuth('Rich text editor');
 
     cy.getByTestId(paths.richtextWithChecklist)
       .click()
@@ -57,7 +57,7 @@ describe('Rich text editor component', () => {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot('Rich text dialog');
+    cy.percySnapshotWithAuth('Rich text dialog');
 
     cy.get('.ProseMirror').type('\n\n').type(LOREM_IPSUM);
 
