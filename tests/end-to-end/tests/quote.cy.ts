@@ -26,7 +26,7 @@ describe('Quote component', () => {
 
     cy.visit('/content/howlite-test/pages/Quote.html');
 
-    cy.percySnapshot('Quote preview');
+    cy.percySnapshotWithAuth('Quote preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -41,7 +41,7 @@ describe('Quote component', () => {
       '**/pagesection/quote.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshot('Quote editor');
+    cy.percySnapshotWithAuth('Quote editor');
 
     cy.getByTestId(paths.quote)
       .click()
@@ -50,7 +50,7 @@ describe('Quote component', () => {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot('Quote dialog');
+    cy.percySnapshotWithAuth('Quote dialog');
 
     cy.get('.ProseMirror').should('have.text', 'Default quote component.');
     cy.getByTestId('Input_Author’sname').clear().type('John Doe');
