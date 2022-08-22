@@ -77,16 +77,14 @@ describe('Accordion component', function () {
     cy.login();
 
     cy.visit(
-        '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
+      '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
     );
 
     cy.percySnapshotWithAuth('Accordion editor');
 
     cy.getByTestId(paths.emptyAccordion)
-        .click()
-        .find(selectors.overlayName)
-        .should('have.text', 'Accordion');
-
+      .click()
+      .find(selectors.overlayName)
+      .should('have.text', 'Accordion');
   });
-
 });
