@@ -32,6 +32,15 @@
                         classes="hl-rich-text--checked-bullet-points"
                         text="&lt;ul>&lt;li>&lt;p>List item&lt;/p>&lt;/li>&lt;li>&lt;p>List item&lt;/p>&lt;/li>&lt;/ul>"/>
                 </pagesection_1>
+                <pagesection_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/richtext"
+                        lgColSize="6"
+                        text="&lt;p>Resized rich text component with 6 columns width on L breakpoint.&lt;/p>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, neque in ultricies euismod, ex purus eleifend ex, ut pretium mauris felis sit amet mauris.&lt;/p>"/>
+                </pagesection_2>
             </maincontainer>
             <footer
                 jcr:primaryType="nt:unstructured"
