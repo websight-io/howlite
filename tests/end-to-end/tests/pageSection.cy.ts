@@ -21,22 +21,21 @@ const paths = {
 };
 
 describe('Page Section component', function () {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Page-Section.html');
-
-    cy.percySnapshot("Page Section preview");
+    cy.percySnapshotWithAuth('Page Section preview');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Page-Section::editor'
     );
 
-    cy.percySnapshot("Page Section editor");
+    cy.percySnapshotWithAuth('Page Section editor');
 
     cy.getByTestId(paths.pageSection)
       .click()
@@ -45,7 +44,7 @@ describe('Page Section component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot("Page Section dialog");
+    cy.percySnapshotWithAuth('Page Section dialog');
 
     // TODO: add test for saving background image properties
   });

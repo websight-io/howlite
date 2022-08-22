@@ -15,22 +15,21 @@
  */
 
 describe('Image component', function () {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Image.html');
-
-    cy.percySnapshot("Image preview");
+    cy.percySnapshotWithAuth('Image preview');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
     );
 
-    cy.percySnapshot("Image editor");
+    cy.percySnapshotWithAuth('Image editor');
 
     // TODO: check dialog - changing properties
   });

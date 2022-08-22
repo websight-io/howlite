@@ -35,6 +35,7 @@ declare global {
         alias: string
       ): void;
       login(): void;
+      percySnapshotWithAuth(name: string): void;
       submitLoginFormWithAdmin(): void;
       percySnapshotNoHeaderFooter(name?: string, options?: SnapshotOptions);
     }
