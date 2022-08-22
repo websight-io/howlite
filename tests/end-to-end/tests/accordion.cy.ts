@@ -29,7 +29,7 @@ describe('Accordion component', function () {
 
     cy.visit('/content/howlite-test/pages/Accordion.html');
 
-    cy.percySnapshot('Accordion preview');
+    cy.percySnapshotWithAuth('Accordion preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -44,7 +44,7 @@ describe('Accordion component', function () {
       '**/pagesection/accordion/accordionitem1.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshot('Accordion editor');
+    cy.percySnapshotWithAuth('Accordion editor');
 
     cy.getByTestId(paths.accordionItem)
       .click()
@@ -53,7 +53,7 @@ describe('Accordion component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshot('Accordion dialog');
+    cy.percySnapshotWithAuth('Accordion dialog');
 
     cy.getByTestId('Input_Title-container').clear().type('Title');
     cy.get('.ProseMirror').clear().type('Text');
@@ -80,7 +80,7 @@ describe('Accordion component', function () {
         '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
     );
 
-    cy.percySnapshot('Accordion editor');
+    cy.percySnapshotWithAuth('Accordion editor');
 
     cy.getByTestId(paths.emptyAccordion)
         .click()
