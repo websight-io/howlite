@@ -1,6 +1,6 @@
 # Howlite
 
-Howlite project repository.
+Howlite is a sample component library for the [WebSight CMS](https://www.websight.io/). You can try it together with a demo site. Check the [Getting Started](https://www.websight.io/getting-started/) page for information on how to run a local instance in 5 minutes. You may find an [authoring guide for the components](https://www.websight.io/guides/authoring/howlite/) handy too.
 
 ## Modules
 - `core` - components logic for Howlite
