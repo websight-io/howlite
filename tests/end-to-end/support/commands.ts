@@ -124,7 +124,7 @@ Cypress.Commands.add('submitLoginFormWithAdmin', () => {
 });
 
 Cypress.Commands.add('percySnapshotNoHeaderFooter', (name: string, options) =>
-  cy.percySnapshotWithAuth(name, {
+  cy.percySnapshot(name, {
     percyCSS: `
       div[data-testid="Footer_WebSight"] {
         visibility: hidden !important;
