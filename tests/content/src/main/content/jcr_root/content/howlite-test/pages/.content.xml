@@ -9,4 +9,5 @@
     <Page-Section/>
     <Quote/>
     <Rich-text/>
+    <Accordion/>
 </jcr:root>
