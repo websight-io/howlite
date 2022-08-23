@@ -47,20 +47,22 @@
   width: 100%;
 }
 
+// Col width classes:
+
 @for $i from 1 through abstracts.$grid-columns - 1 {
   /* same across all breakpoints */
   .hl-cols-#{$i} {
     width: percentage(math.div($i, 12));
+
+    &.hl-grid-component {
+      width: calc(percentage(math.div($i, 12))  - var(--gutter));
+    }
   }
 
   /* mobile only */
   .hl-cols-sm-#{$i} {
     @include abstracts.media-breakpoint-down(md) {
       width: percentage(math.div($i, 12));
-
-      // &.hl-grid-component {
-      //   width: calc(percentage(math.div($i, 12))  - var(--gutter));
-      // }
     }
   }
 
@@ -86,6 +88,8 @@
     }
   }
 }
+
+// Offset classes:
 
 @for $i from 1 through abstracts.$grid-columns - 1 {
     /* same across all breakpoints */

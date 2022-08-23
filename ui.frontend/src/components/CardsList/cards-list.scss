@@ -78,6 +78,8 @@
 
     .hl-cta {
       margin-top: map.get(abstracts.$spacing, 'medium');
+      margin-left: 0;
+
       @include abstracts.media-breakpoint-up(md) {
         margin-top: map.get(abstracts.$spacing, 'medium-2');
       }
