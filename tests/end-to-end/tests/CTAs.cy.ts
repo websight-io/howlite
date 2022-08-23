@@ -23,17 +23,17 @@ const paths = {
 const pathpickerInput = 'input[placeholder="Choose a path"';
 
 describe('CTA components and CTA list component', function () {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/CTAs-list-and-CTA.html');
 
-    cy.percySnapshot();
+    cy.percySnapshotWithAuth('CTA preview');
   });
 
   it('renders correctly in edit mode and saves a text, path and checkbox property', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/CTAs-list-and-CTA::editor'
     );
@@ -43,23 +43,17 @@ describe('CTA components and CTA list component', function () {
       '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
     ).as('contentRendered');
 
-    // uncomment the code below to recreate the WS-1841 bug
-
-    // cy.getByTestId(paths.ctasList)
-    //   .click()
-    //   .find(selectors.overlayName)
-    //   .should('have.text', 'CTAs List');
-
-    // cy.percySnapshot();
-    // cy.wait(1000);
-
-    cy.getByTestId(paths.ctasList)
-      .getByTestId(paths.cta)
+    cy.getByTestId(paths.cta)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'CTA');
 
+    cy.percySnapshotWithAuth('CTA editor');
+
     cy.getByTestId(testIds.editIcon).click();
+
+    cy.percySnapshotWithAuth('CTA dialog');
+
     cy.getByTestId('Input_Text').clear().type('new value');
 
     cy.get(pathpickerInput)

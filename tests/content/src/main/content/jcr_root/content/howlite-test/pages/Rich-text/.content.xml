@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="ws:Page">
+    <jcr:content
+        jcr:primaryType="ws:PageContent"
+        jcr:title="Rich text"
+        sling:resourceType="howlite/components/page"
+        ws:template="/libs/howlite/templates/contentpage">
+        <rootcontainer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="howlite/components/rootcontainer/fixedrootcontainer">
+            <header
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/headerreference"/>
+            <maincontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/maincontainer">
+                <pagesection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/richtext"
+                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, neque in ultricies euismod, ex purus eleifend ex, ut pretium mauris felis sit amet mauris.&lt;/p>"/>
+                </pagesection>
+                <pagesection_1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/richtext"
+                        classes="hl-rich-text--checked-bullet-points"
+                        text="&lt;ul>&lt;li>&lt;p>List item&lt;/p>&lt;/li>&lt;li>&lt;p>List item&lt;/p>&lt;/li>&lt;/ul>"/>
+                </pagesection_1>
+                <pagesection_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <richtext
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/richtext"
+                        lgColSize="6"
+                        text="&lt;p>Resized rich text component with 6 columns width on L breakpoint.&lt;/p>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, neque in ultricies euismod, ex purus eleifend ex, ut pretium mauris felis sit amet mauris.&lt;/p>"/>
+                </pagesection_2>
+            </maincontainer>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="howlite/components/footerreference"/>
+        </rootcontainer>
+    </jcr:content>
+</jcr:root>

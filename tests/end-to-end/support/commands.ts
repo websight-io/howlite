@@ -90,16 +90,30 @@ Cypress.Commands.add('login', () => {
   }/apps/websight-authentication/j_security_check`;
   const spacesUrl = '/websight/index.html/content::spaces';
 
-  cy.request({
-    method: 'POST',
-    url: authUrl,
-    form: true,
-    body: {
-      j_username: Cypress.env('loginUsername'),
-      j_password: Cypress.env('loginPassword'),
-      resource: `/apps${spacesUrl}`,
-      _charset_: 'UTF-8'
-    }
+  cy.session('admin', () => {
+    cy.request({
+      method: 'POST',
+      url: authUrl,
+      form: true,
+      body: {
+        j_username: Cypress.env('loginUsername'),
+        j_password: Cypress.env('loginPassword'),
+        resource: `/apps${spacesUrl}`,
+        _charset_: 'UTF-8'
+      }
+    });
+  });
+});
+
+Cypress.Commands.add('percySnapshotWithAuth', (name: string) => {
+  cy.getCookie('websight.auth').then((authCookie) => {
+    cy.percySnapshot(name, {
+      discovery: {
+        requestHeaders: {
+          cookie: `${authCookie.name}=${authCookie.value}`
+        }
+      }
+    });
   });
 });
 

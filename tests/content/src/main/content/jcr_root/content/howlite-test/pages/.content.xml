@@ -5,4 +5,9 @@
     <Home/>
     <Image/>
     <CTAs-list-and-CTA/>
+    <Heading/>
+    <Page-Section/>
+    <Quote/>
+    <Rich-text/>
+    <Accordion/>
 </jcr:root>

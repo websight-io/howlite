@@ -14,23 +14,38 @@
  * limitations under the License.
  */
 
-describe('Image component', function () {
+import { selectors, testIds } from '../support/consts';
+
+const paths = {
+  pageSection: 'ComponentOverlay_rootcontainer/maincontainer/pagesection'
+};
+
+describe('Page Section component', function () {
   beforeEach(() => {
     cy.login();
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/howlite-test/pages/Image.html');
-    cy.percySnapshotWithAuth('Image preview');
+    cy.visit('/content/howlite-test/pages/Page-Section.html');
+    cy.percySnapshotWithAuth('Page Section preview');
   });
 
   it('renders correctly in edit mode', function () {
     cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
+      '/apps/websight/index.html/content/howlite-test/pages/Page-Section::editor'
     );
 
-    cy.percySnapshotWithAuth('Image editor');
+    cy.percySnapshotWithAuth('Page Section editor');
 
-    // TODO: check dialog - changing properties
+    cy.getByTestId(paths.pageSection)
+      .click()
+      .find(selectors.overlayName)
+      .should('have.text', 'Page Section');
+
+    cy.getByTestId(testIds.editIcon).click();
+
+    cy.percySnapshotWithAuth('Page Section dialog');
+
+    // TODO: add test for saving background image properties
   });
 });

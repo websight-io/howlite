@@ -184,6 +184,10 @@
                   <log>CONTROL</log>
                   <time>60000</time>
                 </wait>
+                <env>
+                  <MONGO_INITDB_ROOT_USERNAME>mongoadmin</MONGO_INITDB_ROOT_USERNAME>
+                  <MONGO_INITDB_ROOT_PASSWORD>mongoadmin</MONGO_INITDB_ROOT_PASSWORD>
+                </env>
               </run>
             </image>
           </images>

@@ -1,6 +1,6 @@
 # Howlite
 
-Howlite project repository.
+Howlite is a sample component library for the [WebSight CMS](https://www.websight.io/). You can try it together with a demo site. Check the [Getting Started](https://www.websight.io/getting-started/) page for information on how to run a local instance in 5 minutes. You may find an [authoring guide for the components](https://www.websight.io/guides/authoring/howlite/) handy too.
 
 ## Modules
 - `core` - components logic for Howlite
@@ -27,7 +27,7 @@ mvn clean install -P e2e
 After building the project, start MongoDB:
 
 ```bash
-docker run -p 27017:27017 mongo:4.4.6
+docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=mongoadmin mongo:4.4.6
 ```
 
 

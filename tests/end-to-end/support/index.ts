@@ -35,8 +35,20 @@ declare global {
         alias: string
       ): void;
       login(): void;
+      percySnapshotWithAuth(name: string): void;
       submitLoginFormWithAdmin(): void;
       percySnapshotNoHeaderFooter(name?: string, options?: SnapshotOptions);
     }
   }
 }
+
+// ignore resizeObserver error occuring only in cypress
+// https://github.com/cypress-io/cypress/issues/20341
+// https://github.com/quasarframework/quasar/issues/2233
+const resizeObserverLoopErrRe = /^[^(ResizeObserver loop limit exceeded)]/;
+Cypress.on('uncaught:exception', (err) => {
+  /* returning false here prevents Cypress from failing the test */
+  if (resizeObserverLoopErrRe.test(err.message)) {
+    return false;
+  }
+});
