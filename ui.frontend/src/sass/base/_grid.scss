@@ -44,11 +44,12 @@
 .hl-grid-component {
   margin-left: calc(var(--gutter) / 2);
   margin-right: calc(var(--gutter) / 2);
+  width: calc(100% - var(--gutter));
 }
 
 @for $i from 1 through abstracts.$grid-columns {
   /* same across all breakpoints */
-  .hl-grid-cols-#{$i} {
+  .hl-cols-#{$i} {
     width: percentage(math.div($i, 12));
 
     &.hl-grid-component {
@@ -57,18 +58,18 @@
   }
 
   /* mobile only */
-  .hl-grid-sm-cols-#{$i} {
+  .hl-cols-sm-#{$i} {
     @include abstracts.media-breakpoint-down(md) {
       width: percentage(math.div($i, 12));
 
-      &.hl-grid-component {
-        width: calc(percentage(math.div($i, 12))  - var(--gutter));
-      }
+      // &.hl-grid-component {
+      //   width: calc(percentage(math.div($i, 12))  - var(--gutter));
+      // }
     }
   }
 
   /* tablet only */
-  .hl-grid-md-cols-#{$i} {
+  .hl-cols-md-#{$i} {
     @include abstracts.media-breakpoint-between(md, lg) {
       width: percentage(math.div($i, 12));
 
@@ -79,13 +80,14 @@
   }
 
   /* desktop only */
-  .hl-grid-lg-cols-#{$i} {
+  .hl-cols-lg-#{$i} {
     @include abstracts.media-breakpoint-up(lg) {
       width: percentage(math.div($i, 12));
 
       &.hl-grid-component {
         width: calc(percentage(math.div($i, 12))  - var(--gutter));
-      }    }
+      }
+    }
   }
 }
 
@@ -93,55 +95,45 @@
 // TO DO: change to standalone offset classes:
 
 @for $i from 1 through abstracts.$grid-columns {
-  @for $j from 1 through abstracts.$grid-columns {
     /* same across all breakpoints */
-    .hl-grid-cols-#{$j}-#{$i} {
-      width: percentage(math.div($i, 12));
-      margin-left: percentage(math.div($j - 1, 12));
+    .hl-offset-#{$i} {
+      margin-left: percentage(math.div($i, 12));
 
       &.hl-grid-component {
-        width: calc(percentage(math.div($i, 12))  - var(--gutter));
-        margin-left: calc(percentage(math.div($j - 1, 12)) + var(--gutter) / 2 );
+        margin-left: calc(percentage(math.div($i, 12)) + var(--gutter) / 2 );
       }
     }
 
     /* mobile only */
-    .hl-grid-sm-cols-#{$j}-#{$i} {
+    .hl-offset-sm-#{$i} {
       @include abstracts.media-breakpoint-down(md) {
-        width: percentage(math.div($i, 12));
-        margin-left: percentage(math.div($j - 1, 12));
+        margin-left: percentage(math.div($i, 12));
 
         &.hl-grid-component {
-          width: calc(percentage(math.div($i, 12))  - var(--gutter));
-          margin-left: calc(percentage(math.div($j - 1, 12)) + var(--gutter) / 2);
+          margin-left: calc(percentage(math.div($i, 12)) + var(--gutter) / 2);
         }
       }
     }
 
     /* tablet only */
-    .hl-grid-md-cols-#{$j}-#{$i} {
+    .hl-offset-md-#{$i} {
       @include abstracts.media-breakpoint-between(md, lg) {
-        width: percentage(math.div($i, 12));
-        margin-left: percentage(math.div($j - 1, 12));
+        margin-left: percentage(math.div($i, 12));
 
         &.hl-grid-component {
-          width: calc(percentage(math.div($i, 12))  - var(--gutter));
-          margin-left: calc(percentage(math.div($j - 1, 12)) + var(--gutter) / 2);
+          margin-left: calc(percentage(math.div($i, 12)) + var(--gutter) / 2);
         }
       }
     }
 
     /* desktop only */
-    .hl-grid-lg-cols-#{$j}-#{$i} {
+    .hl-offset-lg-#{$i} {
       @include abstracts.media-breakpoint-up(lg) {
-        width: percentage(math.div($i, 12));
-        margin-left: percentage(math.div($j - 1, 12));
+        margin-left: percentage(math.div($i, 12));
 
         &.hl-grid-component {
-          width: calc(percentage(math.div($i, 12))  - var(--gutter));
-          margin-left: calc(percentage(math.div($j - 1, 12)) + var(--gutter) / 2);
+          margin-left: calc(percentage(math.div($i, 12)) + var(--gutter) / 2);
         }
       }
     }
-  }
 }
