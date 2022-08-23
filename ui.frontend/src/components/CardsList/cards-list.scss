@@ -21,9 +21,11 @@
   counter-reset: cards-list;
 
   &.hl-cards-list--slider {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    @include abstracts.media-breakpoint-down(md) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   

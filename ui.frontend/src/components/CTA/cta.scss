@@ -38,7 +38,6 @@ $min-button-width: 173px;
   white-space: nowrap;
   text-transform: var(--links-text-transform);
   justify-self: center;
-  grid-column: 1/-1;
   margin-top: map.get(abstracts.$spacing, 'medium-2');
 
   @include abstracts.media-breakpoint-up(md) {

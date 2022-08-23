@@ -44,17 +44,13 @@
 .hl-grid-component {
   margin-left: calc(var(--gutter) / 2);
   margin-right: calc(var(--gutter) / 2);
-  width: calc(100% - var(--gutter));
+  width: 100%;
 }
 
-@for $i from 1 through abstracts.$grid-columns {
+@for $i from 1 through abstracts.$grid-columns - 1 {
   /* same across all breakpoints */
   .hl-cols-#{$i} {
     width: percentage(math.div($i, 12));
-
-    &.hl-grid-component {
-      width: calc(percentage(math.div($i, 12))  - var(--gutter));
-    }
   }
 
   /* mobile only */
@@ -91,10 +87,7 @@
   }
 }
 
-
-// TO DO: change to standalone offset classes:
-
-@for $i from 1 through abstracts.$grid-columns {
+@for $i from 1 through abstracts.$grid-columns - 1 {
     /* same across all breakpoints */
     .hl-offset-#{$i} {
       margin-left: percentage(math.div($i, 12));
