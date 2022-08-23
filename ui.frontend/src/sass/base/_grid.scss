@@ -21,7 +21,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  --gutter: 0;
+  --gutter: 0px;
 
   @include abstracts.media-breakpoint-up(md) {
     --gutter: 1rem;
