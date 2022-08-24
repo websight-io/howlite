@@ -31,6 +31,13 @@ describe('Accordion component', function () {
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Accordion.html');
     cy.percySnapshotPreview('Accordion preview');
+
+    cy.contains('Sample title').click();
+    cy.contains('Sample text')
+      .should('be.visible')
+      .parent()
+      .parent()
+      .should('have.class', 'opened');
   });
 
   it('renders correctly in edit mode', function () {
