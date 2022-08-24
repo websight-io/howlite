@@ -32,11 +32,15 @@ describe('Cards lists and card item component', function () {
     cy.visit('/content/howlite-test/pages/Cards.html');
 
     cy.percySnapshotWithAuth('Cards preview');
+
+    cy.get('section:nth-of-type(2) div').should('have.class', 'glide--slider');
+    cy.contains('Third card item').move({ deltaX: 1500, deltaY: 0 });
+    cy.contains('Last card item').should('be.visible');
+
+    cy.get('section:last-of-type ul').should('have.class', 'hl-grid-lg-2');
   });
 
   it('render correctly in edit mode', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Cards::editor'
     );

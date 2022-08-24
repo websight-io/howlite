@@ -63,10 +63,18 @@
                         <card3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/cardslist/card"
+                            title="Third card item"
                             ctaClasses="hl-cta--small"
                             ctaDisplayIcon="false"
                             ctaLabel="Link"
                             ctaOpenInNewTab="false"/>
+                        <card
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"
+                            title="Last card item"/>
                     </cardslist>
                 </pagesection_1>
                 <pagesection_2
@@ -100,6 +108,57 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/cardslist"/>
                 </pagesection_3>
+                <pagesection_4
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
+                    <cardslist
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/cardslist"
+                        headingLevel="h2"
+                        headingSize="hl-title__heading--size-4"
+                        isSlider="false"
+                        itemsPerRowLg="2">
+                        <card1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"
+                            ctaLabel="Link"/>
+                        <card2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"
+                            ctaLabel="Link"/>
+                        <card3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"
+                            ctaLabel="Link"/>
+                        <card_2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_5
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_4
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_8
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_7
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                        <card_6
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/cardslist/card"/>
+                    </cardslist>
+                </pagesection_4>
             </maincontainer>
             <footer
                 jcr:primaryType="nt:unstructured"
