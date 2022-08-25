@@ -13,9 +13,15 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.model="pl.ds.howlite.components.models.DefaultStyledGridComponent"
-     data-sly-test="${resource.hasChildren}">
-     <div class="hl-logos-cloud ${model.classes @ join=' '}">
+<sly data-sly-use.model="pl.ds.howlite.components.models.DefaultStyledGridComponent">
+     <sly data-sly-test.CSSclasses="hl-logos-cloud ${model.classes @ join=' '}"></sly>
+     <div data-sly-test="${resource.hasChildren}" class="${CSSclasses}">
         <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
      </div>
+
+     <sly data-sly-test="${!resource.hasChildren}">
+      <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+        data-sly-call="${lib.placeholder @ classes=CSSclasses}">
+      </sly>
+  </sly>
 </sly>
