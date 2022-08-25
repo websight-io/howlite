@@ -29,9 +29,9 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/richtext"
                         lgColSize="8"
-                        lgColStart="3"
+                        lgOffset="2"
                         mdColSize="8"
-                        mdColStart="3"
+                        mdOffset="2"
                         text="&lt;p>&lt;strong>CTA&lt;/strong> component should not have grid options. The width of CTA depends on its text width, and is not aligned to grid.&lt;/p>&lt;p>If multiple CTAs are added directly to page section, they will stack one below another. &lt;br>In order to align buttons in one row use &lt;strong>CTA list&lt;/strong> component.&lt;/p>"/>
                     <cta_2
                         jcr:primaryType="nt:unstructured"

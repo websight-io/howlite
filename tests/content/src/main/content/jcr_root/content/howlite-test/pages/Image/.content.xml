@@ -61,21 +61,21 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/richtext"
                         lgColSize="8"
-                        lgColStart="3"
+                        lgOffset="2"
                         mdColSize="8"
-                        mdColStart="3"
+                        mdCOffset="2"
                         text="&lt;p>Original asset is 1200px wide, but it should be shrinked to grid width (2 columns in this case).&lt;/p>"/>
                     <image_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/image"
                         lgColSize="2"
-                        lgColStart="6"
+                        lgOffset="5"
                         lgImageSrc="/content/howlite-test/assets/landscape.jpg"
                         mdColSize="2"
-                        mdColStart="6"
+                        mdOffset="5"
                         showLink="false"
                         smColSize="2"
-                        smColStart="6"/>
+                        smOffset="5"/>
                 </pagesection_1_1>
                 <pagesection_1_1_1
                     jcr:primaryType="nt:unstructured"
@@ -92,17 +92,15 @@
                         sling:resourceType="howlite/components/richtext"
                         lgColSize="8"
                         mdColSize="8"
-                        mdColStart="3"
-                        smColStart="3"
+                        mdOffset="2"
+                        smOffset="2"
                         text="&lt;p>Original asset is 300px wide and it should not stretch to grid width (12 columns). Image should never stretch above original asset width. Blue overlay should have grid width (12 columns in this case).&lt;/p>"/>
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/image"
                         lgColSize="12"
-                        lgColStart="1"
                         lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                         mdColSize="12"
-                        mdColStart="1"
                         showLink="false"
                         smColSize="12"/>
                 </pagesection_1_1_1>
@@ -121,8 +119,8 @@
                         sling:resourceType="howlite/components/richtext"
                         lgColSize="8"
                         mdColSize="8"
-                        mdColStart="3"
-                        smColStart="3"
+                        mdOffset="2"
+                        smOffset="2"
                         text="&lt;p>Image link should have asset width (it should not stretch to grid width, only asset area should be clickable on preview).&lt;/p>"/>
                     <image
                         jcr:primaryType="nt:unstructured"

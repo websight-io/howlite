@@ -12,9 +12,6 @@
     "smColSize": 12,
     "mdColSize": 6,
     "lgColSize": 3,
-    "smColStart": 1,
-    "mdColStart": 2,
-    "lgColStart": 3,
     "sling:resourceType": "howlite/components/title"
   }
 }

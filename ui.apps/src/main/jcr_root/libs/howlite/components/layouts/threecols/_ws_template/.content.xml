@@ -6,9 +6,6 @@
      <container1
             jcr:primaryType="nt:unstructured"
             sling:resourceType="howlite/components/container"
-            mdColStart="1"
-            smColStart="1"
-            lgColStart="1"
             smColSize="12"
             mdColSize="4"
             lgColSize="4">
@@ -16,9 +13,6 @@
     <container2
             jcr:primaryType="nt:unstructured"
             sling:resourceType="howlite/components/container"
-            mdColStart="5"
-            smColStart="1"
-            lgColStart="5"
             smColSize="12"
             mdColSize="4"
             lgColSize="4">
@@ -26,9 +20,6 @@
     <container3
             jcr:primaryType="nt:unstructured"
             sling:resourceType="howlite/components/container"
-            mdColStart="9"
-            smColStart="1"
-            lgColStart="9"
             smColSize="12"
             mdColSize="4"
             lgColSize="4">

@@ -71,7 +71,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/quote"
                         lgColSize="6"
-                        lgColStart="4"
+                        lgOffset="3"
                         quoteText="&lt;p>Quote component which is resized on L breakpoint.&lt;/p>"
                         showImage="false"/>
                 </pagesection_2>
