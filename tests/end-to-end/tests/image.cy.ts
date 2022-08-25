@@ -13,6 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { selectors, testIds } from '../support/consts';
+
+const paths = {
+  imagePlaceholder:
+    'ComponentOverlay_rootcontainer/maincontainer/pagesection/image_1'
+};
 
 describe('Image component', function () {
   beforeEach(() => {
@@ -22,6 +28,8 @@ describe('Image component', function () {
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Image.html');
     cy.percySnapshotWithAuth('Image preview');
+
+    cy.get('.hl-image__link').last().should('have.attr', 'target', '_blank');
   });
 
   it('renders correctly in edit mode', function () {
@@ -29,8 +37,42 @@ describe('Image component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
     );
 
+    cy.intercept(
+      'POST',
+      '**/pagesection/image_1.websight-dialogs-service.save-properties.action'
+    ).as('saveProperties');
+
     cy.percySnapshotWithAuth('Image editor');
 
-    // TODO: check dialog - changing properties
+    cy.getByTestId(paths.imagePlaceholder)
+      .click()
+      .find(selectors.overlayName)
+      .should('have.text', 'Image');
+
+    cy.getByTestId(testIds.editIcon).click();
+
+    // TODO: check asset drag & drop
+    cy.getByTestId('Input_Alttext').clear().type('Image of a logo');
+    cy.getByTestId('Input_Link--toggle-check-icon').click();
+    cy.get('input[placeholder="Choose a path"]').clear().type('#');
+    cy.getByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
+
+    cy.getByTestId(testIds.dialogSubmitButton).click();
+    cy.wait('@saveProperties');
+
+    cy.percySnapshotWithAuth('Image dialog');
+
+    cy.request(
+      '/content/howlite-test/pages/Image/jcr:content/rootcontainer/maincontainer/pagesection/image_1.json'
+    )
+      .its('body')
+      .should('deep.eq', {
+        'sling:resourceType': 'howlite/components/image',
+        'jcr:primaryType': 'nt:unstructured',
+        alt: 'Image of a logo',
+        url: '#',
+        showLink: 'true',
+        openInNewTab: 'true'
+      });
   });
 });

@@ -27,9 +27,7 @@
                         title="Image placeholder:"/>
                     <image_1
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="howlite/components/image"
-                        lgColSize="12"
-                        showLink="false"/>
+                        sling:resourceType="howlite/components/image"/>
                 </pagesection>
                 <pagesection_1
                     jcr:primaryType="nt:unstructured"
@@ -128,7 +126,7 @@
                         lgColSize="12"
                         lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                         mdColSize="12"
-                        openInNewTab="false"
+                        openInNewTab="true"
                         showLink="true"
                         smColSize="12"
                         url="https://www.google.com"/>
