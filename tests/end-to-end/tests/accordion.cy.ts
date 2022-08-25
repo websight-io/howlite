@@ -24,39 +24,39 @@ const paths = {
 };
 
 describe('Accordion component', function () {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Accordion.html');
-
-    cy.percySnapshotWithAuth('Accordion preview');
+    cy.percySnapshotPreview('Accordion preview');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
-    );
-
     cy.intercept(
       'POST',
       '**/pagesection/accordion/accordionitem1.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshotWithAuth('Accordion editor');
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
+    );
 
     cy.getByTestId(paths.accordionItem)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Accordion Item');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.percySnapshotPageEditor('Accordion editor');
 
-    cy.percySnapshotWithAuth('Accordion dialog');
+    cy.getByTestId(testIds.editIcon).click();
 
     cy.getByTestId('Input_Title-container').clear().type('Title');
     cy.get('.ProseMirror').clear().type('Text');
+
+    cy.percySnapshotDialog('Accordion dialog');
+
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
@@ -74,17 +74,15 @@ describe('Accordion component', function () {
   });
 
   it('renders empty accordion correctly in edit mode', function () {
-    cy.login();
-
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Accordion::editor'
     );
-
-    cy.percySnapshotWithAuth('Accordion editor');
 
     cy.getByTestId(paths.emptyAccordion)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Accordion');
   });
+
+    // TODO: check grid classes once dropdowns have test-ids
 });

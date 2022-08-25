@@ -21,36 +21,33 @@ const paths = {
 };
 
 describe('Quote component', () => {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Quote.html');
-
-    cy.percySnapshotWithAuth('Quote preview');
+    cy.percySnapshotPreview('Quote preview');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Quote::editor'
-    );
-
     cy.intercept(
       'POST',
       '**/pagesection/quote.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshotWithAuth('Quote editor');
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Quote::editor'
+    );
 
     cy.getByTestId(paths.quote)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Quote');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.percySnapshotPageEditor('Quote editor');
 
-    cy.percySnapshotWithAuth('Quote dialog');
+    cy.getByTestId(testIds.editIcon).click();
 
     cy.get('.ProseMirror').should('have.text', 'Default quote component.');
     cy.getByTestId('Input_Author’sname').clear().type('John Doe');
@@ -64,8 +61,9 @@ describe('Quote component', () => {
     //TODO: Asset uploading should be tested in image.cy.ts
     cy.getByTestId('Input_Alttext').clear().type('Image from John Doe');
 
-    cy.getByTestId(testIds.dialogSubmitButton).click();
+    cy.percySnapshotDialog('Quote dialog');
 
+    cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
     cy.request(

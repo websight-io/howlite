@@ -28,41 +28,40 @@ const LOREM_IPSUM =
 const LIST = '<ul><li><p>List item</p></li><li><p>List item</p></li></ul>';
 
 describe('Rich text editor component', () => {
-  it('renders correctly in preview mode', function () {
+  beforeEach(() => {
     cy.login();
+  });
 
+  it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Rich-text.html');
-
-    cy.percySnapshotWithAuth('Rich text preview');
+    cy.percySnapshotPreview('Rich text preview');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Rich-text::editor'
-    );
-
     cy.intercept(
       'POST',
       '**/pagesection_1/richtext.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshotWithAuth('Rich text editor');
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Rich-text::editor'
+    );
 
     cy.getByTestId(paths.richtextWithChecklist)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Rich text editor');
 
+    cy.percySnapshotPageEditor('Rich text editor');
+
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshotWithAuth('Rich text dialog');
 
     cy.get('.ProseMirror').type('\n\n').type(LOREM_IPSUM);
 
-    cy.getByTestId(testIds.dialogSubmitButton).click();
+    cy.percySnapshotDialog('Rich text dialog');
 
+    cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
     cy.request(

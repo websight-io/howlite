@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "cypress open --browser chrome",
-    "test": "cypress run --browser chrome --spec './tests/image.cy.ts'",
+    "test": "cypress run --browser chrome",
     "test:formatting": "prettier --check . && eslint **/*.ts",
-    "test:visual": "percy exec -- cypress run --spec './tests/image.cy.ts'",
+    "test:visual": "percy exec -- cypress run",
     "format": "prettier --write .",
     "format:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "rebuild-content": "cd ../content && mvn clean install -P autoInstallPackage"
