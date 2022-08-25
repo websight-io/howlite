@@ -24,7 +24,7 @@
 
 <template data-sly-template.simpleImage="${ @ defaultImage, alt, showLink, url, openInNewTab, classes}">
     <div class="hl-image ${classes @ join=' '}">
-        <a href="${url}" class="hl-image__link}" target="${openInNewTab ? '_blank' : ''}" data-sly-unwrap="${!showLink || !url || url == ''}">
+        <a href="${url}" class="hl-image__link" target="${openInNewTab ? '_blank' : ''}" data-sly-unwrap="${!showLink || !url || url == ''}">
           <sly data-sly-call="${img @ defaultImage=defaultImage, alt=alt}"></sly>
         </a>
     </div>
