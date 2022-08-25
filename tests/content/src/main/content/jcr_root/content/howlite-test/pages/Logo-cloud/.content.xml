@@ -100,6 +100,14 @@
                             showLink="false"/>
                     </logoscloud>
                 </pagesection_2>
+                <pagesection_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/pagesection">
+                    <logoscloud
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/logoscloud">
+                    </logoscloud>
+                </pagesection_3>
             </maincontainer>
             <footer
                 jcr:primaryType="nt:unstructured"

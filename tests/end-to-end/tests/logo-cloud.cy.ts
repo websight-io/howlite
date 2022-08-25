@@ -18,9 +18,7 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   logoCloud:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/logoscloud',
-  logoCloudImage:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/logoscloud/image1'
+    'ComponentOverlay_rootcontainer/maincontainer/pagesection/logoscloud'
 };
 
 describe('Logo cloud component', function () {
@@ -50,34 +48,21 @@ describe('Logo cloud component', function () {
       .find(selectors.overlayName)
       .should('have.text', 'Logo cloud');
 
-    cy.getByTestId(paths.logoCloudImage)
-      .click()
-      .find(selectors.overlayName)
-      .should('have.text', 'Image');
-
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshotWithAuth('Logo cloud image dialog');
-    cy.getByTestId('Input_Alttext').clear().type('Image of a logo');
-    cy.getByTestId('Input_Link--toggle-check-icon').click();
-    cy.get('input[placeholder="Choose a path"]').clear().type('#');
-    cy.getByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
+    cy.percySnapshotWithAuth('Logo cloud dialog');
+
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
 
     cy.request(
-      '/content/howlite-test/pages/Logo-cloud/jcr:content/rootcontainer/maincontainer/pagesection/logoscloud/image1.json'
+      '/content/howlite-test/pages/Logo-cloud/jcr:content/rootcontainer/maincontainer/pagesection/logoscloud.json'
     )
       .its('body')
       .should('deep.eq', {
         'sling:resourceType': 'howlite/components/image',
         'jcr:primaryType': 'nt:unstructured',
-        lgImageSrc: '/content/howlite-test/assets/landscape.jpg',
-        alt: 'Image of a logo',
-        url: '#',
-        showLink: 'true',
-        openInNewTab: 'true'
       });
   });
 });
