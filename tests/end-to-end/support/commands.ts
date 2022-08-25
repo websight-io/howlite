@@ -105,34 +105,55 @@ Cypress.Commands.add('login', () => {
   });
 });
 
-Cypress.Commands.add('percySnapshotWithAuth', (name: string) => {
+const hideHowliteHeaderFooterCSS = `
+  .hl-header {
+    visibility: hidden !important;
+  }
+  .hl-footer {
+    visibility: hidden !important;
+  }
+`;
+
+const hideWSNavbarAndSidepanelCSS = `
+  [data-ds--page-layout--slot="top-navigation"] {
+    visibility: hidden !important;
+  }
+
+  [data-ds--page-layout--slot="left-sidebar"] {
+    visibility: hidden !important;
+  }
+`;
+
+Cypress.Commands.add('percySnapshotWithAuth', (name: string, options) => {
   cy.getCookie('websight.auth').then((authCookie) => {
     cy.percySnapshot(name, {
       discovery: {
         requestHeaders: {
           cookie: `${authCookie.name}=${authCookie.value}`
         }
-      }
+      },
+      ...options
     });
   });
 });
 
-Cypress.Commands.add('submitLoginFormWithAdmin', () => {
-  cy.getByTestId('login-form-username').type(Cypress.env('loginUsername'));
-  cy.getByTestId('login-form-password').type(Cypress.env('loginPassword'));
-  cy.getByTestId('login-form-submit').click();
+Cypress.Commands.add('percySnapshotPreview', (name: string, options) => {
+  cy.percySnapshotWithAuth(name, {
+    percyCSS: hideHowliteHeaderFooterCSS,
+    ...options
+  });
 });
 
-Cypress.Commands.add('percySnapshotNoHeaderFooter', (name: string, options) =>
-  cy.percySnapshot(name, {
-    percyCSS: `
-      div[data-testid="Footer_WebSight"] {
-        visibility: hidden !important;
-      }
-      header {
-        visibility: hidden !important;
-      }
-      `,
+Cypress.Commands.add('percySnapshotPageEditor', (name: string, options) => {
+  cy.percySnapshotWithAuth(name, {
+    percyCSS: hideWSNavbarAndSidepanelCSS,
     ...options
-  })
-);
+  });
+});
+
+Cypress.Commands.add('percySnapshotDialog', (name: string, options) => {
+  cy.percySnapshotWithAuth(name, {
+    scope: '[data-testid="ModalDialog_Image--positioner"]',
+    ...options
+  });
+});
