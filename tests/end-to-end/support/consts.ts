@@ -21,5 +21,5 @@ export const selectors = {
 
 export const testIds = {
   editIcon: 'ToolbarOption_Edit',
-  dialogSubmitButton: 'Button_Submit'
+  dialogSubmitButton: 'Action_Submit'
 };
