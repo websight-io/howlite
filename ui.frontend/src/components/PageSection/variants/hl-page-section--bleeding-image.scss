@@ -39,10 +39,6 @@
     .hl-title {
       text-align: left;
     }
-
-    .hl-cta {
-      grid-column: initial;
-    }
   }
 
   .hl-image {
@@ -54,8 +50,6 @@
     }
 
     @include abstracts.media-breakpoint-only(md) {
-      width: auto;
-
       img {
         width: 100%;
       }

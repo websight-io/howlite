@@ -6,9 +6,9 @@
     <smOffset
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select"
-            name="smColStart"
-            description="In which column the component should start (contols left offset)"
-            label="Start - S breakpoint">
+            name="smOffset"
+            description="Contols left offset - columns to be skipped"
+            label="Offset - S breakpoint">
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
@@ -74,9 +74,9 @@
     <mdOffset
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select"
-            name="mdColStart"
-             description="In which column the component should start (contols left offset)"
-            label="Start - M breakpoint">
+            name="mdOffset"
+             description="Contols left offset - columns to be skipped"
+            label="Offset - M breakpoint">
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
@@ -142,9 +142,9 @@
     <lgOffset
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select"
-            name="lgColStart"
-            description="In which column the component should start (contols left offset)"
-            label="Start - L breakpoint">
+            name="lgOffset"
+            description="Contols left offset - columns to be skipped"
+            label="Offset - L breakpoint">
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"

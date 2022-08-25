@@ -23,8 +23,6 @@
   max-width: 100%;
   padding-right: abstracts.$page-padding-horizontal;
   padding-left: abstracts.$page-padding-horizontal;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
 
   @include abstracts.media-breakpoint-up(md) {
     max-width: map.get(abstracts.$container-max-widths, 'md');

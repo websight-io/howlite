@@ -11,113 +11,131 @@
     "backgroundImageLg": "/content/space/assets/imageLg.jpg"
   },
   "grid": {
+    "gridWithDefaultParameters": {
+      "displayType": "grid",
+      "//Expected classes": "hl-grid"
+    },
     "gridWithSameSize": {
       "displayType": "grid",
       "smColSize": 6,
       "mdColSize": 6,
-      "lgColSize": 6
+      "lgColSize": 6,
+      "//Expected classes": "hl-grid  hl-cols-6"
     },
     "gridWithDifferentSize": {
       "displayType": "grid",
       "smColSize": 4,
       "mdColSize": 5,
-      "lgColSize": 6
+      "lgColSize": 6,
+      "//Expected classes": "hl-grid  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6"
     },
-    "gridWithSameSizeAndSameStart": {
+    "gridWithSameSizeAndSameOffset": {
       "displayType": "grid",
       "smColSize": 6,
       "mdColSize": 6,
       "lgColSize": 6,
-      "smColStart": 3,
-      "mdColStart": 3,
-      "lgColStart": 3
+      "smOffset": 3,
+      "mdOffset": 3,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid  hl-cols-6 hl-offset-3"
     },
-    "gridWithSameSizeAndDifferentStart": {
+    "gridWithSameSizeAndDifferentOffset": {
       "displayType": "grid",
       "smColSize": 6,
       "mdColSize": 6,
       "lgColSize": 6,
-      "smColStart": 1,
-      "mdColStart": 2,
-      "lgColStart": 3
+      "smOffset": 1,
+      "mdOffset": 2,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid  hl-cols-6 hl-offset-sm-1 hl-offset-md-2 hl-offset-lg-3"
     },
-    "gridWithDifferentSizeAndDifferentStart": {
+    "gridWithDifferentSizeAndDifferentOffset": {
       "displayType": "grid",
       "smColSize": 4,
       "mdColSize": 5,
       "lgColSize": 6,
-      "smColStart": 1,
-      "mdColStart": 2,
-      "lgColStart": 3
+      "smOffset": 1,
+      "mdOffset": 2,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6 hl-offset-sm-1 hl-offset-md-2 hl-offset-lg-3"
     },
-    "gridWithDifferentSizeAndSameStart": {
+    "gridWithDifferentSizeAndSameOffset": {
       "displayType": "grid",
       "smColSize": 4,
       "mdColSize": 5,
       "lgColSize": 6,
-      "smColStart": 3,
-      "mdColStart": 3,
-      "lgColStart": 3
+      "smOffset": 3,
+      "mdOffset": 3,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6 hl-offset-3"
     },
-    "gridWithDifferentSizeAndOnlyLgStart": {
+    "gridWithDifferentSizeAndOnlyLgOffset": {
       "displayType": "grid",
       "smColSize": 4,
       "mdColSize": 5,
       "lgColSize": 6,
-      "lgColStart": 3
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6 hl-offset-lg-6"
     },
     "gridWithLgBreakpoint": {
       "displayType": "grid",
       "lgColSize": 6,
-      "lgColStart": 3
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid hl-cols-sm-12 hl-cols-md-12  hl-cols-lg-6 hl-offset-lg-3"
     },
     "inlineWithSameSize": {
       "displayType": "inline",
       "smColSize": 6,
       "mdColSize": 6,
-      "lgColSize": 6
+      "lgColSize": 6,
+      "//Expected classes": "hl-grid--inline  hl-cols-6"
     },
     "inlineWithDifferentSize": {
       "displayType": "inline",
       "smColSize": 4,
       "mdColSize": 5,
-      "lgColSize": 6
+      "lgColSize": 6,
+      "//Expected classes": "hl-grid--inline  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6"
     },
-    "inlineWithSameSizeAndSameStart": {
+    "inlineWithSameSizeAndSameOffset": {
       "displayType": "inline",
       "smColSize": 6,
       "mdColSize": 6,
       "lgColSize": 6,
-      "smColStart": 3,
-      "mdColStart": 3,
-      "lgColStart": 3
+      "smOffset": 3,
+      "mdOffset": 3,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid--inline hl-offset-3 hl-cols-6"
     },
-    "inlineWithSameSizeAndDifferentStart": {
+    "inlineWithSameSizeAndDifferentOffset": {
       "displayType": "inline",
       "smColSize": 6,
       "mdColSize": 6,
       "lgColSize": 6,
-      "smColStart": 1,
-      "mdColStart": 2,
-      "lgColStart": 3
+      "smOffset": 1,
+      "mdOffset": 2,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid--inline hl-offset-sm-1 hl-offset-md-2 hl-offset-lg-3 hl-cols-6"
     },
-    "inlineWithDifferentSizeAndDifferentStart": {
+    "inlineWithDifferentSizeAndOffset": {
       "displayType": "inline",
       "smColSize": 4,
       "mdColSize": 5,
       "lgColSize": 6,
-      "smColStart": 1,
-      "mdColStart": 2,
-      "lgColStart": 3
+      "smOffset": 1,
+      "mdOffset": 2,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid--inline hl-offset-sm-1 hl-cols-sm-4 hl-offset-md-2 hl-cols-md-5 hl-offset-lg-3 hl-cols-lg-6"
     },
-    "inlineWithDifferentSizeAndSameStart": {
+    "inlineWithDifferentSizeAndSameOffset": {
       "displayType": "inline",
       "smColSize": 4,
       "mdColSize": 5,
       "lgColSize": 6,
-      "smColStart": 3,
-      "mdColStart": 3,
-      "lgColStart": 3
+      "smOffset": 3,
+      "mdOffset": 3,
+      "lgOffset": 3,
+      "//Expected classes": "hl-grid--inline hl-offset-3 hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6"
     }
   }
 }

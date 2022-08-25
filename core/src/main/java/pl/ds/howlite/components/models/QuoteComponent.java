@@ -102,14 +102,14 @@ public class QuoteComponent implements Styled, Grid {
   }
 
   private void initQuoteContentGridClasses() {
-    Grid quoteGrid = GridImpl.builder().lgColSize(12).mdColSize(12).smColSize(12).lgColStart(2)
-        .mdColStart(3).build();
+    Grid quoteGrid = GridImpl.builder().lgColSize(12).mdColSize(12).smColSize(12).lgOffset(2)
+        .mdOffset(3).build();
     quoteContentGridClasses = String.join(" ", new GridStyle(quoteGrid).getClasses());
   }
 
   private void initAuthorGridClasses() {
-    Grid quoteGrid = GridImpl.builder().lgColSize(12).mdColSize(12).smColSize(12).lgColStart(2)
-        .mdColStart(3).build();
+    Grid quoteGrid = GridImpl.builder().lgColSize(12).mdColSize(12).smColSize(12).lgOffset(2)
+        .mdOffset(3).build();
     authorGridClasses = String.join(" ", new GridStyle(quoteGrid).getClasses());
   }
 

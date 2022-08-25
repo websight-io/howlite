@@ -13,10 +13,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.model="pl.ds.howlite.components.models.CardsListComponent"
-     data-sly-test="${resource.hasChildren}">
+<sly data-sly-use.model="pl.ds.howlite.components.models.CardsListComponent">
+  <sly data-sly-test.CSSclasses="hl-cards-list ${model.classes @ join=' '}"></sly>
+  <sly data-sly-test="${resource.hasChildren}">
     <sly data-sly-test="${model.isSlider && !wcmmode.isEdit}">
-        <div class="hl-cards-list hl-cards-list--slider glide ${model.classes @ join=' '}"
+        <div class="hl-cards-list--slider glide ${CSSclasses}"
              data-items-per-row-sm="${model.itemsPerRowSm}"
              data-items-per-row-md="${model.itemsPerRowMd}"
              data-items-per-row-lg="${model.itemsPerRowLg}">
@@ -29,11 +30,19 @@
     </sly>
 
     <sly data-sly-test="${!model.isSlider || wcmmode.isEdit}">
-        <ul class="hl-cards-list hl-grid
-              hl-grid-sm-${model.itemsPerRowSm}
-              hl-grid-md-${model.itemsPerRowMd}
-              hl-grid-lg-${model.itemsPerRowLg} ${model.classes @ join=' '}">
-            <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-        </ul>
+          <ul class="${CSSclasses} hl-grid
+          hl-grid-sm-${model.itemsPerRowSm}
+          hl-grid-md-${model.itemsPerRowMd}
+          hl-grid-lg-${model.itemsPerRowLg}">
+              <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+          </ul>
     </sly>
+  </sly>
+  
+  <sly data-sly-test="${!resource.hasChildren}">
+      <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+        data-sly-call="${lib.placeholder @ classes=CSSclasses}">
+      </sly>
+  </sly>
 </sly>
+

@@ -27,9 +27,9 @@
       font-style: normal;
       content: '\e80c';
       padding-top: map.get(abstracts.$spacing, 'medium-2');
-      grid-column: span 12;
       justify-self: center;
       font-size: abstracts.$font-icon;
+      margin: 0 auto;
     }
   }
 

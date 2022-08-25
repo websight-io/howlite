@@ -28,7 +28,7 @@
                         headingLevel="h2"
                         headingSize="hl-title__heading--size-1"
                         lgColSize="6"
-                        lgColStart="4"
+                        lgOffset="3"
                         showSubtitle="true"
                         subtitle="Page Section with a background image (L)"
                         title="Image should be visible on L breakpoint"/>
@@ -44,7 +44,7 @@
                         headingLevel="h2"
                         headingSize="hl-title__heading--size-3"
                         lgColSize="6"
-                        lgColStart="4"
+                        lgOffset="3"
                         showSubtitle="true"
                         subtitle="Page Section with a background image (S &amp; M)"
                         title="Image should NOT be visible on L breakpoint"/>
@@ -143,12 +143,10 @@
                             headingLevel="h2"
                             headingSize="hl-title__heading--size-4"
                             lgColSize="5"
-                            lgColStart="2"
+                            lgOffset="1"
                             mdColSize="12"
-                            mdColStart="1"
                             showSubtitle="true"
                             smColSize="12"
-                            smColStart="1"
                             subtitle="Add your subtitle here"
                             title="Full Width Image Page Section"/>
                         <richtext
@@ -173,11 +171,9 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/container"
                         lgColSize="5"
-                        lgColStart="8"
+                        lgOffset="1"
                         mdColSize="6"
-                        mdColStart="7"
-                        smColSize="12"
-                        smColStart="1">
+                        smColSize="12">
                         <title
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/title"
@@ -231,11 +227,9 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/image"
                         lgColSize="6"
-                        lgColStart="7"
+                        lgOffset="1"
                         mdColSize="6"
-                        mdColStart="7"
-                        smColSize="12"
-                        smColStart="1"/>
+                        smColSize="12"/>
                 </imagerightsection>
             </maincontainer>
             <footer

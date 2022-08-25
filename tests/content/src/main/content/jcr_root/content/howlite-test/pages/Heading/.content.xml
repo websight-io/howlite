@@ -43,7 +43,7 @@
                         headingLevel="h2"
                         headingSize="hl-title__heading--size-1"
                         lgColSize="6"
-                        lgColStart="4"
+                        lgOffset="3"
                         showSubtitle="true"
                         subtitle="Resized to 6 cols on L breakpoint"
                         title="Heading With H2 level and XXL size"/>

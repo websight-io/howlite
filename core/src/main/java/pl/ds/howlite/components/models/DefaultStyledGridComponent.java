@@ -62,18 +62,18 @@ public class DefaultStyledGridComponent implements Styled, Grid {
   }
 
   @Override
-  public Integer getSmColStart() {
-    return grid.getSmColStart();
+  public Integer getSmOffset() {
+    return grid.getSmOffset();
   }
 
   @Override
-  public Integer getMdColStart() {
-    return grid.getMdColStart();
+  public Integer getMdOffset() {
+    return grid.getMdOffset();
   }
 
   @Override
-  public Integer getLgColStart() {
-    return grid.getLgColStart();
+  public Integer getLgOffset() {
+    return grid.getLgOffset();
   }
 
   @PostConstruct

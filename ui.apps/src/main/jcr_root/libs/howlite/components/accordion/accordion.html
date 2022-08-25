@@ -14,9 +14,16 @@
     limitations under the License.
 */-->
 <sly data-sly-use.model="pl.ds.howlite.components.models.DefaultStyledGridComponent">
-    <div data-sly-test="${resource.hasChildren}" class="hl-accordion ${model.classes @ join=' '}">
+    <sly data-sly-test.CSSclasses="hl-accordion ${model.classes @ join=' '}"></sly>
+    <div data-sly-test="${resource.hasChildren}" class="${CSSclasses}">
         <ul>
             <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
         </ul>
     </div>
+
+    <sly data-sly-test="${!resource.hasChildren}">
+      <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+        data-sly-call="${lib.placeholder @ classes=CSSclasses}">
+      </sly>
+    </sly>
 </sly>

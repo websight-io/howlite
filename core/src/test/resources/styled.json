@@ -1,44 +1,50 @@
 {
-  "sameSize": {
-    "smColSize": 6,
-    "mdColSize": 6,
-    "lgColSize": 6
-  },
-  "differentSize": {
-    "smColSize": 4,
-    "mdColSize": 5,
-    "lgColSize": 6
-  },
-  "sameSizeAndSameStart": {
+  "noDisplayTypeWithSameSize": {
     "smColSize": 6,
     "mdColSize": 6,
     "lgColSize": 6,
-    "smColStart": 3,
-    "mdColStart": 3,
-    "lgColStart": 3
+    "//Expected classes": "hl-grid-component  hl-cols-6"
   },
-  "sameSizeAndDifferentStart": {
+  "noDisplayTypeWithDifferentSize": {
+    "smColSize": 4,
+    "mdColSize": 5,
+    "lgColSize": 6,
+    "//Expected classes": "hl-grid-component  hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6"
+  },
+  "noDisplayTypeWithSameSizeAndSameOffset": {
     "smColSize": 6,
     "mdColSize": 6,
     "lgColSize": 6,
-    "smColStart": 1,
-    "mdColStart": 2,
-    "lgColStart": 3
+    "smOffset": 3,
+    "mdOffset": 3,
+    "lgOffset": 3,
+    "//Expected classes": "hl-grid-component hl-offset-3 hl-cols-6"
   },
-  "differentSizeAndDifferentStart": {
+  "noDisplayTypeWithSameSizeAndDifferentOffset": {
+    "smColSize": 6,
+    "mdColSize": 6,
+    "lgColSize": 6,
+    "smOffset": 1,
+    "mdOffset": 2,
+    "lgOffset": 3,
+    "//Expected classes": "hl-grid-component hl-offset-sm-1 hl-offset-md-2 hl-offset-lg-3 hl-cols-6"
+  },
+  "noDisplayTypeWithDifferentSizeAndOffset": {
     "smColSize": 4,
     "mdColSize": 5,
     "lgColSize": 6,
-    "smColStart": 1,
-    "mdColStart": 2,
-    "lgColStart": 3
+    "smOffset": 1,
+    "mdOffset": 2,
+    "lgOffset": 3,
+    "//Expected classes": "hl-grid-component hl-offset-sm-1 hl-cols-sm-4 hl-offset-md-2 hl-cols-md-5 hl-offset-lg-3 hl-cols-lg-6"
   },
-  "differentSizeAndSameStart": {
+  "noDisplayTypeWithDifferentSizeAndSameOffset": {
     "smColSize": 4,
     "mdColSize": 5,
     "lgColSize": 6,
-    "smColStart": 3,
-    "mdColStart": 3,
-    "lgColStart": 3
+    "smOffset": 3,
+    "mdOffset": 3,
+    "lgOffset": 3,
+    "//Expected classes": "hl-grid-component hl-offset-3 hl-cols-sm-4 hl-cols-md-5 hl-cols-lg-6"
   }
 }
