@@ -33,12 +33,15 @@
 }
 
 .hl-grid.hl-page-section {
-  width: calc(100% + var(--gutter));
-
   @include abstracts.media-breakpoint-up(md) {
+    width: calc(100% + var(--gutter));
     margin-left: calc(var(--gutter) / -2);
     margin-right: calc(var(--gutter) / -2);
   }
+}
+
+.hl-container {
+  width: 100%;
 }
 
 .hl-grid-component {
