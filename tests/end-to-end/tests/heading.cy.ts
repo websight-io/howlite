@@ -31,35 +31,33 @@ describe('Heading component', function () {
   });
 
   it('renders correctly in edit mode', function () {
-    cy.login();
-
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
-    );
-
-    cy.percySnapshotWithAuth('Heading editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/title.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
+    );
+
     cy.getByTestId(paths.title)
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Heading');
+    
+    cy.percySnapshotPageEditor('Heading editor');
 
     cy.getByTestId(testIds.editIcon).click();
-
-    cy.percySnapshotWithAuth('Heading dialog');
 
     cy.getByTestId('RadioElement_h1').click();
     cy.getByTestId('RadioElement_hl-title__heading--size-2').click();
     cy.getByTestId('Input_Headingtext').clear().type('New heading');
     cy.getByTestId('Input_Addanoverline').click();
     cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
-    cy.getByTestId(testIds.dialogSubmitButton).click();
+    
+    cy.percySnapshotDialog('Heading dialog');
 
+    cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
     cy.request(

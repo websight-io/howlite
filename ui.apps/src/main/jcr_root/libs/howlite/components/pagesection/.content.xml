@@ -4,5 +4,5 @@
           jcr:title="Page Section"
           jcr:description="Use for 12 cols page sections, inside main content"
           isContainer="true"
-          group="Howlite"
+          group=".hidden"
           allowedComponents="Howlite"/>
