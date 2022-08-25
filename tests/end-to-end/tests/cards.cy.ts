@@ -69,6 +69,10 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('Input_Displayasaslider--checkbox-label').click();
     cy.getByTestId('RadioElement_h3').click();
     cy.getByTestId('RadioElement_hl-title__heading--size-3').click();
+    cy.getByTestId('Input_Itemsperrow-Sbreakpoint').clear().type('1');
+    cy.getByTestId('Input_Itemsperrow-Mbreakpoint').clear().type('2');
+    cy.getByTestId('Input_Itemsperrow-Lbreakpoint').clear().type('3');
+
     cy.get('#undefined-1').click();
     cy.get('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
@@ -87,7 +91,10 @@ describe('Cards lists and card item component', function () {
         isSlider: 'true',
         classes: 'hl-cards-list--numbered',
         headingLevel: 'h3',
-        headingSize: 'hl-title__heading--size-3'
+        headingSize: 'hl-title__heading--size-3',
+        itemsPerRowSm: '1',
+        itemsPerRowLg: '3',
+        itemsPerRowMd: '2'
       });
   }
 
