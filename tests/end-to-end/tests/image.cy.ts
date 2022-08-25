@@ -27,14 +27,14 @@ describe('Image component', function () {
 
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Image.html');
-    cy.percySnapshotWithAuth('Image preview');
+    cy.percySnapshotPreview('Image preview');
 
     cy.get('.hl-image__link').last().should('have.attr', 'target', '_blank');
   });
 
   it('renders correctly in edit mode', function () {
-    cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
+    cy.intercept('GET', '**/libs/howlite/web_root/images/broken-image.svg').as(
+      'assetLoaded'
     );
 
     cy.intercept(
@@ -42,7 +42,12 @@ describe('Image component', function () {
       '**/pagesection/image_1.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
-    cy.percySnapshotWithAuth('Image editor');
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
+    );
+
+    cy.wait('@assetLoaded');
+    cy.percySnapshotPageEditor('Image editor');
 
     cy.getByTestId(paths.imagePlaceholder)
       .click()
@@ -57,10 +62,10 @@ describe('Image component', function () {
     cy.get('input[placeholder="Choose a path"]').clear().type('#');
     cy.getByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
 
+    cy.percySnapshotDialog('Image dialog');
+
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
-
-    cy.percySnapshotWithAuth('Image dialog');
 
     cy.request(
       '/content/howlite-test/pages/Image/jcr:content/rootcontainer/maincontainer/pagesection/image_1.json'

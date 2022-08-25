@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "cypress open --browser chrome",
-    "test": "jest && cypress run --browser chrome",
+    "test": "cypress run --browser chrome --spec './tests/image.cy.ts'",
     "test:formatting": "prettier --check . && eslint **/*.ts",
-    "test:visual": "percy exec -- cypress run",
+    "test:visual": "percy exec -- cypress run --spec './tests/image.cy.ts'",
     "format": "prettier --write .",
-    "format:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+    "format:watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "rebuild-content": "cd ../content && mvn clean install -P autoInstallPackage"
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.1.0",
-    "@percy/cli": "^1.2.1",
+    "@percy/cli": "^1.10.0",
     "@percy/cypress": "^3.1.2",
     "@types/jest": "^27.4.1",
     "@types/node": "^14.18.16",
