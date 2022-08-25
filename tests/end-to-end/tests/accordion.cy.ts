@@ -33,11 +33,7 @@ describe('Accordion component', function () {
     cy.percySnapshotPreview('Accordion preview');
 
     cy.contains('Sample title').click();
-    cy.contains('Sample text')
-      .should('be.visible')
-      .parent()
-      .parent()
-      .should('have.class', 'opened');
+    cy.contains('Sample text').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {
