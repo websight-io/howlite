@@ -153,7 +153,7 @@ Cypress.Commands.add('percySnapshotPageEditor', (name: string, options) => {
 
 Cypress.Commands.add('percySnapshotDialog', (name: string, options) => {
   cy.percySnapshotWithAuth(name, {
-    scope: '[data-testid="ModalDialog_Image--positioner"]',
+    scope: '[data-testid^="ModalDialog_"][role="dialog"]',
     ...options
   });
 });
