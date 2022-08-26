@@ -79,7 +79,7 @@
     <npm.version>8.4.1</npm.version>
 
     <!-- backend dependencies -->
-    <jupiter.version>5.8.2</jupiter.version>
+    <jupiter.version>5.9.0</jupiter.version>
 
     <!-- admin user default credentials for tests and maven plugins -->
     <websight.admin.username>wsadmin</websight.admin.username>
@@ -362,7 +362,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.resource</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -439,7 +439,7 @@
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.18.22</version>
+        <version>1.18.24</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
