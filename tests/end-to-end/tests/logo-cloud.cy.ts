@@ -40,7 +40,7 @@ describe('Logo cloud component', function () {
 
     cy.intercept(
       'POST',
-      '**/pagesection/logoscloud/image1.websight-dialogs-service.save-properties.action'
+      '**/pagesection/logoscloud.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
     cy.getByTestId(paths.logoCloud)
@@ -61,7 +61,7 @@ describe('Logo cloud component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'howlite/components/image',
+        'sling:resourceType': 'howlite/components/logoscloud',
         'jcr:primaryType': 'nt:unstructured',
       });
   });
