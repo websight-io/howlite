@@ -9,66 +9,71 @@
             name="smOffset"
             description="Contols left offset - columns to be skipped"
             label="Offset - S breakpoint">
+        <default
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="No offset"
+                selected="true"
+                value=""/>
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="1st Column"
-                selected="true"
+                label="1 Column"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="2nd Column"
+                label="2 Columns"
                 value="2"/>
         <column3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="3d Column"
+                label="3 Columns"
                 value="3"/>
         <column4
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="4th Column"
+                label="4 Columns"
                 value="4"/>
         <column5
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="5th Column"
+                label="5 Columns"
                 value="5"/>
         <column6
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="6th Column"
+                label="6 Columns"
                 value="6"/>
         <column7
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="7th Column"
+                label="7 Columns"
                 value="7"/>
         <column8
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="8th Column"
+                label="8 Columns"
                 value="8"/>
         <column9
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="9th Column"
+                label="9 Columns"
                 value="9"/>
         <column10
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="10th Column"
+                label="10 Columns"
                 value="10"/>
         <column11
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="11th Column"
+                label="11 Columns"
                 value="11"/>
         <column12
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12th Column"
+                label="12 Columns"
                 value="12"/>
     </smOffset>
     <mdOffset
@@ -77,66 +82,71 @@
             name="mdOffset"
              description="Contols left offset - columns to be skipped"
             label="Offset - M breakpoint">
+       <default
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="No offset"
+                selected="true"
+                value=""/>
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="1st Column"
-                selected="true"
+                label="1 Column"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="2nd Column"
+                label="2 Columns"
                 value="2"/>
         <column3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="3d Column"
+                label="3 Columns"
                 value="3"/>
         <column4
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="4th Column"
+                label="4 Columns"
                 value="4"/>
         <column5
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="5th Column"
+                label="5 Columns"
                 value="5"/>
         <column6
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="6th Column"
+                label="6 Columns"
                 value="6"/>
         <column7
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="7th Column"
+                label="7 Columns"
                 value="7"/>
         <column8
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="8th Column"
+                label="8 Columns"
                 value="8"/>
         <column9
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="9th Column"
+                label="9 Columns"
                 value="9"/>
         <column10
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="10th Column"
+                label="10 Columns"
                 value="10"/>
         <column11
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="11th Column"
+                label="11 Columns"
                 value="11"/>
         <column12
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12th Column"
+                label="12 Columns"
                 value="12"/>
     </mdOffset>
     <lgOffset
@@ -145,66 +155,71 @@
             name="lgOffset"
             description="Contols left offset - columns to be skipped"
             label="Offset - L breakpoint">
+        <default
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/select/selectitem"
+                label="No offset"
+                selected="true"
+                value=""/>
         <column1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="1st Column"
-                selected="true"
+                label="1 Column"
                 value="1"/>
         <column2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="2nd Column"
+                label="2 Columns"
                 value="2"/>
         <column3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="3d Column"
+                label="3 Columns"
                 value="3"/>
         <column4
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="4th Column"
+                label="4 Columns"
                 value="4"/>
         <column5
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="5th Column"
+                label="5 Columns"
                 value="5"/>
         <column6
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="6th Column"
+                label="6 Columns"
                 value="6"/>
         <column7
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="7th Column"
+                label="7 Columns"
                 value="7"/>
         <column8
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="8th Column"
+                label="8 Columns"
                 value="8"/>
         <column9
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="9th Column"
+                label="9 Columns"
                 value="9"/>
         <column10
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="10th Column"
+                label="10 Columns"
                 value="10"/>
         <column11
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="11th Column"
+                label="11 Columns"
                 value="11"/>
         <column12
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12th Column"
+                label="12 Columns"
                 value="12"/>
     </lgOffset>
     <smColsize
