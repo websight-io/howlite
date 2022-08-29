@@ -38,7 +38,8 @@
     width: auto;
     max-width: 120px;
 
-    img {
+    img,
+    .hl-image__link {
       max-height: inherit;
     }
 
