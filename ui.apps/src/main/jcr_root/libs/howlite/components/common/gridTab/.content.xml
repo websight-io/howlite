@@ -70,11 +70,6 @@
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="11 Columns"
                 value="11"/>
-        <column12
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12 Columns"
-                value="12"/>
     </smOffset>
     <mdOffset
             jcr:primaryType="nt:unstructured"
@@ -143,11 +138,6 @@
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="11 Columns"
                 value="11"/>
-        <column12
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12 Columns"
-                value="12"/>
     </mdOffset>
     <lgOffset
             jcr:primaryType="nt:unstructured"
@@ -216,11 +206,6 @@
                 sling:resourceType="wcm/dialogs/components/select/selectitem"
                 label="11 Columns"
                 value="11"/>
-        <column12
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/select/selectitem"
-                label="12 Columns"
-                value="12"/>
     </lgOffset>
     <smColsize
             jcr:primaryType="nt:unstructured"
