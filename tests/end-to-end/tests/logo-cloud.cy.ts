@@ -28,7 +28,7 @@ describe('Logo cloud component', function () {
 
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Logo-cloud.html');
-    cy.percySnapshotWithAuth('Logo cloud preview');
+    cy.percySnapshotPreview('Logo cloud preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -36,7 +36,7 @@ describe('Logo cloud component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Logo-cloud::editor'
     );
 
-    cy.percySnapshotWithAuth('Logo cloud editor');
+    cy.percySnapshotPageEditor('Logo cloud editor');
 
     cy.intercept(
       'POST',
@@ -49,9 +49,9 @@ describe('Logo cloud component', function () {
       .should('have.text', 'Logo cloud');
 
     cy.getByTestId(testIds.editIcon).click();
+    cy.percySnapshotDialog('Logo cloud dialog');
 
-    cy.percySnapshotWithAuth('Logo cloud dialog');
-
+    //TODO: modify width and offset values for component, once data-testid attributes are available in WebSight
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
