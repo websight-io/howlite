@@ -27,7 +27,6 @@ $color-n20: #F4F5F7;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   min-width: 60px;
 
   &.hl-image--featured {
@@ -36,7 +35,6 @@ $color-n20: #F4F5F7;
 }
 
 .hl-image--broken {
-  width: 100%;
   height: 50px;
   display: flex;
   justify-content: center;
