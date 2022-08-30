@@ -42,12 +42,14 @@
 
 .hl-container {
   width: 100%;
+  flex-shrink: 0;
 }
 
 .hl-grid-component {
   margin-left: calc(var(--gutter) / 2);
   margin-right: calc(var(--gutter) / 2);
   width: 100%;
+  flex-shrink: 0;
 }
 
 // Col width classes:
