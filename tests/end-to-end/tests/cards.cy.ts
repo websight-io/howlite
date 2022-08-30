@@ -64,8 +64,6 @@ describe('Cards lists and card item component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshotWithAuth('Cards list dialog');
-
     cy.getByTestId('Input_Displayasaslider--checkbox-label').click();
     cy.getByTestId('RadioElement_h3').click();
     cy.getByTestId('RadioElement_hl-title__heading--size-3').click();
@@ -76,6 +74,8 @@ describe('Cards lists and card item component', function () {
     cy.get('#undefined-1').click();
     cy.get('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
+
+    cy.percySnapshotWithAuth('Cards list dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
@@ -113,8 +113,6 @@ describe('Cards lists and card item component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.percySnapshotWithAuth('Card item dialog');
-
     cy.getByTestId('Input_Title').clear().type('Card item title');
     cy.get('.ProseMirror').clear().type('Sample text');
 
@@ -130,6 +128,8 @@ describe('Cards lists and card item component', function () {
 
     cy.contains('Text Link').click();
     cy.contains('Small Button').click({ force: true });
+
+    cy.percySnapshotWithAuth('Card item dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
