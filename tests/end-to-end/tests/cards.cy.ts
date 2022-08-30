@@ -50,8 +50,6 @@ describe('Cards lists and card item component', function () {
   });
 
   function testCardsList() {
-    cy.percySnapshotWithAuth('Cards list editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/cardslist.websight-dialogs-service.save-properties.action'
@@ -61,6 +59,8 @@ describe('Cards lists and card item component', function () {
       .click({ force: true })
       .find(selectors.overlayName)
       .should('have.text', 'Cards List');
+
+    cy.percySnapshotWithAuth('Cards list editor');
 
     cy.getByTestId(testIds.editIcon).click();
 
@@ -99,8 +99,6 @@ describe('Cards lists and card item component', function () {
   }
 
   function testCardItem() {
-    cy.percySnapshotWithAuth('Card item editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/cardslist/card1.websight-dialogs-service.save-properties.action'
@@ -110,6 +108,8 @@ describe('Cards lists and card item component', function () {
       .click({ force: true })
       .find(selectors.overlayName)
       .should('have.text', 'Card Item');
+
+    cy.percySnapshotWithAuth('Card item editor');
 
     cy.getByTestId(testIds.editIcon).click();
 
