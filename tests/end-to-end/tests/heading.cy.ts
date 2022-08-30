@@ -27,7 +27,7 @@ describe('Heading component', function () {
 
   it('renders correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Heading.html');
-    cy.percySnapshotWithAuth('Heading preview');
+    cy.percySnapshotPreview('Heading preview');
   });
 
   it('renders correctly in edit mode', function () {
