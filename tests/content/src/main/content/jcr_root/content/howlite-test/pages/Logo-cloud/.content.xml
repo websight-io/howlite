@@ -52,13 +52,18 @@
                         <image1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/image"
+                            alt="test"
                             lgImageSrc="/content/howlite-test/assets/landscape.jpg"
-                            showLink="false"/>
+                            openInNewTab="true"
+                            showLink="true"
+                            url="https://www.test.com"/>
                         <image2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/image"
                             lgImageSrc="/content/howlite-test/assets/landscape.jpg"
-                            showLink="false"/>
+                            openInNewTab="false"
+                            showLink="true"
+                            url="https://www.test.com"/>
                         <image3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/image"
@@ -82,7 +87,12 @@
                     <logoscloud
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="howlite/components/logoscloud"
-                        lgColSize="6">
+                        lgColSize="4"
+                        lgOffset="4"
+                        mdColSize="10"
+                        mdOffset="1"
+                        smColSize="10"
+                        smOffset="1">
                         <image1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/image"
@@ -98,15 +108,30 @@
                             sling:resourceType="howlite/components/image"
                             lgImageSrc="/content/howlite-test/assets/portrait.jpg"
                             showLink="false"/>
+                        <image1_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/image"
+                            lgImageSrc="/content/howlite-test/assets/portrait.jpg"
+                            showLink="false"/>
+                        <image2_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="howlite/components/image"
+                            lgImageSrc="/content/howlite-test/assets/portrait.jpg"
+                            showLink="false"/>
                     </logoscloud>
                 </pagesection_2>
                 <pagesection_3
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="howlite/components/pagesection">
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="howlite/components/pagesection">
                     <logoscloud
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="howlite/components/logoscloud">
-                    </logoscloud>
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/logoscloud"
+                        lgColSize="10"
+                        lgOffset="1"
+                        mdColSize="10"
+                        mdOffset="1"
+                        smColSize="10"
+                        smOffset="1"/>
                 </pagesection_3>
             </maincontainer>
             <footer
