@@ -48,7 +48,7 @@
 .hl-grid-component {
   margin-left: calc(var(--gutter) / 2);
   margin-right: calc(var(--gutter) / 2);
-  width: 100%;
+  width: calc(100% - var(--gutter));
   flex-shrink: 0;
 }
 
