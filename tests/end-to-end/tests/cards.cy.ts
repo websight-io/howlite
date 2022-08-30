@@ -31,7 +31,7 @@ describe('Cards lists and card item component', function () {
   it('render correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Cards.html');
 
-    cy.percySnapshotWithAuth('Cards preview');
+    cy.percySnapshotPreview('Cards preview');
 
     cy.get('section:nth-of-type(2) div').should('have.class', 'glide--slider');
     cy.contains('Third card item').move({ deltaX: 1500, deltaY: 0 });
@@ -60,7 +60,7 @@ describe('Cards lists and card item component', function () {
       .find(selectors.overlayName)
       .should('have.text', 'Cards List');
 
-    cy.percySnapshotWithAuth('Cards list editor');
+    cy.percySnapshotPageEditor('Cards list editor');
 
     cy.getByTestId(testIds.editIcon).click();
 
@@ -75,7 +75,7 @@ describe('Cards lists and card item component', function () {
     cy.get('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
 
-    cy.percySnapshotWithAuth('Cards list dialog');
+    cy.percySnapshotDialog('Cards list dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
@@ -109,7 +109,7 @@ describe('Cards lists and card item component', function () {
       .find(selectors.overlayName)
       .should('have.text', 'Card Item');
 
-    cy.percySnapshotWithAuth('Card item editor');
+    cy.percySnapshotPageEditor('Card item editor');
 
     cy.getByTestId(testIds.editIcon).click();
 
@@ -129,7 +129,7 @@ describe('Cards lists and card item component', function () {
     cy.contains('Text Link').click();
     cy.contains('Small Button').click({ force: true });
 
-    cy.percySnapshotWithAuth('Card item dialog');
+    cy.percySnapshotDialog('Card item dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
