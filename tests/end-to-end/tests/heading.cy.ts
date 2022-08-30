@@ -44,7 +44,7 @@ describe('Heading component', function () {
       .click()
       .find(selectors.overlayName)
       .should('have.text', 'Heading');
-    
+
     cy.percySnapshotPageEditor('Heading editor');
 
     cy.getByTestId(testIds.editIcon).click();
@@ -54,7 +54,7 @@ describe('Heading component', function () {
     cy.getByTestId('Input_Headingtext').clear().type('New heading');
     cy.getByTestId('Input_Addanoverline').click();
     cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
-    
+
     cy.percySnapshotDialog('Heading dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();

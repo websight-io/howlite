@@ -44,7 +44,7 @@ describe('Page Section component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.wait(1000)
+    cy.wait(1000);
     // TODO: add test for saving background image properties
 
     cy.percySnapshotDialog('Page Section dialog');
