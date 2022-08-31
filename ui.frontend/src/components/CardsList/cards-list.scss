@@ -31,7 +31,6 @@
   
   &.hl-grid {
     display: grid;
-    width: 100%;
   }
 
   @for $i from 1 through abstracts.$grid-columns {

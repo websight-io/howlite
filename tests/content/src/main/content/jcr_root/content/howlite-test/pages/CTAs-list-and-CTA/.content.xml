@@ -48,6 +48,12 @@
                         openInNewTab="false"/>
                     <ctaslist
                         jcr:primaryType="nt:unstructured"
+                        lgColSize="6"
+                        mdColSize="10"
+                        smColsize="10"
+                        lgOffset="3"
+                        mdOffset="1"
+                        smOffset="1"
                         sling:resourceType="howlite/components/ctaslist">
                         <cta1_1_1
                             jcr:primaryType="nt:unstructured"
@@ -87,6 +93,16 @@
                             classes="hl-cta--text"
                             openInNewTab="false"/>
                     </ctaslist>
+                    <ctaslistempty
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="howlite/components/ctaslist"
+                        lgColSize="6"
+                        mdColSize="10"
+                        smColsize="10"
+                        lgOffset="3"
+                        mdOffset="1"
+                        smOffset="1">
+                    </ctaslistempty>
                 </pagesection>
             </maincontainer>
             <footer

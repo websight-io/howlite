@@ -72,10 +72,16 @@ describe('Image component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'howlite/components/image',
-        'jcr:primaryType': 'nt:unstructured',
+        mdOffset: '1',
+        smOffset: '1',
         alt: 'Image of a logo',
+        'sling:resourceType': 'howlite/components/image',
         url: '#',
+        lgOffset: '2',
+        smColsize: '10',
+        mdColSize: '10',
+        'jcr:primaryType': 'nt:unstructured',
+        lgColSize: '8',
         showLink: 'true',
         openInNewTab: 'true'
       });

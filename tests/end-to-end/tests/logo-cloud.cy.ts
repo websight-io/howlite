@@ -44,7 +44,7 @@ describe('Logo cloud component', function () {
     ).as('saveProperties');
 
     cy.getByTestId(paths.logoCloud)
-      .click({force: true})
+      .click({ force: true })
       .find(selectors.overlayName)
       .should('have.text', 'Logo cloud');
 
@@ -62,7 +62,7 @@ describe('Logo cloud component', function () {
       .its('body')
       .should('deep.eq', {
         'sling:resourceType': 'howlite/components/logoscloud',
-        'jcr:primaryType': 'nt:unstructured',
+        'jcr:primaryType': 'nt:unstructured'
       });
   });
 });

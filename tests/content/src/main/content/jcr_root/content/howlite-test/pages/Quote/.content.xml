@@ -72,6 +72,10 @@
                         sling:resourceType="howlite/components/quote"
                         lgColSize="6"
                         lgOffset="3"
+                        mdColSize="10"
+                        smColsize="10"
+                        mdOffset="1"
+                        smOffset="1"
                         quoteText="&lt;p>Quote component which is resized on L breakpoint.&lt;/p>"
                         showImage="false"/>
                 </pagesection_2>

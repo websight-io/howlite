@@ -31,7 +31,7 @@ describe('Cards lists and card item component', function () {
   it('render correctly in preview mode', function () {
     cy.visit('/content/howlite-test/pages/Cards.html');
 
-    cy.percySnapshotWithAuth('Cards preview');
+    cy.percySnapshotPreview('Cards preview');
 
     cy.get('section:nth-of-type(2) div').should('have.class', 'glide--slider');
     cy.contains('Third card item').move({ deltaX: 1500, deltaY: 0 });
@@ -50,8 +50,6 @@ describe('Cards lists and card item component', function () {
   });
 
   function testCardsList() {
-    cy.percySnapshotWithAuth('Cards list editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/cardslist.websight-dialogs-service.save-properties.action'
@@ -62,9 +60,9 @@ describe('Cards lists and card item component', function () {
       .find(selectors.overlayName)
       .should('have.text', 'Cards List');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.percySnapshotPageEditor('Cards list editor');
 
-    cy.percySnapshotWithAuth('Cards list dialog');
+    cy.getByTestId(testIds.editIcon).click();
 
     cy.getByTestId('Input_Displayasaslider--checkbox-label').click();
     cy.getByTestId('RadioElement_h3').click();
@@ -76,6 +74,8 @@ describe('Cards lists and card item component', function () {
     cy.get('#undefined-1').click();
     cy.get('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
+
+    cy.percySnapshotDialog('Cards list dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
@@ -99,8 +99,6 @@ describe('Cards lists and card item component', function () {
   }
 
   function testCardItem() {
-    cy.percySnapshotWithAuth('Card item editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/cardslist/card1.websight-dialogs-service.save-properties.action'
@@ -111,9 +109,9 @@ describe('Cards lists and card item component', function () {
       .find(selectors.overlayName)
       .should('have.text', 'Card Item');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.percySnapshotPageEditor('Card item editor');
 
-    cy.percySnapshotWithAuth('Card item dialog');
+    cy.getByTestId(testIds.editIcon).click();
 
     cy.getByTestId('Input_Title').clear().type('Card item title');
     cy.get('.ProseMirror').clear().type('Sample text');
@@ -130,6 +128,8 @@ describe('Cards lists and card item component', function () {
 
     cy.contains('Text Link').click();
     cy.contains('Small Button').click({ force: true });
+
+    cy.percySnapshotDialog('Card item dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 

@@ -56,7 +56,6 @@ describe('Rich text editor component', () => {
 
     cy.getByTestId(testIds.editIcon).click();
 
-
     cy.get('.ProseMirror').type('\n\n').type(LOREM_IPSUM);
 
     cy.percySnapshotDialog('Rich text dialog');

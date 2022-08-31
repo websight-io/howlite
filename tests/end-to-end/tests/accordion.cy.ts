@@ -87,5 +87,5 @@ describe('Accordion component', function () {
       .should('have.text', 'Accordion');
   });
 
-    // TODO: check grid classes once dropdowns have test-ids
+  // TODO: check grid classes once dropdowns have test-ids
 });
