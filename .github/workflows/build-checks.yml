@@ -60,6 +60,8 @@ jobs:
       - name: Build and test with Maven
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-        run: mvn --batch-mode --update-snapshots clean install -P e2e
+        run: |
+              mvn -f tests/end-to-end/pom.xml versions:update-properties
+              mvn --batch-mode --update-snapshots clean install -P e2e
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
