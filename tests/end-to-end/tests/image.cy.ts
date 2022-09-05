@@ -64,6 +64,8 @@ describe('Image component', function () {
 
     cy.percySnapshotDialog('Image dialog');
 
+    cy.checkGridProperties();
+
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
@@ -72,16 +74,17 @@ describe('Image component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        mdOffset: '1',
-        smOffset: '1',
+        mdOffset: '',
+        smColSize: '8',
+        smOffset: '2',
         alt: 'Image of a logo',
         'sling:resourceType': 'howlite/components/image',
         url: '#',
-        lgOffset: '2',
+        lgOffset: '1',
         smColsize: '10',
-        mdColSize: '10',
+        mdColSize: '12',
         'jcr:primaryType': 'nt:unstructured',
-        lgColSize: '8',
+        lgColSize: '11',
         showLink: 'true',
         openInNewTab: 'true'
       });

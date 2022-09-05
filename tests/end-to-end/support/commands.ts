@@ -60,10 +60,8 @@ Cypress.Commands.add('listByTestIdPrefix', (testIdPrefix) => {
 });
 
 Cypress.Commands.add('checkGridProperties', () => {
-  cy.getByTestId('ModalDialog_Container')
-    .find('div[role="tab"]')
-    .contains('Layout')
-    .click();
+  cy.get('.atlaskit-portal').find('div[role="tab"]').contains('Layout').click();
+
   cy.get('.Input_Offset-Sbreakpoint__control').click();
   cy.get('.Input_Offset-Sbreakpoint__option')
     .contains('2 Columns')
