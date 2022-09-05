@@ -17,11 +17,33 @@
             <headingLevel
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/include"
-                    path="/libs/howlite/components/common/headinglevel"/>
+                    path="/libs/howlite/components/common/headinglevel">
+                    <include
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceSuperType="/libs/howlite/components/common/headinglevel">
+                          <h2
+                                  jcr:primaryType="nt:unstructured"
+                                  selected="false"/>
+                          <h3
+                                  jcr:primaryType="nt:unstructured"
+                                  selected="true"/>
+                    </include>
+            </headingLevel>
             <headingSize
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/include"
-                    path="/libs/howlite/components/common/headingsize"/>
+                    path="/libs/howlite/components/common/headingsize">
+                    <include
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceSuperType="/libs/howlite/components/common/headingsize">
+                        <s
+                                jcr:primaryType="nt:unstructured"
+                                selected="true"/>
+                        <m
+                                jcr:primaryType="nt:unstructured"
+                                selected="false"/>
+                    </include>
+            </headingSize>
             <itemsPerRowSm
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/numberfield"
