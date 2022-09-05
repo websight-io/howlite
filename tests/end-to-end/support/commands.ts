@@ -64,7 +64,7 @@ Cypress.Commands.add('checkGridProperties', () => {
 
   cy.get('.Input_Offset-Sbreakpoint__control').click();
   cy.get('.Input_Offset-Sbreakpoint__option')
-    .contains('2 Columns')
+    .contains(/^2 Columns$/)
     .click({ force: true });
   cy.get('.Input_Offset-Mbreakpoint__control').click();
   cy.get('.Input_Offset-Mbreakpoint__option')
