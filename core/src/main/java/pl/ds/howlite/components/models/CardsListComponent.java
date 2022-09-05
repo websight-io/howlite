@@ -41,7 +41,7 @@ public class CardsListComponent implements Styled, Grid {
 
   @Getter
   @Inject
-  @Default(values = "hl-title__heading--default")
+  @Default(values = "hl-title__heading--size-5")
   private String headingSize;
 
   @Getter
