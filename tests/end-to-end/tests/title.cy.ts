@@ -20,14 +20,14 @@ const paths = {
   title: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/title'
 };
 
-describe('Heading component', function () {
+describe('Title component', function () {
   beforeEach(() => {
     cy.login();
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/howlite-test/pages/Heading.html');
-    cy.percySnapshotPreview('Heading preview');
+    cy.visit('/content/howlite-test/pages/Title.html');
+    cy.percySnapshotPreview('Title preview');
   });
 
   it('renders correctly in edit mode', function () {
@@ -37,15 +37,15 @@ describe('Heading component', function () {
     ).as('saveProperties');
 
     cy.visit(
-      '/apps/websight/index.html/content/howlite-test/pages/Heading::editor'
+      '/apps/websight/index.html/content/howlite-test/pages/Title::editor'
     );
 
     cy.getByTestId(paths.title)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Heading');
+      .should('have.text', 'Title');
 
-    cy.percySnapshotPageEditor('Heading editor');
+    cy.percySnapshotPageEditor('Title editor');
 
     cy.getByTestId(testIds.editIcon).click();
 
@@ -55,13 +55,13 @@ describe('Heading component', function () {
     cy.getByTestId('Input_Addanoverline').click();
     cy.getByTestId('Input_Overlinetext').clear().type('New overline text');
 
-    cy.percySnapshotDialog('Heading dialog');
+    cy.percySnapshotDialog('Title dialog');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
     cy.request(
-      '/content/howlite-test/pages/Heading/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
+      '/content/howlite-test/pages/Title/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
     )
       .its('body')
       .should('deep.eq', {
