@@ -59,30 +59,35 @@ Cypress.Commands.add('listByTestIdPrefix', (testIdPrefix) => {
   return cy.get(`[data-testid^=${prepareTestId(testIdPrefix)}_]`);
 });
 
-Cypress.Commands.add(
-  'saveDataAttrAsNumber',
-  {
-    prevSubject: 'element'
-  },
-  (subject, attrName: string, alias: string) => {
-    cy.wrap(subject).invoke('attr', attrName).then(parseInt).as(alias);
-  }
-);
+Cypress.Commands.add('checkGridProperties', () => {
+  cy.get('.atlaskit-portal').find('div[role="tab"]').contains('Layout').click();
 
-Cypress.Commands.add(
-  'shouldAttrAsNumber',
-  {
-    prevSubject: 'element'
-  },
-  (subject, attrName: string, chainer: string, alias: string) => {
-    cy.get(`@${alias}`).then((valueToCompareWith) => {
-      cy.wrap(subject)
-        .invoke('attr', attrName)
-        .then(parseInt)
-        .should(chainer, valueToCompareWith);
-    });
-  }
-);
+  cy.get('.Input_Offset-Sbreakpoint__control').click();
+  cy.get('.Input_Offset-Sbreakpoint__option')
+    .contains(/^2 Columns$/)
+    .click({ force: true });
+  cy.get('.Input_Offset-Mbreakpoint__control').click();
+  cy.get('.Input_Offset-Mbreakpoint__option')
+    .contains('No offset')
+    .click({ force: true });
+  cy.get('.Input_Offset-Lbreakpoint__control').click();
+  cy.get('.Input_Offset-Lbreakpoint__option')
+    .contains(/^1 Column$/)
+    .click({ force: true });
+
+  cy.get('.Input_Width-Sbreakpoint__control').click();
+  cy.get('.Input_Width-Sbreakpoint__option')
+    .contains('8 Columns')
+    .click({ force: true });
+  cy.get('.Input_Width-Mbreakpoint__control').click();
+  cy.get('.Input_Width-Mbreakpoint__option')
+    .contains('12 Columns')
+    .click({ force: true });
+  cy.get('.Input_Width-Lbreakpoint__control').click();
+  cy.get('.Input_Width-Lbreakpoint__option')
+    .contains('11 Columns')
+    .click({ force: true });
+});
 
 Cypress.Commands.add('login', () => {
   const authUrl = `${

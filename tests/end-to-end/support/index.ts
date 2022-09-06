@@ -39,6 +39,7 @@ declare global {
       percySnapshotPreview(name: string, options?: SnapshotOptions): void;
       percySnapshotPageEditor(name: string, options?: SnapshotOptions): void;
       percySnapshotDialog(name?: string, options?: SnapshotOptions): void;
+      checkGridProperties(): void;
     }
   }
 }
