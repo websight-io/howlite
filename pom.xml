@@ -346,7 +346,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.metatype.annotations</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
