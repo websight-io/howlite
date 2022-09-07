@@ -16,7 +16,7 @@
     "@4tw/cypress-drag-drop": "^2.1.0",
     "@percy/cli": "^1.10.1",
     "@percy/cypress": "^3.1.2",
-    "@types/jest": "^28.1.8",
+    "@types/jest": "^29.0.0",
     "@types/node": "^18.7.15",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "chai": "^4.3.6",
