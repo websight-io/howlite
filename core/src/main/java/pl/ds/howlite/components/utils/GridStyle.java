@@ -66,8 +66,6 @@ public class GridStyle {
       classes.add(GRID_CLASS_PREFIX + "-component");
     } else if (GridDisplayType.GRID.equals(displayType)) {
       classes.add(GRID_CLASS_PREFIX);
-    } else if (GridDisplayType.INLINE.equals(displayType)) {
-      classes.add(GRID_CLASS_PREFIX + "--inline");
     }
     return classes;
   }

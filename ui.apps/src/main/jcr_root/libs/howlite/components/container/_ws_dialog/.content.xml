@@ -10,23 +10,6 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="General">
-            <displayType
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/select"
-                    name="displayType"
-                    label="Display type">
-                <grid
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/selectitem"
-                        label="Grid"
-                        selected="true"
-                        value="grid"/>
-                <inline
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/selectitem"
-                        label="Inline"
-                        value="inline"/>
-            </displayType>
             <backgroundImageLg
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/assetreference"
