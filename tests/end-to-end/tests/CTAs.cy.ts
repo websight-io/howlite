@@ -42,6 +42,11 @@ describe('CTA components and CTA list component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/CTAs-list-and-CTA::editor'
     );
 
+    cy.getByTestId(paths.ctasList)
+      .click({ force: true })
+      .find(selectors.overlayName)
+      .should('have.text', 'CTAs List');
+
     cy.getByTestId(paths.cta)
       .click()
       .find(selectors.overlayName)
