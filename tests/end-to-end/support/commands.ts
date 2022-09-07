@@ -60,7 +60,10 @@ Cypress.Commands.add('listByTestIdPrefix', (testIdPrefix) => {
 });
 
 Cypress.Commands.add('checkGridProperties', () => {
-  cy.get('.atlaskit-portal').find('div[role="tab"]').contains('Layout').click();
+  cy.get('[data-testid^="ModalDialog_"][role="dialog"]')
+    .find('div[role="tab"]')
+    .contains('Layout')
+    .click();
 
   cy.get('.Input_Offset-Sbreakpoint__control').click();
   cy.get('.Input_Offset-Sbreakpoint__option')
@@ -145,6 +148,7 @@ Cypress.Commands.add('percySnapshotWithAuth', (name: string, options) => {
 Cypress.Commands.add('percySnapshotPreview', (name: string, options) => {
   cy.percySnapshotWithAuth(name, {
     percyCSS: hideHowliteHeaderFooterCSS,
+    widths: [375, 768, 970],
     ...options
   });
 });
