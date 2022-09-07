@@ -32,15 +32,3 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.hl-grid--inline {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: map.get(abstracts.$spacing, 'small-3') * -1;
-  margin-left: map.get(abstracts.$spacing, 'small-3') * -1;
-
-  > * {
-    margin-right: map.get(abstracts.$spacing, 'small-3');
-    margin-left: map.get(abstracts.$spacing, 'small-3');
-  }
-}

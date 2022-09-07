@@ -51,11 +51,6 @@ public class ContainerComponent implements Styled, Grid {
   private ResourceResolver resourceResolver;
 
   @Inject
-  @Default(values = "grid")
-  @Getter
-  private String displayType;
-
-  @Inject
   private String backgroundImageSm;
 
   @Inject
@@ -100,24 +95,11 @@ public class ContainerComponent implements Styled, Grid {
 
   @PostConstruct
   private void init() {
-    GridDisplayType gridDisplayType = queryDisplayType();
-
     componentClasses = Stream.concat(
             Arrays.stream(style.getClasses()),
-            new GridStyle(this, gridDisplayType).getClasses().stream())
+            new GridStyle(this, GridDisplayType.GRID).getClasses().stream())
         .collect(Collectors.toCollection(LinkedHashSet::new))
         .toArray(new String[]{});
-  }
-
-  private GridDisplayType queryDisplayType() {
-    if (StringUtils.isNotEmpty(displayType)) {
-      try {
-        return GridDisplayType.valueOf(displayType.toUpperCase());
-      } catch (IllegalArgumentException e) {
-        log.debug("Invalid display type: {}.", displayType);
-      }
-    }
-    return GridDisplayType.GRID;
   }
 
 }

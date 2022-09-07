@@ -104,23 +104,7 @@ class ContainerComponentTest {
                 "hl-offset-lg-3"}),
         Arguments.of(GRID_PATH + "/gridWithLgBreakpoint",
             new String[]{"hl-grid", "hl-cols-sm-12", "hl-cols-md-12", "hl-cols-lg-6",
-                "hl-offset-lg-3"}),
-        Arguments.of(GRID_PATH + "/inlineWithSameSize",
-            new String[]{"hl-grid--inline", "hl-cols-6"}),
-        Arguments.of(GRID_PATH + "/inlineWithDifferentSize",
-            new String[]{"hl-grid--inline", "hl-cols-sm-4", "hl-cols-md-5",
-                "hl-cols-lg-6"}),
-        Arguments.of(GRID_PATH + "/inlineWithSameSizeAndSameOffset",
-            new String[]{"hl-grid--inline", "hl-offset-3", "hl-cols-6"}),
-        Arguments.of(GRID_PATH + "/inlineWithSameSizeAndDifferentOffset",
-            new String[]{"hl-grid--inline", "hl-offset-sm-1",
-                "hl-offset-md-2", "hl-cols-6", "hl-offset-lg-3"}),
-        Arguments.of(GRID_PATH + "/inlineWithDifferentSizeAndOffset",
-            new String[]{"hl-grid--inline", "hl-offset-sm-1", "hl-cols-sm-4",
-                "hl-offset-md-2", "hl-cols-md-5", "hl-offset-lg-3", "hl-cols-lg-6"}),
-        Arguments.of(GRID_PATH + "/inlineWithDifferentSizeAndSameOffset",
-            new String[]{"hl-grid--inline", "hl-offset-3", "hl-cols-sm-4",
-                "hl-cols-md-5", "hl-cols-lg-6"})
+                "hl-offset-lg-3"})
     );
   }
 
