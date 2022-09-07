@@ -36,8 +36,6 @@ describe('Logo cloud component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Logo-cloud::editor'
     );
 
-    cy.percySnapshotPageEditor('Logo cloud editor');
-
     cy.intercept(
       'POST',
       '**/pagesection/logoscloud.websight-dialogs-service.save-properties.action'
@@ -47,6 +45,8 @@ describe('Logo cloud component', function () {
       .click({ force: true })
       .find(selectors.overlayName)
       .should('have.text', 'Logo cloud');
+
+    cy.percySnapshotPageEditor('Logo cloud editor');
 
     cy.getByTestId(testIds.editIcon).click();
     cy.percySnapshotDialog('Logo cloud dialog');
