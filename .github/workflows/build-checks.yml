@@ -60,6 +60,8 @@ jobs:
       - name: Update snapshot version
         if: ${{ github.event_name == 'schedule' }}
         run: mvn -f tests/end-to-end/pom.xml versions:update-properties
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       - name: Build and test with Maven
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
