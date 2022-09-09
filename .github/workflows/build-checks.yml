@@ -18,7 +18,8 @@ on:
   pull_request:
 
   schedule:
-    - cron:  '0 3 * * 1-5'
+    - cron:  '30 3 * * 2-4'
+    - cron:  '30 3 * * 1,5'
 
 env:
   AWS_REGION: "eu-central-1"
@@ -62,9 +63,18 @@ jobs:
         run: mvn -f tests/end-to-end/pom.xml versions:update-properties
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-      - name: Build and test with Maven
+      - name: Build and test with Maven and Cypress
+        if: >-
+          github.event.name == 'pull_request' ||
+          github.event.schedule != '30 3 * * 1,5'
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         run: mvn --batch-mode --update-snapshots clean install -P e2e
+      - name: Build and test visual with Maven and Percy
+        if: github.event.schedule == '30 3 * * 1,5'
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+          HOWLITE_PERCY_TOKEN: ${{ secrets.HOWLITE_PERCY_TOKEN }}
+        run: mvn --batch-mode --update-snapshots clean install -P e2e-visual
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
