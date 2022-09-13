@@ -220,6 +220,8 @@
               <configuration>
                 <bnd>
                   <![CDATA[
+                                    Bundle-Developers: Dynamic Solutions
+                                    Bundle-Vendor: Dynamic Solutions
                                     Bundle-Category: ${componentGroupName}
 
                                     # export all versioned packages except for conditional ones (https://github.com/bndtools/bnd/issues/3721#issuecomment-579026778)
