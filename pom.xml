@@ -90,6 +90,8 @@
 
     <!-- functional tests   -->
     <e2e.skip>true</e2e.skip>
+    <e2e.skip.cypress>true</e2e.skip.cypress>
+    <e2e.skip.visual>true</e2e.skip.visual>
     <mongo.container.image>mongo:4.4.6</mongo.container.image>
   </properties>
 
@@ -535,6 +537,16 @@
       <id>e2e</id>
       <properties>
         <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>false</e2e.skip.cypress>
+        <e2e.skip.visual>true</e2e.skip.visual>
+      </properties>
+    </profile>
+    <profile>
+      <id>e2e-visual</id>
+      <properties>
+        <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>true</e2e.skip.cypress>
+        <e2e.skip.visual>false</e2e.skip.visual>
       </properties>
     </profile>
     <profile>
