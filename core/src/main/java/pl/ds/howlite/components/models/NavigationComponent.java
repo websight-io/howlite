@@ -33,10 +33,4 @@ public class NavigationComponent {
   @Getter
   private List<NavigationItemComponent> menuItems;
 
-  @PostConstruct
-  private void init() {
-    if (menuItems != null) {
-      Collections.reverse(menuItems); //workaround for correct order - remove after multifield merge
-    }
-  }
 }
