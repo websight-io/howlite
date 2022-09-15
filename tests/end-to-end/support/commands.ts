@@ -50,8 +50,32 @@ Cypress.Commands.add(
   {
     prevSubject: 'element'
   },
-  (subject, targetTestId) => {
-    cy.wrap(subject).drag(`[data-testid=${prepareTestId(targetTestId)}]`);
+  (subject, targetTestId, options) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+
+    cy.wrap(subject).drag(`[data-testid=${prepareTestId(targetTestId)}]`, {
+      target: {
+        force: true,
+        position: 'top'
+      }
+    });
+
+    if (options?.forceDrop) {
+      cy.getByTestId(targetTestId)
+        .trigger('drop', {
+          eventConstructor: 'DragEvent',
+          force: true
+        })
+        .then(() => {
+          cy.getByTestId(targetTestId).trigger('mouseup', {
+            which: 1,
+            button: 0,
+            eventConstructor: 'MouseEvent',
+            force: true
+          });
+        });
+    }
   }
 );
 

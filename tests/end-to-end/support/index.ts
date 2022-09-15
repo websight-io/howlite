@@ -26,7 +26,10 @@ declare global {
       getPageIframe(): Chainable<any>;
       getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
       findByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
-      dragByTestId(targetTestId: string): void;
+      dragByTestId(
+        targetTestId: string,
+        options?: { forceDrop: boolean }
+      ): void;
       listByTestIdPrefix(testIdPrefix: string): Chainable<JQuery<HTMLElement>>;
       saveDataAttrAsNumber(attrName: string, alias: string): void;
       shouldAttrAsNumber(
