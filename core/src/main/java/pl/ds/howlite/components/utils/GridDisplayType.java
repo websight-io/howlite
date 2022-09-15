@@ -18,7 +18,5 @@ package pl.ds.howlite.components.utils;
 
 public enum GridDisplayType {
 
-  GRID,
-  INLINE
-
+  GRID
 }

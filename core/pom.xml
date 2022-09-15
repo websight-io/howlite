@@ -42,24 +42,6 @@
                         <goals>
                             <goal>bnd-process</goal>
                         </goals>
-                        <configuration>
-                            <bnd>
-                                <![CDATA[
-                                        Bundle-Category: ${componentGroupName}
-                                        Bundle-Developers: Dynamic Solutions sp. z o.o. sp. k.
-                                        Bundle-Description : ${project.name}
-                                        Bundle-Vendor: Dynamic Solutions sp. z o.o. sp. k.
-                                        Bundle-DocURL: https://websight.io
-                                        WebSight-Apps-WebRoot: /libs/howlite/web_root
-
-                                        -exportcontents: \
-                                            pl.ds.howlite.components,pl.ds.howlite.components.models,pl.ds.howlite.components.utils \
-                                            ${removeall;${packages;VERSIONED};${packages;CONDITIONAL}}
-                                        -noextraheaders: true
-                                        -snapshot: SNAPSHOT
-                                ]]>
-                            </bnd>
-                        </configuration>
                     </execution>
                 </executions>
                 <dependencies>

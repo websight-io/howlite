@@ -14,23 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.howlite.components.models;
+@Version("1.0.0")
+package pl.ds.howlite.components.utils;
 
-import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
-
-import java.util.Collections;
-import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import lombok.Getter;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Model;
-
-@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class NavigationComponent {
-
-  @Inject
-  @Getter
-  private List<NavigationItemComponent> menuItems;
-
-}
+import org.osgi.annotation.versioning.Version;

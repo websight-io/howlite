@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
           jcr:primaryType="ws:Component"
-          sling:resourceType="howlite/components/pagesection"
+          instanceResourceType="howlite/components/pagesection"
+          sling:resourceSuperType="howlite/components/pagesection"
           jcr:title="4 Columns"
-          isContainer="true"
           isLayout="true"
           group="Empty Sections"/>

@@ -41,7 +41,7 @@
                     <validatorsSettings>
                         <jackrabbit-filter>
                             <options>
-                                <validRoots>/libs/howlite</validRoots>
+                                <validRoots>/libs</validRoots>
                             </options>
                         </jackrabbit-filter>
                     </validatorsSettings>

@@ -41,12 +41,4 @@ public class SocialLinksComponent implements Styled, Grid {
   @Delegate
   private DefaultStyledGridComponent style;
 
-  @PostConstruct
-  private void init() {
-    if (socialLinkItems != null) {
-      Collections.reverse(
-          socialLinkItems); //workaround for correct order - remove after multifield merge
-    }
-
-  }
 }

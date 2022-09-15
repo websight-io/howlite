@@ -90,6 +90,8 @@
 
     <!-- functional tests   -->
     <e2e.skip>true</e2e.skip>
+    <e2e.skip.cypress>true</e2e.skip.cypress>
+    <e2e.skip.visual>true</e2e.skip.visual>
     <mongo.container.image>mongo:4.4.6</mongo.container.image>
   </properties>
 
@@ -138,6 +140,7 @@
             </goals>
             <configuration>
               <excludes>
+                <exclude>**/*.bnd</exclude>
                 <exclude>**/*.md</exclude>
                 <exclude>**/*.json</exclude>
                 <exclude>**/.git*</exclude>
@@ -219,6 +222,8 @@
               <configuration>
                 <bnd>
                   <![CDATA[
+                                    Bundle-Developers: Dynamic Solutions
+                                    Bundle-Vendor: Dynamic Solutions
                                     Bundle-Category: ${componentGroupName}
 
                                     # export all versioned packages except for conditional ones (https://github.com/bndtools/bnd/issues/3721#issuecomment-579026778)
@@ -270,7 +275,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.22.1</version>
+          <version>2.22.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.sling</groupId>
@@ -315,7 +320,7 @@
       <dependency>
         <groupId>pl.ds.websight</groupId>
         <artifactId>websight-pages-core-api</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2.0.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -358,7 +363,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.component</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -497,7 +502,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.sling-mock.junit5</artifactId>
-        <version>3.3.0</version>
+        <version>3.4.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -509,7 +514,7 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>4.7.0</version>
+        <version>4.8.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -532,6 +537,16 @@
       <id>e2e</id>
       <properties>
         <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>false</e2e.skip.cypress>
+        <e2e.skip.visual>true</e2e.skip.visual>
+      </properties>
+    </profile>
+    <profile>
+      <id>e2e-visual</id>
+      <properties>
+        <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>true</e2e.skip.cypress>
+        <e2e.skip.visual>false</e2e.skip.visual>
       </properties>
     </profile>
     <profile>
