@@ -56,7 +56,21 @@ describe('Image component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    // TODO: check asset drag & drop
+    cy.getByTestId('SidebarElement_Assets').click();
+    cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+      'Input_Chooseimage-Lbreakpoint',
+      { forceDrop: true }
+    );
+
+    cy.getByTestId('AssetItem_portrait_jpg').dragByTestId(
+      'Input_Chooseimage-Mbreakpoint',
+      { forceDrop: true }
+    );
+    cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+      'Input_Chooseimage-Sbreakpoint',
+      { forceDrop: true }
+    );
+
     cy.getByTestId('Input_Alttext').clear().type('Image of a logo');
     cy.getByTestId('Input_Link--toggle-check-icon').click();
     cy.get('input[placeholder="Choose a path"]').clear().type('#');
@@ -76,6 +90,7 @@ describe('Image component', function () {
       .should('deep.eq', {
         mdOffset: '',
         smColSize: '8',
+        lgImageSrc: '/content/howlite-test/assets/landscape.jpg',
         smOffset: '2',
         alt: 'Image of a logo',
         'sling:resourceType': 'howlite/components/image',
@@ -86,7 +101,9 @@ describe('Image component', function () {
         'jcr:primaryType': 'nt:unstructured',
         lgColSize: '11',
         showLink: 'true',
-        openInNewTab: 'true'
+        smImageSrc: '/content/howlite-test/assets/landscape.jpg',
+        openInNewTab: 'true',
+        mdImageSrc: '/content/howlite-test/assets/portrait.jpg'
       });
   });
 });
