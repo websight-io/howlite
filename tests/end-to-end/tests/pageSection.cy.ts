@@ -35,6 +35,11 @@ describe('Page Section component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Page-Section::editor'
     );
 
+    cy.intercept(
+      'POST',
+      '**/maincontainer/pagesection.websight-dialogs-service.save-properties.action'
+    ).as('saveProperties');
+
     cy.getByTestId(paths.pageSection)
       .click()
       .find(selectors.overlayName)
@@ -44,9 +49,36 @@ describe('Page Section component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.wait(1000);
-    // TODO: add test for saving background image properties
+    cy.getByTestId('SidebarElement_Assets').click();
+    cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+      'Input_Backgroundimage-Lbreakpoint',
+      { forceDrop: true }
+    );
+
+    cy.getByTestId('AssetItem_portrait_jpg').dragByTestId(
+      'Input_Backgroundimage-Mbreakpoint',
+      { forceDrop: true }
+    );
+    cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+      'Input_Backgroundimage-Sbreakpoint',
+      { forceDrop: true }
+    );
 
     cy.percySnapshotDialog('Page Section dialog');
+
+    cy.getByTestId(testIds.dialogSubmitButton).click();
+    cy.wait('@saveProperties');
+
+    cy.request(
+      '/content/howlite-test/pages/Page-Section/jcr:content/rootcontainer/maincontainer/pagesection.json'
+    )
+      .its('body')
+      .should('deep.eq', {
+        backgroundImageSm: '/content/howlite-test/assets/landscape.jpg',
+        backgroundImageMd: '/content/howlite-test/assets/portrait.jpg',
+        'sling:resourceType': 'howlite/components/pagesection',
+        'jcr:primaryType': 'nt:unstructured',
+        backgroundImageLg: '/content/howlite-test/assets/landscape.jpg'
+      });
   });
 });
