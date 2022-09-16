@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "cta1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/cta"
+  },
+  "cta2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/cta"
+  }
+}

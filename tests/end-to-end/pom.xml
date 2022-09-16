@@ -51,12 +51,6 @@
     </dependency>
     <dependency>
       <groupId>pl.ds.howlite</groupId>
-      <artifactId>howlite-ui-apps</artifactId>
-      <version>${howlite.version}</version>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.howlite</groupId>
       <artifactId>howlite-tests-content</artifactId>
       <version>${howlite.version}</version>
       <type>pom</type>

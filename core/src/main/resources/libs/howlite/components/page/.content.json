@@ -1,0 +1,7 @@
+{
+  "sling:resourceSuperType": "wcm/core/components/page",
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "description": "Page component that can be used to render Howlite pages.",
+  "title": "Howlite Page"
+}

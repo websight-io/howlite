@@ -115,15 +115,15 @@ module.exports = {
                     copy: [
                         {
                             source: path.join(__dirname, 'dist/main'),
-                            destination: path.join(__dirname, '../ui.apps/src/main/jcr_root/libs/howlite/web_root')
+                            destination: path.join(__dirname, '../core/src/main/resources/libs/howlite/web_root')
                         },
                         {
                           source: path.join(__dirname, 'dist/author'),
-                          destination: path.join(__dirname, '../ui.apps/src/main/jcr_root/libs/howlite/author')
+                          destination: path.join(__dirname, '../core/src/main/resources/libs/howlite/author')
                         },
                         {
                           source: path.join(__dirname, 'dist/theme'),
-                          destination: path.join(__dirname, '../ui.apps/src/main/jcr_root/libs/howlite/web_root')
+                          destination: path.join(__dirname, '../core/src/main/resources/libs/howlite/web_root')
                         }
                     ]
                 }

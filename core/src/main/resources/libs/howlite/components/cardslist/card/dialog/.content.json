@@ -1,0 +1,86 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
+      "content": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content"
+      }
+    },
+    "imageTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Card image",
+      "image": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "image",
+        "label": "Image"
+      },
+      "imageAlt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "alt",
+        "label": "Alt text"
+      }
+    },
+    "ctaTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Card CTA",
+      "ctaLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "ctaLabel",
+        "label": "Display name"
+      },
+      "ctaLink": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content",
+        "name": "ctaLink",
+        "label": "Link"
+      },
+      "ctaOpenInNewTab": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "ctaOpenInNewTab",
+        "label": "Open link in a new tab"
+      },
+      "ctaDisplayIcon": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "ctaDisplayIcon",
+        "label": "Show icon"
+      },
+      "ctaStyle": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "CTA style variant",
+        "name": "ctaClasses",
+        "primaryButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Primary Button",
+          "value": "hl-cta--primary"
+        },
+        "secondaryButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Secondary Button",
+          "value": "hl-cta--secondary"
+        },
+        "smallButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Small Button",
+          "value": "hl-cta--small"
+        },
+        "textLink": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Text Link",
+          "selected": true,
+          "value": "hl-cta--text"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingSize",
+  "description": "Changes font size (without affecting html heading level)",
+  "label": "Heading size",
+  "xs": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "XS",
+    "value": "hl-title__heading--size-6"
+  },
+  "s": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "S",
+    "value": "hl-title__heading--size-5"
+  },
+  "m": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "M",
+    "selected": true,
+    "value": "hl-title__heading--size-4"
+  },
+  "l": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "L",
+    "value": "hl-title__heading--size-3"
+  },
+  "xl": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "XL",
+    "value": "hl-title__heading--size-2"
+  },
+  "xxl": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "XXL",
+    "value": "hl-title__heading--size-1"
+  }
+}

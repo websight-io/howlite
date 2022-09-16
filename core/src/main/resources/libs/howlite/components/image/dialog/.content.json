@@ -1,0 +1,61 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "lgImageSrc": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "lgImageSrc",
+        "description": "L breakpoint image will be used also on smaller screens if only this source is provided",
+        "label": "Choose image - L breakpoint"
+      },
+      "mdImageSrc": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "mdImageSrc",
+        "label": "Choose image - M breakpoint"
+      },
+      "smImageSrc": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "smImageSrc",
+        "label": "Choose image - S breakpoint"
+      },
+      "alt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "alt",
+        "label": "Alt text"
+      },
+      "showLink": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showLink",
+        "label": "Link"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL"
+        },
+        "openInNewTab": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "openInNewTab",
+          "label": "Open link in a new tab"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "showLink",
+          "values": true
+        }}
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

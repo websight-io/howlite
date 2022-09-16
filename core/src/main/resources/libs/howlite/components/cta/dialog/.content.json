@@ -1,0 +1,61 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "labelText": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "label",
+        "label": "Text",
+        "required": true
+      },
+      "link": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content",
+        "name": "link",
+        "label": "URL"
+      },
+      "openInNewTab": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "openInNewTab",
+        "label": "Open in new tab"
+      },
+      "displayIcon": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "displayIcon",
+        "label": "Show icon"
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "primaryButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Primary Button",
+          "value": "hl-cta--primary"
+        },
+        "secondaryButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Secondary Button",
+          "selected": true,
+          "value": "hl-cta--secondary"
+        },
+        "smallButton": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Small Button",
+          "value": "hl-cta--small"
+        },
+        "textLink": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Text Link",
+          "value": "hl-cta--text"
+        }
+      }
+    }
+  }
+}

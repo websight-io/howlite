@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          sling:resourceSuperType="wcm/core/components/page"
-          jcr:title="Howlite Page"
-          jcr:description="Page component that can be used to render Howlite pages."
-          group=".hidden"/>

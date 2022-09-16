@@ -6,7 +6,6 @@
     }
   ],
   "content-packages:ARTIFACTS|true": [
-    "pl.ds.howlite:howlite-ui-apps:zip:${howlite.version}",
     "pl.ds.howlite:howlite-tests-content:zip:${howlite.version}"
   ]
 }

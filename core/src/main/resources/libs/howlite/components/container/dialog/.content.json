@@ -1,0 +1,32 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "backgroundImageLg": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageLg",
+        "label": "Background image - L breakpoint"
+      },
+      "backgroundImageMd": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageMd",
+        "label": "Background image - M breakpoint"
+      },
+      "backgroundImageSm": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageSm",
+        "label": "Background image - S breakpoint"
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

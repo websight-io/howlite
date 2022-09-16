@@ -1,0 +1,39 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "text": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "selected": true,
+          "value": ""
+        },
+        "black": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Checked bullet points",
+          "value": "hl-rich-text--checked-bullet-points"
+        }
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

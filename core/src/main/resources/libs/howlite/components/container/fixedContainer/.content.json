@@ -1,0 +1,7 @@
+{
+  "isContainer": false,
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "description": "Non-editable container used in initial content to create layouts",
+  "title": "Container"
+}

@@ -1,6 +1,6 @@
 ## Description
 
-Module contains Front-End for Howlite. During build it copy build results to web root folder in ui.apps.
+Module contains Front-End for Howlite. During build it copy build results to web root folder i core.
 
 ## Usage:
 
@@ -16,7 +16,7 @@ Run `npm run sync` to watch your changes. Those will be deployed to local enviro
 
 Local deployment
 
-Front-End files are deployed as a part of `ui.apps` package.
+Front-End files are deployed as a part of `core` bundle.
 
 1. Build this module
-2. Build with local deployment `ui.apps` module
+2. Build with local deployment `core` module

@@ -1,0 +1,63 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "backgroundImageLg": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageLg",
+        "label": "Background image - L breakpoint"
+      },
+      "backgroundImageMd": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageMd",
+        "label": "Background image - M breakpoint"
+      },
+      "backgroundImageSm": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "backgroundImageSm",
+        "label": "Background image - S breakpoint"
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "Style variants",
+        "name": "classes",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "selected": true,
+          "value": ""
+        },
+        "featuredBanner": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Hero with mouse icon",
+          "value": "hl-page-section--featured-banner"
+        },
+        "featuredContent": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Full Width Image Section",
+          "value": "hl-page-section--featured-content"
+        },
+        "bleedingImage": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Bleeding Image Section",
+          "value": "hl-page-section--bleeding-image"
+        },
+        "callToAction": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Call To Action Section",
+          "value": "hl-page-section--call-to-action"
+        }
+      }
+    }
+  }
+}

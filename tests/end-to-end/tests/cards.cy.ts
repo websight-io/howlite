@@ -71,7 +71,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('Input_Itemsperrow-Mbreakpoint').clear().type('2');
     cy.getByTestId('Input_Itemsperrow-Lbreakpoint').clear().type('3');
 
-    cy.get('#undefined-1').click();
+    cy.getByTestId('dialogTab_Style').click();
     cy.get('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
 
@@ -116,10 +116,10 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('Input_Title').clear().type('Card item title');
     cy.get('.ProseMirror').clear().type('Sample text');
 
-    cy.get('#undefined-1').click();
+    cy.getByTestId('dialogTab_Cardimage').click();
     cy.getByTestId('Input_Alttext').clear().type('Image of the card item');
 
-    cy.get('#undefined-2').click();
+    cy.getByTestId("dialogTab_CardCTA").click();
     cy.getByTestId('Input_Displayname').clear().type('Link title');
 
     cy.get('input[placeholder="Choose a path"]').clear().type('#');

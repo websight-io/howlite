@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          instanceResourceType="howlite/components/pagesection"
-          jcr:title="1 Column"
-          jcr:description="Empty Page Section"
-          isLayout="true"
-          group="Empty Sections"/>

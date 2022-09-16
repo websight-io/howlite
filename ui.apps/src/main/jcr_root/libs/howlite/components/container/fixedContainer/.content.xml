@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          jcr:title="Container"
-          jcr:description="Non-editable container used in initial content to create layouts"
-          isContainer="false"
-          group=".hidden"/>

@@ -1,0 +1,37 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "headingLevel",
+  "description": "HTML heading level help to communicate the organization and hierarchy of the content (for SEO and accessibility)",
+  "label": "Heading level",
+  "h1": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H1",
+    "value": "h1"
+  },
+  "h2": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H2",
+    "selected": true,
+    "value": "h2"
+  },
+  "h3": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H3",
+    "value": "h3"
+  },
+  "h4": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H4",
+    "value": "h4"
+  },
+  "h5": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H5",
+    "value": "h5"
+  },
+  "h6": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "H6",
+    "value": "h6"
+  }
+}

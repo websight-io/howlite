@@ -1,0 +1,96 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "isSlider": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isSlider",
+        "label": "Display as a slider"
+      },
+      "headingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headinglevel",
+        "include": {
+          "sling:resourceSuperType": "/libs/howlite/components/common/headinglevel",
+          "h2": {"selected": false},
+          "h3": {"selected": true}
+        }
+      },
+      "headingSize": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headingsize",
+        "include": {
+          "sling:resourceSuperType": "/libs/howlite/components/common/headingsize",
+          "s": {"selected": true},
+          "m": {"selected": false}
+        }
+      },
+      "itemsPerRowSm": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "itemsPerRowSm",
+        "label": "Items per row - S breakpoint",
+        "min": 1,
+        "max": 12
+      },
+      "itemsPerRowMd": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "itemsPerRowMd",
+        "label": "Items per row - M breakpoint",
+        "min": 1,
+        "max": 12
+      },
+      "itemsPerRowLg": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "itemsPerRowLg",
+        "label": "Items per row - L breakpoint",
+        "min": 1,
+        "max": 12
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "value": ""
+        },
+        "textCentred": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Text centered",
+          "value": "hl-cards-list--text-centered"
+        },
+        "black": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Black",
+          "value": "hl-cards-list--black"
+        },
+        "numbered": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Numbered",
+          "value": "hl-cards-list--numbered"
+        },
+        "mdImageLeft": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "MD image left",
+          "value": "hl-cards-list--md-image-left"
+        },
+        "largeSpacing": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Large Spacing",
+          "value": "hl-cards-list--large-spacing"
+        }
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

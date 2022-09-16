@@ -1,0 +1,5 @@
+{
+  "group": "Howlite Restricted",
+  "sling:resourceType": "ws:Component",
+  "title": "Card Item"
+}

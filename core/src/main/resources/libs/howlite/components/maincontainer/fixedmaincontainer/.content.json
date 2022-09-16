@@ -1,0 +1,7 @@
+{
+  "isContainer": false,
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "description": "Non-editable container, use for main content, inside body tag, between header and footer",
+  "title": "Main Content"
+}

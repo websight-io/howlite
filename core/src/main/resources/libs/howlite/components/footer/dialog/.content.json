@@ -1,0 +1,122 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "imageTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Logo",
+      "lgImageSrc": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "image/lgImageSrc",
+        "label": "Choose image"
+      },
+      "alt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "image/alt",
+        "label": "Alt text"
+      },
+      "showLink": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "image/showLink",
+        "label": "Link"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "image/url",
+          "label": "URL"
+        },
+        "openInNewTab": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "image/openInNewTab",
+          "label": "Open link in a new tab"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "image/showLink",
+          "values": true
+        }}
+      }
+    },
+    "menuTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Menu",
+      "items": {
+        "name": "navigation/menuItems",
+        "label": "Tabs",
+        "labelText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        },
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "link": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "link",
+          "label": "URL"
+        },
+        "newtab": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "openInNewTab",
+          "label": "Open link in a new tab"
+        }
+      }
+    },
+    "socialLinksTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Social links",
+      "items": {
+        "name": "socialLinks/socialLinkItems",
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "title": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "title",
+          "label": "Title"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "url",
+          "label": "URL"
+        },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "icon",
+          "label": "Icon",
+          "linkedin": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "LinkedIn",
+            "value": "icon-linkedin"
+          },
+          "facebook": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Facebook",
+            "value": "icon-facebook"
+          },
+          "twitter": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Twitter",
+            "value": "icon-twitter"
+          },
+          "instagram": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Instagram",
+            "value": "icon-instagram"
+          }
+        }
+      }
+    },
+    "copyrightTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Copyrights",
+      "copyright": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "copyright",
+        "label": "Copyrights",
+        "configuration": "howlite/components/common/rte/configuration/simple"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
+  "bold": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Bold",
+    "icon": "format_bold",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"}
+  },
+  "italic": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Italic",
+    "icon": "format_italic",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/italic"}
+  },
+  "underline": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Underline",
+    "icon": "format_underlined",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/underline"}
+  },
+  "strikethrough": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Strikethrough",
+    "icon": "format_strikethrough",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/strikethrough"}
+  },
+  "link": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/link",
+    "title": "Link",
+    "icon": "link",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"}
+  },
+  "hardbreak": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "New Line",
+    "icon": "subdirectory_arrow_left",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/hardbreak"}
+  },
+  "clearformatting": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Clear Formatting",
+    "icon": "format_clear",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/clearformatting"}
+  },
+  "undo": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Undo",
+    "icon": "undo",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/undo"}
+  },
+  "redo": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Redo",
+    "icon": "redo",
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/redo"}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

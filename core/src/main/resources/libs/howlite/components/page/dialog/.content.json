@@ -1,0 +1,96 @@
+{"tabs": {
+  "generalTab": {"bodyClasses": {
+    "sling:resourceType": "wcm/dialogs/components/include",
+    "ws:disallowedContext": ["create"],
+    "path": "/libs/howlite/components/common/stylevariant"
+  }},
+  "metadataTab": {
+    "sling:resourceType": "wcm/dialogs/components/tab",
+    "label": "Metadata",
+    "title": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property title",
+      "name": "title"
+    },
+    "description": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property description",
+      "name": "description"
+    },
+    "ogImage": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property og:image",
+      "name": "ogImage"
+    },
+    "ogType": {
+      "sling:resourceType": "wcm/dialogs/components/select",
+      "label": "Property og:type",
+      "name": "ogType",
+      "article": {
+        "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+        "label": "article",
+        "value": "article"
+      },
+      "website": {
+        "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+        "label": "website",
+        "value": "website"
+      }
+    },
+    "ogUrl": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property og:url",
+      "name": "ogUrl"
+    },
+    "ogDescription": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property og:description",
+      "name": "ogDescription"
+    },
+    "ogTitle": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property og:title",
+      "name": "ogTitle"
+    },
+    "twitterCard": {
+      "sling:resourceType": "wcm/dialogs/components/select",
+      "label": "Property twitter:card",
+      "name": "twitterCard",
+      "summary": {
+        "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+        "label": "summary",
+        "value": "summary"
+      },
+      "summaryLargeImage": {
+        "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+        "label": "summary_large_image",
+        "value": "summary_large_image"
+      }
+    },
+    "twitterTitle": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property twitter:title",
+      "name": "twitterTitle"
+    },
+    "twitterImageAlt": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property twitter:image:alt",
+      "name": "twitterImageAlt"
+    },
+    "twitterSite": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property twitter:site",
+      "name": "twitterSite"
+    },
+    "twitterDescription": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property twitter:description",
+      "name": "twitterDescription"
+    },
+    "twitterImage": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Property twitter:image",
+      "name": "twitterImage"
+    }
+  }
+}}

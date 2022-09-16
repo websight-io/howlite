@@ -1,0 +1,6 @@
+{
+  "allowedChildren": ["/libs/howlite/templates/contentpage"],
+  "sling:resourceType": "ws:PageTemplate",
+  "description": "Howlite",
+  "title": "Home Page"
+}

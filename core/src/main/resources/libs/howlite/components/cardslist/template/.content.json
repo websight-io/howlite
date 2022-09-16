@@ -1,0 +1,18 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "card1": {
+    "jcr:primaryType": "nt:unstructured",
+    "ctaLabel": "Link",
+    "sling:resourceType": "howlite/components/cardslist/card"
+  },
+  "card2": {
+    "jcr:primaryType": "nt:unstructured",
+    "ctaLabel": "Link",
+    "sling:resourceType": "howlite/components/cardslist/card"
+  },
+  "card3": {
+    "jcr:primaryType": "nt:unstructured",
+    "ctaLabel": "Link",
+    "sling:resourceType": "howlite/components/cardslist/card"
+  }
+}

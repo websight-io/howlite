@@ -1,0 +1,66 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "headingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headinglevel"
+      },
+      "headingSize": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headingsize"
+      },
+      "heading": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "default": "Add your heading here",
+        "label": "Heading text",
+        "required": true
+      },
+      "showOverline": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showSubtitle",
+        "label": "Add an overline"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "overline": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "subtitle",
+          "description": "Optional line before the main heading",
+          "default": "Add your text here",
+          "label": "Overline text"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "showSubtitle",
+          "values": true
+        }}
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "value": ""
+        },
+        "centered": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Centered on all breakpoints",
+          "value": "hl-title--centered"
+        }
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

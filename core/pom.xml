@@ -121,6 +121,13 @@
             <artifactId>websight-assets-core-api</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>howlite-ui-frontend</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+
         <!-- TEST -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

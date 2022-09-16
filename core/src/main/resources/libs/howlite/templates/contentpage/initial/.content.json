@@ -1,0 +1,16 @@
+{
+  "jcr:primaryType": "ws:Page",
+  "jcr:content": {
+    "jcr:primaryType": "ws:PageContent",
+    "sling:resourceType": "howlite/components/page",
+    "rootcontainer": {
+      "sling:resourceType": "howlite/components/rootcontainer/fixedrootcontainer",
+      "header": {"sling:resourceType": "howlite/components/headerreference"},
+      "maincontainer": {
+        "sling:resourceType": "howlite/components/maincontainer",
+        "pagesection": {"sling:resourceType": "howlite/components/pagesection"}
+      },
+      "footer": {"sling:resourceType": "howlite/components/footerreference"}
+    }
+  }
+}

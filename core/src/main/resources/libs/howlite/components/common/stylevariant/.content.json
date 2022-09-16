@@ -1,0 +1,35 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "bodyClasses",
+  "label": "Style variant",
+  "default": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Default color",
+    "value": ""
+  },
+  "yellow": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Yellow",
+    "value": "primary-color--yellow"
+  },
+  "blue": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Blue",
+    "value": "primary-color--blue"
+  },
+  "green": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Green",
+    "value": "primary-color--green"
+  },
+  "red": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Red",
+    "value": "primary-color--red"
+  },
+  "purple": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Purple",
+    "value": "primary-color--purple"
+  }
+}

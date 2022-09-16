@@ -1,0 +1,31 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "classes": "hl-page-section--featured-content",
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/image"
+  },
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/container",
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "smColSize": 12,
+      "mdColSize": 12,
+      "lgColSize": 5,
+      "lgOffset": 1,
+      "title": "Add your section title here",
+      "headingLevel": "h2",
+      "subtitle": "Add your subtitle here",
+      "showSubtitle": true,
+      "sling:resourceType": "howlite/components/title"
+    },
+    "richtext": {
+      "jcr:primaryType": "nt:unstructured",
+      "smColSize": 12,
+      "mdColSize": 12,
+      "lgColSize": 6,
+      "sling:resourceType": "howlite/components/richtext"
+    }
+  }
+}
