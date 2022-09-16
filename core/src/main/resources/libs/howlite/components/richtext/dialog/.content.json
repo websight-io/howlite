@@ -1,15 +1,11 @@
 {
-  "jcr:primaryType": "nt:unstructured",
   "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/tabs",
     "generalTab": {
-      "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
       "text": {
-        "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
@@ -17,22 +13,18 @@
       }
     },
     "styleTab": {
-      "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Style",
       "cssClasses": {
-        "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "wcm/dialogs/components/select",
         "name": "classes",
         "default": {
-          "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "Default",
           "selected": true,
           "value": ""
         },
         "black": {
-          "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "Checked bullet points",
           "value": "hl-rich-text--checked-bullet-points"
@@ -40,7 +32,6 @@
       }
     },
     "gridTab": {
-      "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "wcm/dialogs/components/include",
       "path": "/libs/howlite/components/common/gridTab"
     }

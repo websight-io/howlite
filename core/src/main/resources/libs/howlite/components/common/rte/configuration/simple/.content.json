@@ -1,94 +1,57 @@
 {
-  "jcr:primaryType": "sling:OrderedFolder",
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
   "bold": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Bold",
     "icon": "format_bold",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"}
   },
   "italic": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Italic",
     "icon": "format_italic",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/italic"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/italic"}
   },
   "underline": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Underline",
     "icon": "format_underlined",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/underline"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/underline"}
   },
   "strikethrough": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Strikethrough",
     "icon": "format_strikethrough",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/strikethrough"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/strikethrough"}
   },
   "link": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/link",
     "title": "Link",
     "icon": "link",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"}
   },
   "hardbreak": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "New Line",
     "icon": "subdirectory_arrow_left",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/hardbreak"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/hardbreak"}
   },
   "clearformatting": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Clear Formatting",
     "icon": "format_clear",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/clearformatting"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/clearformatting"}
   },
   "undo": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Undo",
     "icon": "undo",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/undo"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/undo"}
   },
   "redo": {
-    "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
     "title": "Redo",
     "icon": "redo",
-    "plugin": {
-      "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "wcm/dialogs/components/richtext/plugin/redo"
-    }
+    "plugin": {"sling:resourceType": "wcm/dialogs/components/richtext/plugin/redo"}
   }
 }

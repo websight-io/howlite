@@ -4,24 +4,13 @@
     "jcr:primaryType": "ws:PageContent",
     "sling:resourceType": "howlite/components/page",
     "rootcontainer": {
-      "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "howlite/components/rootcontainer",
-      "header": {
-        "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "howlite/components/header"
-      },
+      "header": {"sling:resourceType": "howlite/components/header"},
       "maincontainer": {
-        "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "howlite/components/maincontainer",
-        "pagesection": {
-          "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "howlite/components/pagesection"
-        }
+        "pagesection": {"sling:resourceType": "howlite/components/pagesection"}
       },
-      "footer": {
-        "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "howlite/components/footer"
-      }
+      "footer": {"sling:resourceType": "howlite/components/footer"}
     }
   }
 }
