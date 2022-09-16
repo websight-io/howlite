@@ -50,15 +50,12 @@
       },
       "items": {
         "name": "navigation/menuItems",
-        "label": [
-          "Tabs",
-          {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Label"
-          }
-        ],
+        "label": "Tabs",
+        "labelText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        },
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "link": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -75,15 +72,12 @@
     },
     "ctaTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": [
-        "CTA",
-        {
-          "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "cta/label",
-          "label": "Display name"
-        }
-      ],
+      "label": "CTA",
+      "ctaLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "cta/label",
+        "label": "Display name"
+      },
       "link": {
         "sling:resourceType": "wcm/dialogs/components/pathpicker",
         "rootPath": "/content",

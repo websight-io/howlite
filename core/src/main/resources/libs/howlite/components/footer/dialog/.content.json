@@ -45,15 +45,12 @@
       "label": "Menu",
       "items": {
         "name": "navigation/menuItems",
-        "label": [
-          "Tabs",
-          {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Label"
-          }
-        ],
+        "label": "Tabs",
+        "labelText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        },
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "link": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",

@@ -4,16 +4,13 @@
     "sling:resourceType": "wcm/dialogs/components/tabs",
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": [
-        "General",
-        {
-          "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Text",
-          "required": true
-        }
-      ],
+      "label": "General",
+      "labelText": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "label",
+        "label": "Text",
+        "required": true
+      },
       "link": {
         "sling:resourceType": "wcm/dialogs/components/pathpicker",
         "rootPath": "/content",
