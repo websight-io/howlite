@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "group": ".hidden",
+  "allowedComponents": "Howlite",
+  "sling:resourceType": "ws:Component",
+  "description": "Use for most outer, editable (homepage) root",
+  "title": "Body"
+}

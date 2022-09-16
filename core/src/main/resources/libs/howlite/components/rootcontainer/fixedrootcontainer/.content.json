@@ -1,0 +1,7 @@
+{
+  "isContainer": false,
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "description": "Use for most outer, non-editable root",
+  "title": "Body"
+}

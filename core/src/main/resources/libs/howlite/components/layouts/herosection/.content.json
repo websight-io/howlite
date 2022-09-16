@@ -1,0 +1,8 @@
+{
+  "instanceResourceType": "howlite/components/pagesection",
+  "isLayout": true,
+  "group": "Filled Sections",
+  "sling:resourceType": "ws:Component",
+  "description": "First section of any content page",
+  "title": "Hero"
+}

@@ -1,0 +1,6 @@
+{
+  "group": "Howlite",
+  "sling:resourceType": "ws:Component",
+  "description": "This is CTA component for Howlite",
+  "title": "CTA"
+}

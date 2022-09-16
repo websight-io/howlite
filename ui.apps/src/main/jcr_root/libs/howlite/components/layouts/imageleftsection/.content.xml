@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          instanceResourceType="howlite/components/pagesection"
-          jcr:title="Image Left"
-          isLayout="true"
-          group="Filled Sections"/>

@@ -1,0 +1,5 @@
+{
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "title": "Navigation"
+}

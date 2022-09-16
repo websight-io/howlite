@@ -1,0 +1,8 @@
+{
+  "instanceResourceType": "howlite/components/pagesection",
+  "isLayout": true,
+  "group": "Empty Sections",
+  "sling:resourceType": "ws:Component",
+  "description": "Empty Page Section",
+  "title": "1 Column"
+}

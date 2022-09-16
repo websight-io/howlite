@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "group": "Howlite",
+  "allowedComponents": "Howlite",
+  "sling:resourceType": "ws:Component",
+  "description": "Editable components wrapper",
+  "title": "Container"
+}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          jcr:title="Page Section"
-          jcr:description="Use for 12 cols page sections, inside main content"
-          isContainer="true"
-          group=".hidden"
-          allowedComponents="Howlite"/>

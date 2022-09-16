@@ -1,0 +1,25 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "title": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
+      "content": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content"
+      }
+    }
+  }
+}

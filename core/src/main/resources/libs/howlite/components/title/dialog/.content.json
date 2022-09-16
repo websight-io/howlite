@@ -1,0 +1,84 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "headingLevel": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headinglevel"
+      },
+      "headingSize": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/howlite/components/common/headingsize"
+      },
+      "heading": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "default": "Add your heading here",
+        "label": "Heading text",
+        "required": true
+      },
+      "showOverline": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showSubtitle",
+        "label": "Add an overline"
+      },
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "overline": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "subtitle",
+          "description": "Optional line before the main heading",
+          "default": "Add your text here",
+          "label": "Overline text"
+        },
+        "ws:display": {
+          "jcr:primaryType": "nt:unstructured",
+          "condition": {
+            "jcr:primaryType": "nt:unstructured",
+            "sourceName": "showSubtitle",
+            "values": true
+          }
+        }
+      }
+    },
+    "styleTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style",
+      "cssClasses": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "default": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "value": ""
+        },
+        "centered": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Centered on all breakpoints",
+          "value": "hl-title--centered"
+        }
+      }
+    },
+    "gridTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

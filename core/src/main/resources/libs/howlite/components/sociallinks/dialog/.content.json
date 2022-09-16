@@ -1,0 +1,186 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "title1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/1/title",
+        "label": "Linkedin title"
+      },
+      "url1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/1/url",
+        "label": "Linkedin URL"
+      },
+      "icon1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "socialLinkItems/1/icon",
+        "label": "Linkedin icon",
+        "linkedin": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "LinkedIn",
+          "value": "icon-linkedin"
+        },
+        "facebook": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Facebook",
+          "value": "icon-facebook"
+        },
+        "twitter": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Twitter",
+          "value": "icon-twitter"
+        },
+        "instagram": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Instagram",
+          "value": "icon-instagram"
+        }
+      },
+      "title2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/2/title",
+        "label": "Facebook title"
+      },
+      "url2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/2/url",
+        "label": "Facebook URL"
+      },
+      "icon2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "socialLinkItems/2/icon",
+        "label": "Facebook icon",
+        "linkedin": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "LinkedIn",
+          "value": "icon-linkedin"
+        },
+        "facebook": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Facebook",
+          "value": "icon-facebook"
+        },
+        "twitter": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Twitter",
+          "value": "icon-twitter"
+        },
+        "instagram": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Instagram",
+          "value": "icon-instagram"
+        }
+      },
+      "title3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/3/title",
+        "label": "Twitter title"
+      },
+      "url3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/3/url",
+        "label": "Twitter URL"
+      },
+      "icon3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "socialLinkItems/3/icon",
+        "label": "Twitter icon",
+        "linkedin": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "LinkedIn",
+          "value": "icon-linkedin"
+        },
+        "facebook": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Facebook",
+          "value": "icon-facebook"
+        },
+        "twitter": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Twitter",
+          "value": "icon-twitter"
+        },
+        "instagram": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Instagram",
+          "value": "icon-instagram"
+        }
+      },
+      "title4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/4/title",
+        "label": "Instagram title"
+      },
+      "url4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "socialLinkItems/4/url",
+        "label": "Instagram URL"
+      },
+      "icon4": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "socialLinkItems/4/icon",
+        "label": "Instagram icon",
+        "linkedin": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "LinkedIn",
+          "value": "icon-linkedin"
+        },
+        "facebook": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Facebook",
+          "value": "icon-facebook"
+        },
+        "twitter": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Twitter",
+          "value": "icon-twitter"
+        },
+        "instagram": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Instagram",
+          "value": "icon-instagram"
+        }
+      }
+    },
+    "gridTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}

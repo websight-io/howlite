@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "tabs": {
+    "jcr:primaryType": "nt:unstructured",
+    "generalTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "bodyClasses": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "ws:disallowedContext": ["create"],
+        "path": "/libs/howlite/components/common/stylevariant"
+      }
+    },
+    "metadataTab": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Metadata",
+      "title": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property title",
+        "name": "title"
+      },
+      "description": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property description",
+        "name": "description"
+      },
+      "ogImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property og:image",
+        "name": "ogImage"
+      },
+      "ogType": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "Property og:type",
+        "name": "ogType",
+        "article": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "article",
+          "value": "article"
+        },
+        "website": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "website",
+          "value": "website"
+        }
+      },
+      "ogUrl": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property og:url",
+        "name": "ogUrl"
+      },
+      "ogDescription": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property og:description",
+        "name": "ogDescription"
+      },
+      "ogTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property og:title",
+        "name": "ogTitle"
+      },
+      "twitterCard": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "Property twitter:card",
+        "name": "twitterCard",
+        "summary": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "summary",
+          "value": "summary"
+        },
+        "summaryLargeImage": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "summary_large_image",
+          "value": "summary_large_image"
+        }
+      },
+      "twitterTitle": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property twitter:title",
+        "name": "twitterTitle"
+      },
+      "twitterImageAlt": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property twitter:image:alt",
+        "name": "twitterImageAlt"
+      },
+      "twitterSite": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property twitter:site",
+        "name": "twitterSite"
+      },
+      "twitterDescription": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property twitter:description",
+        "name": "twitterDescription"
+      },
+      "twitterImage": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Property twitter:image",
+        "name": "twitterImage"
+      }
+    }
+  }
+}

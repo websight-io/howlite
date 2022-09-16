@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          jcr:title="Main Content"
-          jcr:description="Use for main content, inside body tag, between header and footer"
-          isContainer="true"
-          group=".hidden"
-          allowedComponents="[/libs/howlite/components/pagesection,/libs/howlite/components/container,Empty Sections,Filled Sections]"/>

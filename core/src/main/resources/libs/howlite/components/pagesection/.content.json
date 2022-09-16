@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "group": ".hidden",
+  "allowedComponents": "Howlite",
+  "sling:resourceType": "ws:Component",
+  "description": "Use for 12 cols page sections, inside main content",
+  "title": "Page Section"
+}

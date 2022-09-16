@@ -28,7 +28,6 @@
   <modules>
     <module>core</module>
     <module>ui.frontend</module>
-    <module>ui.apps</module>
     <module>tests</module>
   </modules>
 
