@@ -501,7 +501,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.sling-mock.junit5</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.2</version>
         <scope>test</scope>
       </dependency>
       <dependency>
