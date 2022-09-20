@@ -81,4 +81,64 @@ describe('Page Section component', function () {
         backgroundImageLg: '/content/howlite-test/assets/landscape.jpg'
       });
   });
+
+  it('all of the components are visible in edit mode', function () {
+    let expectedMainElements = [
+      ' Howlite',
+      'Accordion',
+      'CTA',
+      'CTAs List',
+      'Cards List',
+      'Container',
+      'Image',
+      'Logo cloud',
+      'Quote',
+      'Rich text editor',
+      'Title'
+    ];
+    let expectedRestrictedElements = [
+      ' Howlite Restricted',
+      'Accordion Item',
+      'Card Item'
+    ];
+    cy.visit(
+      '/apps/websight/index.html/content/howlite-test/pages/Page-Section::editor'
+    );
+
+    cy.getByTestId('components-section-components').click();
+
+    //Main Howlite components
+    cy.getByTestId('ComponentSection')
+      .getByTestId('ComponentDefinitionsGroup_Howlite')
+      .children()
+      .should('have.length', 11)
+      .each((item, index) => {
+        //First element is name of group and structure is different
+        if (index === 0) {
+          cy.wrap(item).should('have.text', expectedMainElements[index]);
+        } else {
+          cy.wrap(item)
+            .find('.name')
+            .first()
+            .should('have.text', expectedMainElements[index]);
+        }
+      });
+
+    // Howlite restricted components
+    cy.getByTestId('ComponentSection')
+      .getByTestId('ComponentDefinitionsGroup_HowliteRestricted')
+      .children()
+      .should('have.length', 3)
+      .each((item, index) => {
+        //First element is name of group and structure is different
+        if (index === 0) {
+          cy.wrap(item).should('have.text', expectedRestrictedElements[index]);
+        } else {
+          cy.wrap(item)
+            .find('.name')
+            .first()
+            .should('have.text', expectedRestrictedElements[index]);
+        }
+      });
+  });
 });
