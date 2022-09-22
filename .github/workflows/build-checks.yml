@@ -56,7 +56,7 @@ jobs:
         run: |
               export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner ${{ secrets.AWS_ACCOUNT_ID }} --query authorizationToken --output text`
               mkdir -p ~/.m2/repository
-              cp .github/settings.xml ~/.m2/settings.xml
+              curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/settings.xml
               echo "CODEARTIFACT_AUTH_TOKEN=${CODEARTIFACT_AUTH_TOKEN}" >> $GITHUB_ENV
       - name: Update snapshot version
         if: ${{ github.event_name == 'schedule' }}

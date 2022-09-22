@@ -30,7 +30,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <websight.ice.version>2.0.0-SNAPSHOT</websight.ice.version>
+    <websight.cms.version>0.1.1</websight.cms.version>
     <howlite.version>${project.parent.version}</howlite.version>
 
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
@@ -39,9 +39,9 @@
   <dependencies>
     <dependency>
       <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-ice-distribution</artifactId>
-      <version>${websight.ice.version}</version>
-      <classifier>wsce</classifier>
+      <artifactId>websight-cms-ce-feature</artifactId>
+      <version>${websight.cms.version}</version>
+      <classifier>community</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
@@ -90,9 +90,9 @@
               <title>Howlite with test data</title>
               <includeArtifact>
                 <groupId>pl.ds.websight</groupId>
-                <artifactId>websight-ice-distribution</artifactId>
-                <version>${websight.ice.version}</version>
-                <classifier>wsce</classifier>
+                <artifactId>websight-cms-ce-feature</artifactId>
+                <version>${websight.cms.version}</version>
+                <classifier>community_test_mongo</classifier>
                 <type>slingosgifeature</type>
               </includeArtifact>
             </aggregate>
