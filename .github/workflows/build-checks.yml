@@ -56,7 +56,7 @@ jobs:
         run: |
               export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner ${{ secrets.AWS_ACCOUNT_ID }} --query authorizationToken --output text`
               mkdir -p ~/.m2/repository
-              curl -s https://repo.websight.io/settings-websight-public.xml --output ~/.m2/settings.xml
+              curl -s https://ws-dev-public.s3.eu-central-1.amazonaws.com/settings-code-artifact-deploy.xml --output ~/.m2/settings.xml
               echo "CODEARTIFACT_AUTH_TOKEN=${CODEARTIFACT_AUTH_TOKEN}" >> $GITHUB_ENV
       - name: Update snapshot version
         if: ${{ github.event_name == 'schedule' }}
@@ -69,12 +69,12 @@ jobs:
           github.event.schedule != '30 3 * * 1,3,5'
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-        run: mvn --batch-mode --update-snapshots clean install -P e2e
+        run: mvn --batch-mode --update-snapshots clean verify -P e2e
       - name: Build and test visual with Maven and Percy
         if: github.event.schedule == '30 3 * * 1,3,5'
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
           HOWLITE_PERCY_TOKEN: ${{ secrets.HOWLITE_PERCY_TOKEN }}
-        run: mvn --batch-mode --update-snapshots clean install -P e2e-visual
+        run: mvn --batch-mode --update-snapshots clean verify -P e2e-visual
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
