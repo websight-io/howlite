@@ -83,8 +83,7 @@ describe('Page Section component', function () {
   });
 
   it('all of the components are visible in edit mode', function () {
-    let expectedMainElements = [
-      ' Howlite',
+    const expectedMainElements = [
       'Accordion',
       'CTA',
       'CTAs List',
@@ -96,11 +95,7 @@ describe('Page Section component', function () {
       'Rich text editor',
       'Title'
     ];
-    let expectedRestrictedElements = [
-      ' Howlite Restricted',
-      'Accordion Item',
-      'Card Item'
-    ];
+    const expectedRestrictedElements = ['Accordion Item', 'Card Item'];
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Page-Section::editor'
     );
@@ -111,34 +106,34 @@ describe('Page Section component', function () {
     cy.getByTestId('ComponentSection')
       .getByTestId('ComponentDefinitionsGroup_Howlite')
       .children()
-      .should('have.length', 11)
-      .each((item, index) => {
-        //First element is name of group and structure is different
-        if (index === 0) {
-          cy.wrap(item).should('have.text', expectedMainElements[index]);
-        } else {
-          cy.wrap(item)
-            .find('.name')
-            .first()
-            .should('have.text', expectedMainElements[index]);
-        }
-      });
+      .first()
+      .should('have.text', ' Howlite');
+
+    expectedMainElements.forEach((item) => {
+      let testIdItem = item.replaceAll(' ', '');
+      cy.getByTestId('ComponentSection')
+        .getByTestId('ComponentDefinitionsGroup_Howlite')
+        .getByTestId('Component_' + testIdItem)
+        .find('.name')
+        .first()
+        .should('have.text', item);
+    });
 
     // Howlite restricted components
     cy.getByTestId('ComponentSection')
       .getByTestId('ComponentDefinitionsGroup_HowliteRestricted')
       .children()
-      .should('have.length', 3)
-      .each((item, index) => {
-        //First element is name of group and structure is different
-        if (index === 0) {
-          cy.wrap(item).should('have.text', expectedRestrictedElements[index]);
-        } else {
-          cy.wrap(item)
-            .find('.name')
-            .first()
-            .should('have.text', expectedRestrictedElements[index]);
-        }
-      });
+      .first()
+      .should('have.text', ' Howlite Restricted');
+
+    expectedRestrictedElements.forEach((item) => {
+      let testIdItem = item.replaceAll(' ', '');
+      cy.getByTestId('ComponentSection')
+        .getByTestId('ComponentDefinitionsGroup_HowliteRestricted')
+        .getByTestId('Component_' + testIdItem)
+        .find('.name')
+        .first()
+        .should('have.text', item);
+    });
   });
 });
