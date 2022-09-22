@@ -31,7 +31,7 @@
 
   <properties>
     <websight.cms.version>0.1.1</websight.cms.version>
-    <howlite.version>${project.parent.version}</howlite.version>
+    <howlite.version>${project.version}</howlite.version>
 
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
   </properties>
@@ -41,18 +41,18 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-cms-ce-feature</artifactId>
       <version>${websight.cms.version}</version>
-      <classifier>community</classifier>
+      <classifier>community_test_mongo</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.howlite</groupId>
       <artifactId>howlite-core</artifactId>
-      <version>${howlite.version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>pl.ds.howlite</groupId>
       <artifactId>howlite-tests-content</artifactId>
-      <version>${howlite.version}</version>
+      <version>${project.version}</version>
       <type>pom</type>
     </dependency>
   </dependencies>
