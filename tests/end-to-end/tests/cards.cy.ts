@@ -119,7 +119,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('dialogTab_Cardimage').click();
     cy.getByTestId('Input_Alttext').clear().type('Image of the card item');
 
-    cy.getByTestId("dialogTab_CardCTA").click();
+    cy.getByTestId('dialogTab_CardCTA').click();
     cy.getByTestId('Input_Displayname').clear().type('Link title');
 
     cy.get('input[placeholder="Choose a path"]').clear().type('#');

@@ -19,7 +19,8 @@ import '@4tw/cypress-drag-drop';
 /**
  * Adds support for '/' in testId
  */
-const prepareTestId = (testId: string) => testId.replaceAll('/', '\\/');
+const prepareTestId = (testId: string) =>
+  testId.replaceAll('/', '\\/').replaceAll('.', '\\.');
 
 Cypress.Commands.add('getByTestId', (testId) => {
   return cy.get(`[data-testid=${prepareTestId(testId)}]`);
