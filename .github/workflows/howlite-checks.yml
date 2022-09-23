@@ -12,10 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Howlite Pull Request checks
+name: Howlite checks
 
 on:
   pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-test-pr:

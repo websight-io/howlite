@@ -62,19 +62,13 @@ jobs:
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       - name: Build and test with Maven and Cypress
-        if: >-
-          github.event.name == 'workflow_dispatch' ||
-          github.event.schedule == '30 3 * * 2,4'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 3 * * 2,4'
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         run: mvn --batch-mode --update-snapshots clean verify -P e2e
       - name: Build and test visual with Maven and Percy
-        if: >-
-          github.event.name == 'workflow_dispatch' ||
-          github.event.schedule == '30 3 * * 1,3,5'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 3 * * 1,3,5'
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
           HOWLITE_PERCY_TOKEN: ${{ secrets.HOWLITE_PERCY_TOKEN }}
         run: mvn --batch-mode --update-snapshots clean verify -P e2e-visual
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
