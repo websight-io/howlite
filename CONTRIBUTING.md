@@ -21,3 +21,10 @@ checkstyle issue, our `mvn clean install` should fail with the message:
 [WARN] /Projects/websight/projects/howlite/core/src/main/java/pl/ds/howlite/components/models/AccordionItemComponent.java:14:3: Annotation 'Default' have incorrect indentation level 2, expected level should be 7. [AnnotationLocationVariables]
 Audit done.
 ```
+
+## Releasing
+Howlite release is done using GitHub Actions `Release Howlite` workflow.
+
+The 'Prepare release' step requires configuring:
+- a public key as [deploy keys](https://docs.github.com/v3/guides/managing-deploy-keys/#deploy-keys) 
+- a private key as a GitHub Action secret (`SSH_SECRET_KEY`).
