@@ -78,7 +78,7 @@
     <npm.version>8.4.1</npm.version>
 
     <!-- backend dependencies -->
-    <jupiter.version>5.9.0</jupiter.version>
+    <jupiter.version>5.9.1</jupiter.version>
 
     <!-- admin user default credentials for tests and maven plugins -->
     <websight.admin.username>wsadmin</websight.admin.username>
