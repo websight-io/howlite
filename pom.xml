@@ -21,7 +21,7 @@
   <groupId>pl.ds.howlite</groupId>
   <artifactId>howlite-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>Howlite</name>
   <description>Howlite parent module</description>
 
@@ -44,9 +44,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git@github.com:websight-io/howlite.git</connection>
-    <developerConnection>scm:git@github.com:websight-io/howlite.git</developerConnection>
-    <url>https://github.com/websight-io/howlite/</url>
+    <url>https://github.com/websight-io/howlite</url>
+    <connection>scm:git:git://github.com/websight-io/howlite.git</connection>
+    <developerConnection>scm:git:git@github.com:websight-io/howlite.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
@@ -54,7 +54,7 @@
     <!-- generic -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>10</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1664185385</project.build.outputTimestamp>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
@@ -312,6 +312,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <extensions>
+      <extension>
+        <groupId>com.github.seahen</groupId>
+        <artifactId>maven-s3-wagon</artifactId>
+        <version>1.3.3</version>
+      </extension>
+    </extensions>
   </build>
 
   <dependencyManagement>
@@ -596,6 +603,32 @@
           </plugins>
         </pluginManagement>
       </build>
+    </profile>
+    <profile>
+      <id>code-artifact-distribution</id>
+      <distributionManagement>
+        <repository>
+          <id>ws-code-artifact-repo</id>
+          <name>ws-code-artifact-repo</name>
+          <url>https://websight-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-repo/</url>
+        </repository>
+        <snapshotRepository>
+          <id>ws-code-artifact-snapshot-repo</id>
+          <name>ws-code-artifact-snapshot-repo</name>
+          <url>https://websight-internal-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-snapshot-repo/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+
+    <profile>
+      <id>s3-distribution</id>
+      <distributionManagement>
+        <repository>
+          <id>ws-s3-repo</id>
+          <name>ws-s3-repo</name>
+          <url>s3://repo.websight.io/maven</url>
+        </repository>
+      </distributionManagement>
     </profile>
   </profiles>
 
