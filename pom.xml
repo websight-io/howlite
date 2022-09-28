@@ -21,7 +21,7 @@
   <groupId>pl.ds.howlite</groupId>
   <artifactId>howlite-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.2-SNAPSHOT</version>
+  <version>0.2.0-SNAPSHOT</version>
   <name>Howlite</name>
   <description>Howlite parent module</description>
 
@@ -54,7 +54,7 @@
     <!-- generic -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>1664188915</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1664361205</project.build.outputTimestamp>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
