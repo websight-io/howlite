@@ -65,7 +65,7 @@ jobs:
           printf '%s\n' "${{ secrets.SSH_SECRET_KEY }}" > ~/.ssh/id_rsa
           chmod 0600 ~/.ssh/id_rsa
           ls -al ~/.ssh
-          mvn --batch-mode -s ~/.m2/settings-websight-public.xml release:prepare
+          ./mvnw --batch-mode -s ~/.m2/settings-websight-public.xml release:prepare
           RELEASED_VERSION=$(git describe --tags --abbrev=0)
           echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_ENV
       - name: Release to Code Artifact
@@ -74,9 +74,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -s https://ws-dev-public.s3.eu-central-1.amazonaws.com/settings-code-artifact-deploy.xml --output ~/.m2/settings-code-artifact-deploy.xml
-          mvn --batch-mode -s ~/.m2/settings-code-artifact-deploy.xml -P code-artifact-distribution release:perform
+          ./mvnw --batch-mode -s ~/.m2/settings-code-artifact-deploy.xml -P code-artifact-distribution release:perform
       - name: Deploy to S3
         run: |
           curl -s https://ws-dev-public.s3.eu-central-1.amazonaws.com/settings-s3-publication.xml --output ~/.m2/settings-s3-publication.xml
           git checkout tags/${RELEASED_VERSION}
-          mvn --batch-mode -s ~/.m2/settings-s3-publication.xml -P s3-distribution -Dmaven.install.skip=true -DskipTests=true deploy
+          ./mvnw --batch-mode -s ~/.m2/settings-s3-publication.xml -P s3-distribution -Dmaven.install.skip=true -DskipTests=true deploy
