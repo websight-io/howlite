@@ -13,13 +13,13 @@ Howlite is a sample component library for the [WebSight CMS](https://www.websigh
 ### Build
 
 ```bash
-mvn clean install
+./mvnw clean install
 ```
 
 ### Running end-to-end tests
 
 ```bash
-mvn clean install -P e2e
+./mvnw clean install -P e2e
 ```
 
 ### Running dev instance
