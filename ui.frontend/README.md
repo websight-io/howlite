@@ -6,8 +6,8 @@ Module contains Front-End for Howlite. During build it copy build results to web
 
 Build
 
-```
-mvn clean install
+```bash
+../mvnw clean install
 ```
 
 Local development
