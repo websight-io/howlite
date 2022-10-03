@@ -8,13 +8,13 @@ It contains:
 ## How to run tests without Percy
 
 ```bash
-mvn clean install -P e2e
+../mvnw clean install -P e2e
 ```
 
 ## How to run tests with Percy
 You need to set HOWLITE_PERCY_TOKEN variable to upload snapshot to Percy.
 ```bash
-mvn clean install -P e2e-visual
+../mvnw clean install -P e2e-visual
 ```
 
 Remember that e2e and e2e-visual are overlaying in some part and should not be run together!
