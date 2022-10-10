@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.1.0",
-    "@percy/cli": "^1.10.4",
+    "@percy/cli": "^1.11.0",
     "@percy/cypress": "^3.1.2",
     "@types/jest": "^29.1.2",
     "@types/node": "^18.7.21",
@@ -28,6 +28,6 @@
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   }
 }
