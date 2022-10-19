@@ -8,6 +8,7 @@ Howlite is a sample component library for the [WebSight CMS](https://www.websigh
 - `tests` - responsible for the automatic validation of the Howlite components
     - `content` - the minimal set of components and pages used during testing
     - `end-to-end` - end-to-end tests validating both Howlite components on authoring and publication
+
 ## Development
 
 ### Build
@@ -39,7 +40,13 @@ java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slin
 Instance should start at http://localhost:8080/ in a couple of seconds (default credentials: `wsadmin/wsadmin`).
 
 ## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md).
+Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request to the project.
+
+## Community support
+Please check the community support section in [WebSight Starter](https://github.com/websight-io/starter).
 
 ## Authoring Guides
 Description of all Howlite components can be found on [websight.io](https://www.websight.io/guides/authoring/howlite/)
+
+## License
+Howlite components is `open-source` project with `Apache License 2.0` license.
