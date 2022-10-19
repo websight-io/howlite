@@ -76,7 +76,7 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins() {
+                            postcssOptions() {
                                 return [
                                     require('autoprefixer')
                                 ];
