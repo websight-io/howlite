@@ -52,7 +52,7 @@ describe('Image component', function () {
     cy.getByTestId(paths.imagePlaceholder)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Image');
+      .should('contain.text', 'Image');
 
     cy.getByTestId(testIds.editIcon).click();
 

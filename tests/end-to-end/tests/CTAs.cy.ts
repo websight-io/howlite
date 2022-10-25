@@ -45,12 +45,12 @@ describe('CTA components and CTA list component', function () {
     cy.getByTestId(paths.ctasList)
       .click({ force: true })
       .find(selectors.overlayName)
-      .should('have.text', 'CTAs List');
+      .should('contain.text', 'CTAs List');
 
     cy.getByTestId(paths.cta)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'CTA');
+      .should('contain.text', 'CTA');
 
     cy.percySnapshotPageEditor('CTA editor');
 

@@ -49,7 +49,7 @@ describe('Accordion component', function () {
     cy.getByTestId(paths.accordionItem)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Accordion Item');
+      .should('contain.text', 'Accordion Item');
 
     cy.percySnapshotPageEditor('Accordion editor');
 
@@ -84,7 +84,7 @@ describe('Accordion component', function () {
     cy.getByTestId(paths.emptyAccordion)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Accordion');
+      .should('contain.text', 'Accordion');
   });
 
   // TODO: check grid classes once dropdowns have test-ids

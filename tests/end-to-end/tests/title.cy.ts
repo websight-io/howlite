@@ -43,7 +43,7 @@ describe('Title component', function () {
     cy.getByTestId(paths.title)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Title');
+      .should('contain.text', 'Title');
 
     cy.percySnapshotPageEditor('Title editor');
 
