@@ -43,7 +43,7 @@ describe('Container component', function () {
     cy.getByTestId(paths.container)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Container');
+      .should('contain.text', 'Container');
 
     cy.percySnapshotPageEditor('Container editor');
 

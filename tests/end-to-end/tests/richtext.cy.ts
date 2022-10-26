@@ -50,7 +50,7 @@ describe('Rich text editor component', () => {
     cy.getByTestId(paths.richtextWithChecklist)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Rich text editor');
+      .should('contain.text', 'Rich text editor');
 
     cy.percySnapshotPageEditor('Rich text editor');
 

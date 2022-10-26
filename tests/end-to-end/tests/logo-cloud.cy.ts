@@ -44,7 +44,7 @@ describe('Logo cloud component', function () {
     cy.getByTestId(paths.logoCloud)
       .click({ force: true })
       .find(selectors.overlayName)
-      .should('have.text', 'Logo cloud');
+      .should('contain.text', 'Logo cloud');
 
     cy.percySnapshotPageEditor('Logo cloud editor');
 

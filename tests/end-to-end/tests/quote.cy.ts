@@ -43,7 +43,7 @@ describe('Quote component', () => {
     cy.getByTestId(paths.quote)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Quote');
+      .should('contain.text', 'Quote');
 
     cy.percySnapshotPageEditor('Quote editor');
 

@@ -43,7 +43,7 @@ describe('Page Section component', function () {
     cy.getByTestId(paths.pageSection)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Page Section');
+      .should('contain.text', 'Page Section');
 
     cy.percySnapshotPageEditor('Page Section editor');
 

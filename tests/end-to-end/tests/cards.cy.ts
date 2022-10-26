@@ -58,7 +58,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId(paths.cardsList)
       .click({ force: true })
       .find(selectors.overlayName)
-      .should('have.text', 'Cards List');
+      .should('contain.text', 'Cards List');
 
     cy.percySnapshotPageEditor('Cards list editor');
 
@@ -107,7 +107,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId(paths.cardItem)
       .click({ force: true })
       .find(selectors.overlayName)
-      .should('have.text', 'Card Item');
+      .should('contain.text', 'Card Item');
 
     cy.percySnapshotPageEditor('Card item editor');
 
