@@ -20,7 +20,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "chai": "^4.3.6",
-    "cypress": "^10.11.0",
+    "cypress": "^11.0.1",
     "eslint": "^8.27.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-cypress": "^2.12.1",
