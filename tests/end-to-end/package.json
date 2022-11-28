@@ -13,7 +13,7 @@
     "rebuild-content": "cd ../content && mvn clean install -P autoInstallPackage"
   },
   "devDependencies": {
-    "@4tw/cypress-drag-drop": "^2.1.0",
+    "@4tw/cypress-drag-drop": "^2.2.2",
     "@percy/cli": "^1.14.0",
     "@percy/cypress": "^3.1.2",
     "@types/jest": "^29.2.3",
