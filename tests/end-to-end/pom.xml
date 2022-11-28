@@ -29,7 +29,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <websight.cms.version>1.3.0</websight.cms.version>
+    <websight.cms.version>1.4.0</websight.cms.version>
     <howlite.version>${project.version}</howlite.version>
 
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
@@ -302,6 +302,17 @@
               <environmentVariables>
                 <CI>1</CI>
               </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npx healthcheck</id>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <phase>integration-test</phase>
+            <configuration>
+              <skip>${e2e.skip}</skip>
+              <arguments>wait-on http://localhost:${wsce.port}/system/health -t 30000</arguments>
             </configuration>
           </execution>
           <execution>
