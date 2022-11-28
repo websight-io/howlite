@@ -305,6 +305,17 @@
             </configuration>
           </execution>
           <execution>
+            <id>npx healthcheck</id>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <phase>integration-test</phase>
+            <configuration>
+              <skip>${e2e.skip}</skip>
+              <arguments>wait-on http://localhost:${wsce.port}/system/health -t 30000</arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>npx test</id>
             <goals>
               <goal>npx</goal>
