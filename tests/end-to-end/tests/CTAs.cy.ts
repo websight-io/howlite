@@ -20,7 +20,7 @@ const paths = {
   cta: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/ctaslist/cta1'
 };
 
-const pathpickerInput = 'input[placeholder="Choose a path"';
+const pathpickerInput = 'input[placeholder="Type / to choose a path or enter a value"';
 
 describe('CTA components and CTA list component', function () {
   beforeEach(() => {
