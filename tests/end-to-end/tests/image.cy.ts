@@ -73,7 +73,7 @@ describe('Image component', function () {
 
     cy.getByTestId('Input_Alttext').clear().type('Image of a logo');
     cy.getByTestId('Input_Link--toggle-check-icon').click();
-    cy.get('input[placeholder="Choose a path"]').clear().type('#');
+    cy.get('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
     cy.getByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
 
     cy.percySnapshotDialog('Image dialog');

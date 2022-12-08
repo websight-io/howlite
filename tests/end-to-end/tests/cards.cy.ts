@@ -122,7 +122,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('dialogTab_CardCTA').click();
     cy.getByTestId('Input_Displayname').clear().type('Link title');
 
-    cy.get('input[placeholder="Choose a path"]').clear().type('#');
+    cy.get('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
     cy.getByTestId('Input_Openlinkinanewtab--checkbox-label').click();
     cy.getByTestId('Input_Showicon--checkbox-label').click();
 
