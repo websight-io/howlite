@@ -29,7 +29,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <websight.cms.version>1.5.0</websight.cms.version>
+    <websight.cms.version>1.6.0</websight.cms.version>
     <howlite.version>${project.version}</howlite.version>
 
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
