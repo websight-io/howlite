@@ -13,7 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<body class="${properties.defaultTemplateCSS} ${properties.bodyClasses}">
+<body class="${properties.defaultTemplateCSS} ${properties.bodyClasses} ${wcmmode.isEdit ? '' : 'v-min-height'}">
 <sly data-sly-include="body-start.html"></sly>
 <sly data-sly-include="body-content.html"></sly>
 <sly data-sly-include="body-end.html"></sly>
