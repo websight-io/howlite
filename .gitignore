@@ -23,8 +23,9 @@ node/
 target/
 dist/
 
-# JetBrains IDE
+# JetBrains and VSC IDE
 .idea/
+.history/
 
 # Unit test reports
 TEST*.xml

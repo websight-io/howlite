@@ -21,6 +21,7 @@
   counter-reset: cards-list;
 
   &.hl-cards-list--slider {
+    overflow: hidden;
     @include abstracts.media-breakpoint-down(md) {
       width: 100%;
       margin-left: 0;
@@ -28,7 +29,27 @@
     }
   }
 
-  
+  .hl-cards-list--slider {
+    &-controls {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    &-control {
+      margin: 18px 5px;
+      cursor: pointer;
+      @include abstracts.social-icon;
+      &.hl-icon--left {
+        transform: rotate(180deg)
+      }
+      &.glide__arrow--disabled {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
   &.hl-grid {
     display: grid;
   }
