@@ -14,37 +14,6 @@
  * limitations under the License.
  */
 
-@use './abstracts';
-
-// CSS reset
-@import './base/reset';
-@import './base/utils';
-
-* {
-  box-sizing: border-box;
-  color: var(--color-default);
-}
-
-a {
-  text-decoration: none;
-}
-
-img,
-svg {
-  vertical-align: middle;
-}
-
-// global styles
-body {
-  background-color: var(--color-body-background);
-  
-  @include abstracts.font-body;
-
-  &.primary-color {
-    @each $name, $color in abstracts.$primary-colors {
-      &--#{$name} {
-        --color-primary: #{$color};
-      }
-    }
-  }
+.v-min-height {
+    min-height: 100vh;
 }
