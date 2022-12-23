@@ -15,8 +15,7 @@
 */-->
 <template data-sly-template.cta="${ @ label, link, openInNewTab, displayIcon, classes}">
     <a data-sly-attribute.href="${link}"
-       data-sly-attribute.target="${openInNewTab ? '_blank' : ''}"
-       class="hl-cta ${iconName ? 'hl-cta--with-icon' : ''} ${classes @ join=' '}">
+       data-sly-attribute.target="${openInNewTab ? '_blank' : ''}">
       <span class="hl-cta__text">${label}<sly data-sly-test="${displayIcon}"><i class="hl-icon hl-cta__icon"></i></sly></span>
     </a>
 </template>

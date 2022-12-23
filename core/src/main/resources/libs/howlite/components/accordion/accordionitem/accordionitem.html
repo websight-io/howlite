@@ -13,14 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.model="pl.ds.howlite.components.models.AccordionItemComponent">
-    <li class="hl-accordion-item">
-        <button aria-expanded="false" class="hl-accordion-item__title">
-            ${model.title}
-            <i class="hl-icon icon-chevron-down hl-accordion-item__icon"></i>
-        </button>
-        <div role="region" class="hl-accordion-item__content">
-            ${model.content @ context='html'}
-        </div>
-    </li>
-</sly>
+
+<p-accordiontab header="Accordion Item">
+    <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+</p-accordiontab>

@@ -1,0 +1,7 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "accordionitemcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "howlite/components/accordion/accordionitem/accordionitemcontent"
+  }
+}

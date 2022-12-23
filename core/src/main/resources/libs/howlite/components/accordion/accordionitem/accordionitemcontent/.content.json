@@ -1,0 +1,7 @@
+{
+  "isContainer": true,
+  "group": ".hidden",
+  "sling:resourceType": "ws:Component",
+  "title": "Accordion Item Content",
+  "allowedComponents": "Howlite"
+}

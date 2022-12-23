@@ -15,6 +15,35 @@
 */-->
 <body class="${properties.defaultTemplateCSS} ${properties.bodyClasses} ${wcmmode.isEdit ? '' : 'v-min-height'}">
 <sly data-sly-include="body-start.html"></sly>
-<sly data-sly-include="body-content.html"></sly>
+<div id="app">
+  <sly data-sly-include="body-content.html"></sly>
+</div>
 <sly data-sly-include="body-end.html"></sly>
+<script>
+
+  const {createApp, ref} = Vue;
+
+  const App = {
+    setup() {
+      const val = ref(null);
+
+      return {
+        val,
+      };
+    },
+    components: {
+      "p-accordion": primevue.accordion,
+      "p-accordiontab": primevue.accordiontab
+    },
+    compilerOptions: {
+      comments: true
+    }
+  };
+
+  let app = createApp(App);
+  // app.config.compilerOptions.comments = true
+  app.use(primevue.config.default).mount("#app");
+</script>
+<script src="/libs/howlite/web_root/main.js"></script>
+
 </body>

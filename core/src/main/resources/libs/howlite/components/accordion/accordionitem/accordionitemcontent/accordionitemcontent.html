@@ -13,9 +13,6 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-
-<sly data-sly-test="${resource.hasChildren}" class="${CSSclasses}">
-  <p-accordion :multiple="true" :active-index="[0, 1, 2, 3, 4]">
+<div data-sly-test="${resource.hasChildren}" class="${CSSclasses}">
     <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-  </p-accordion>
-</sly>
+</div>
