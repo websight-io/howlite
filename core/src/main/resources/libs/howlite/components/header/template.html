@@ -14,9 +14,9 @@
     limitations under the License.
 */-->
 <template data-sly-template.header="${ @ model}">
-    <sly data-sly-test.image="${model.image}"></sly>
-    <sly data-sly-test.navigation="${model.navigation}"></sly>
-    <sly data-sly-test.cta="${model.cta}"></sly>
+    <sly data-sly-set.image="${model.image}"></sly>
+    <sly data-sly-set.navigation="${model.navigation}"></sly>
+    <sly data-sly-set.cta="${model.cta}"></sly>
 
     <sly data-sly-test="${image || navigation || cta}">
         <nav class="hl-header">

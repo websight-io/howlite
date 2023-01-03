@@ -14,9 +14,9 @@
     limitations under the License.
 */-->
 <template data-sly-template.footer="${ @ model}">
-    <sly data-sly-test.image="${model.image}"></sly>
-    <sly data-sly-test.navigation="${model.navigation}"></sly>
-    <sly data-sly-test.socialLinks="${model.socialLinks}"></sly>
+    <sly data-sly-set.image="${model.image}"></sly>
+    <sly data-sly-set.navigation="${model.navigation}"></sly>
+    <sly data-sly-set.socialLinks="${model.socialLinks}"></sly>
 
     <sly data-sly-test="${image || navigation || socialLinks || model.copyright}">
         <footer class="hl-footer">

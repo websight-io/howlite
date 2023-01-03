@@ -14,7 +14,7 @@
     limitations under the License.
 */-->
 <sly data-sly-use.model="pl.ds.howlite.components.models.PageSectionComponent">
-  <sly data-sly-test.CSSclasses="hl-page-section ${model.classes @ join=' '}"></sly>
+  <sly data-sly-set.CSSclasses="hl-page-section ${model.classes @ join=' '}"></sly>
     <section data-sly-test="${resource.hasChildren}" class="${CSSclasses}"
       style="--bg-image-sm:${model.backgroundImageSm @ context='text'};--height-sm:auto;--bg-image-md: ${model.backgroundImageMd @ context='text'};--height-md:auto;--bg-image-lg:${model.backgroundImageLg @ context='text'};--height-lg:auto;">
       <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
