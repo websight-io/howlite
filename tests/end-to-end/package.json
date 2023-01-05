@@ -13,15 +13,15 @@
     "rebuild-content": "cd ../content && mvn clean install -P autoInstallPackage"
   },
   "devDependencies": {
-    "@4tw/cypress-drag-drop": "^2.2.2",
+    "@4tw/cypress-drag-drop": "^2.2.3",
     "@percy/cli": "^1.16.0",
     "@percy/cypress": "^3.1.2",
-    "@types/jest": "^29.2.4",
-    "@types/node": "^18.11.17",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
     "chai": "^4.3.7",
-    "cypress": "^12.1.0",
-    "eslint": "^8.29.0",
+    "cypress": "^12.2.0",
+    "eslint": "^8.31.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
     "eslint-plugin-cypress": "^2.12.1",
     "onchange": "^7.1.0",
@@ -29,6 +29,6 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.7.0",
     "typescript": "^4.9.4",
-    "wait-on": "^6.0.1"
+    "wait-on": "^7.0.1"
   }
 }
