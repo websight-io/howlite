@@ -134,6 +134,12 @@
             <groupId>pl.ds.websight</groupId>
             <artifactId>websight-assets-core-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>pl.ds.websight</groupId>
+            <artifactId>websight-fragments-registry</artifactId>
+            <version>1.0.3</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
