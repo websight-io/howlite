@@ -9,7 +9,8 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "quoteText",
         "required": true,
-        "label": "Text"
+        "label": "Text",
+        "ws:disallowedContext": ["sidepanel"]
       },
       "authorName": {
         "sling:resourceType": "wcm/dialogs/components/textfield",

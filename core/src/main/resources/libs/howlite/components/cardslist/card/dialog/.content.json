@@ -13,7 +13,8 @@
       "content": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "content",
-        "label": "Content"
+        "label": "Content",
+        "ws:disallowedContext": ["sidepanel"]
       }
     },
     "imageTab": {
