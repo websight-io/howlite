@@ -5,7 +5,7 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "ws:disallowedContext": ["sidepanel"],
+      "ws:disallowedContext": ["edit:panel"],
       "text": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",

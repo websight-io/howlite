@@ -14,7 +14,7 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "content",
         "label": "Content",
-        "ws:disallowedContext": ["sidepanel"]
+        "ws:disallowedContext": ["edit:panel"]
       }
     }
   }
