@@ -1,6 +1,6 @@
 export default {
   init: (editor) => {
-    editor.addEventListener('component tree refresh', () => {
+    editor.addEventListener('component-dom-updated', () => {
       editor.componentTree.get().parentDocument.location.reload();
     });
   }
