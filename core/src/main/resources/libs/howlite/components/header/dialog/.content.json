@@ -57,6 +57,7 @@
           "label": "Label"
         },
         "sling:resourceType": "wcm/dialogs/components/multifield",
+        "ws:disallowedContext": ["edit:panel"],
         "link": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
           "rootPath": "/content",

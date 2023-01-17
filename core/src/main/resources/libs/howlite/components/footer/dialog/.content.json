@@ -43,6 +43,7 @@
     "menuTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Menu",
+      "ws:disallowedContext": ["edit:panel"],
       "items": {
         "name": "navigation/menuItems",
         "label": "Tabs",
@@ -68,6 +69,7 @@
     "socialLinksTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Social links",
+      "ws:disallowedContext": ["edit:panel"],
       "items": {
         "name": "socialLinks/socialLinkItems",
         "sling:resourceType": "wcm/dialogs/components/multifield",
@@ -111,6 +113,7 @@
     "copyrightTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Copyrights",
+      "ws:disallowedContext": ["edit:panel"],
       "copyright": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "copyright",
