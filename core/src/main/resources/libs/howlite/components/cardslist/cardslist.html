@@ -14,7 +14,7 @@
     limitations under the License.
 */-->
 <sly data-sly-use.model="pl.ds.howlite.components.models.CardsListComponent">
-  <sly data-sly-test.CSSclasses="hl-cards-list ${model.classes @ join=' '}"></sly>
+  <sly data-sly-set.CSSclasses="hl-cards-list ${model.classes @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <sly data-sly-test="${model.isSlider && !wcmmode.isEdit}">
         <div class="hl-cards-list--slider glide ${CSSclasses}"

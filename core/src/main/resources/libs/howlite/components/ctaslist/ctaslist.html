@@ -14,7 +14,7 @@
     limitations under the License.
 */-->
 <sly data-sly-use.model="pl.ds.howlite.components.models.DefaultStyledGridComponent">
-    <sly data-sly-test.CSSclasses="hl-ctas-list ${model.classes @ join=' '}"></sly>
+    <sly data-sly-set.CSSclasses="hl-ctas-list ${model.classes @ join=' '}"></sly>
     
     <div data-sly-test="${resource.hasChildren}" class="${CSSclasses}">
       <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
