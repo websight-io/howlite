@@ -30,7 +30,7 @@ $social-icon-size: 40px;
   &:hover {
     .hl-icon {
       background-color: var(--color-default);
-      color: colors.$shades-100;
+      color: var(--color-body-background);
     }
   }
 
