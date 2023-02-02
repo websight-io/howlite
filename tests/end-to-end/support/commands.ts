@@ -15,6 +15,7 @@
  */
 
 import '@4tw/cypress-drag-drop';
+import { SelectionMode } from './types';
 
 /**
  * Adds support for '/' in testId
@@ -22,9 +23,23 @@ import '@4tw/cypress-drag-drop';
 const prepareTestId = (testId: string) =>
   testId.replaceAll('/', '\\/').replaceAll('.', '\\.');
 
-Cypress.Commands.add('getByTestId', (testId) => {
-  return cy.get(`[data-testid=${prepareTestId(testId)}]`);
-});
+Cypress.Commands.addQuery('getByTestId',
+    (testId: string, selectionMode = SelectionMode.FULL_MATCH) => {
+      const fixedTextId = prepareTestId(testId);
+      const getFn = cy.now('get', `[data-testid${selectionMode}="${fixedTextId}"]`);
+      return () => {
+        return getFn(cy);
+      };
+    });
+
+Cypress.Commands.addQuery('findByTestId',
+    (testId: string, selectionMode = SelectionMode.FULL_MATCH) => {
+      const fixedTextId = prepareTestId(testId);
+      const getFn = cy.now('find', `[data-testid${selectionMode}="${fixedTextId}"]`);
+      return (subject) => {
+        return getFn(subject);
+      };
+    });
 
 Cypress.Commands.add('getPageIframe', () => {
   return cy
@@ -35,16 +50,6 @@ Cypress.Commands.add('getPageIframe', () => {
     .should('not.be.undefined')
     .then(cy.wrap);
 });
-
-Cypress.Commands.add(
-  'findByTestId',
-  {
-    prevSubject: true
-  },
-  (subject, testId) => {
-    return subject.find(`[data-testid=${prepareTestId(testId)}]`);
-  }
-);
 
 Cypress.Commands.add(
   'dragByTestId',
