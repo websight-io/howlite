@@ -10,10 +10,185 @@
         "name": "title",
         "label": "Title"
       },
-      "content": {
+      "dialogContent": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "content",
-        "label": "Content"
+        "label": "Content",
+        "ws:disallowedContext": ["edit:panel"]
+      },
+      "panelContent": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content",
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": {
+          "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
+          "textstyles": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
+            "title": "Text Formats",
+            "icon": "text_format",
+            "bold": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Bold",
+              "icon": "format_bold",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/bold"
+              }
+            },
+            "italic": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Italic",
+              "icon": "format_italic",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/italic"
+              }
+            },
+            "underline": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Underline",
+              "icon": "format_underlined",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/underline"
+              }
+            },
+            "strikethrough": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Strikethrough",
+              "icon": "format_strikethrough",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/strikethrough"
+              }
+            }
+          },
+          "link": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/link",
+            "title": "Link",
+            "icon": "link",
+            "plugin": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/plugin/link"
+            }
+          },
+          "textalign": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
+            "title": "Text Alignment",
+            "left": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Left Align",
+              "icon": "format_align_left",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/textalign",
+                "alignment": "left"
+              }
+            },
+            "center": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Center Align",
+              "icon": "format_align_center",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/textalign",
+                "alignment": "center"
+              }
+            },
+            "right": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Right Align",
+              "icon": "format_align_right",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/textalign",
+                "alignment": "right"
+              }
+            },
+            "justify": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Justify Align",
+              "icon": "format_align_justify",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/textalign",
+                "alignment": "justify"
+              }
+            }
+          },
+          "lists": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
+            "title": "Lists",
+            "bulleted": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Bulleted List",
+              "icon": "format_list_bulleted",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/bulletlist"
+              }
+            },
+            "numbered": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Numbered List",
+              "icon": "format_list_numbered",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/orderedlist"
+              }
+            }
+          },
+          "paragraphtypes": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
+            "icon": "format_paragraph",
+            "title": "Paragraph Type",
+            "h1": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 1",
+              "plugin": {
+                "level": 1,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "h2": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 2",
+              "plugin": {
+                "level": 2,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "h3": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 3",
+              "plugin": {
+                "level": 3,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "h4": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 4",
+              "plugin": {
+                "level": 4,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "h5": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 5",
+              "plugin": {
+                "level": 5,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "h6": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Heading 6",
+              "plugin": {
+                "level": 6,
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+              }
+            },
+            "paragraph": {
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "title": "Paragraph",
+              "plugin": {
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/paragraph"
+              }
+            }
+          }
+        }
       }
     }
   }
