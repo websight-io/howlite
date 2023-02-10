@@ -116,10 +116,10 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('Input_Title').clear().type('Card item title');
     cy.get('.ProseMirror').clear().type('Sample text');
 
-    cy.getByTestId('dialogTab_Cardimage').click();
+    cy.getByTestId('dialogTab_Image').click();
     cy.getByTestId('Input_Alttext').clear().type('Image of the card item');
 
-    cy.getByTestId('dialogTab_CardCTA').click();
+    cy.getByTestId('dialogTab_CTA').click();
     cy.getByTestId('Input_Displayname').clear().type('Link title');
 
     cy.get('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');

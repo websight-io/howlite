@@ -10,16 +10,23 @@
         "name": "title",
         "label": "Title"
       },
-      "content": {
+      "dialogContent": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "content",
         "label": "Content",
         "ws:disallowedContext": ["edit:panel"]
+      },
+      "panelContent": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content",
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "howlite/components/common/rte/configuration/sidepanel"
       }
     },
     "imageTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Card image",
+      "label": "Image",
       "image": {
         "sling:resourceType": "wcm/dialogs/components/assetreference",
         "mimeTypes": ["image/*"],
@@ -34,7 +41,7 @@
     },
     "ctaTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Card CTA",
+      "label": "CTA",
       "ctaLabel": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "ctaLabel",
