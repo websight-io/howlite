@@ -128,60 +128,60 @@
               }
             }
           },
-          "paragraphtypes": {
-            "sling:resourceType": "wcm/dialogs/components/richtext/ui/buttondropdown",
+          "textstyle": {
+            "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown",
+            "title": "Text Style",
             "icon": "format_paragraph",
-            "title": "Paragraph Type",
             "h1": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 1",
               "plugin": {
-                "level": 1,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 1
               }
             },
             "h2": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 2",
               "plugin": {
-                "level": 2,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 2
               }
             },
             "h3": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 3",
               "plugin": {
-                "level": 3,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 3
               }
             },
             "h4": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 4",
               "plugin": {
-                "level": 4,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 4
               }
             },
             "h5": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 5",
               "plugin": {
-                "level": 5,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 5
               }
             },
             "h6": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Heading 6",
               "plugin": {
-                "level": 6,
-                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading"
+                "sling:resourceType": "wcm/dialogs/components/richtext/plugin/heading",
+                "level": 6
               }
             },
             "paragraph": {
-              "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+              "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
               "title": "Paragraph",
               "plugin": {
                 "sling:resourceType": "wcm/dialogs/components/richtext/plugin/paragraph"
