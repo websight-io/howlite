@@ -5,11 +5,20 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "quoteText": {
+      "dialogQuoteText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "quoteText",
+        "label": "Text",
         "required": true,
-        "label": "Text"
+        "ws:disallowedContext": ["edit:panel"]
+      },
+      "panelQuoteText": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "quoteText",
+        "label": "Text",
+        "required": true,
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "howlite/components/common/rte/configuration/sidepanel"
       },
       "authorName": {
         "sling:resourceType": "wcm/dialogs/components/textfield",

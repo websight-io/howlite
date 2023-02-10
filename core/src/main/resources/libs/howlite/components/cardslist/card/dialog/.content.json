@@ -10,10 +10,18 @@
         "name": "title",
         "label": "Title"
       },
-      "content": {
+      "dialogContent": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "content",
-        "label": "Content"
+        "label": "Content",
+        "ws:disallowedContext": ["edit:panel"]
+      },
+      "panelContent": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content",
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "howlite/components/common/rte/configuration/sidepanel"
       }
     },
     "imageTab": {
