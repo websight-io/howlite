@@ -82,7 +82,7 @@ describe('CTA components and CTA list component', function () {
       .should('have.value', '/content/howlite-test/pages/Home/')
       .blur();
 
-    cy.getByTestId('Input_Openinnewtab').click();
+    cy.getByTestId('Input_Openinnewtab').click({ force: true });
 
     cy.percySnapshotDialog('CTA dialog');
 
