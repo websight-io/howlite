@@ -18,9 +18,9 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   accordionItem:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/accordion/accordionitem1',
+    'ComponentOverlay_/content/howlite-test/pages/Accordion/jcr:content/rootcontainer/maincontainer/pagesection/accordion/accordionitem1',
   emptyAccordion:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection_1/accordion'
+    'ComponentOverlay_/content/howlite-test/pages/Accordion/jcr:content/rootcontainer/maincontainer/pagesection_1/accordion'
 };
 
 describe('Accordion component', function () {

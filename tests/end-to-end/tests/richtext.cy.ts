@@ -17,9 +17,9 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  richtext: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/richtext',
+  richtext: 'ComponentOverlay_/content/howlite-test/pages/Rich-text/jcr:content/rootcontainer/maincontainer/pagesection/richtext',
   richtextWithChecklist:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection_1/richtext'
+    'ComponentOverlay_/content/howlite-test/pages/Rich-text/jcr:content/rootcontainer/maincontainer/pagesection_1/richtext'
 };
 
 const LOREM_IPSUM =

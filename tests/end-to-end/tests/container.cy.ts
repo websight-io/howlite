@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  container: 'ComponentOverlay_rootcontainer/maincontainer/onecol/container'
+  container: 'ComponentOverlay_/content/howlite-test/pages/Container/jcr:content/rootcontainer/maincontainer/onecol/container'
 };
 
 describe('Container component', function () {

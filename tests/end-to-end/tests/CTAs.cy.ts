@@ -16,8 +16,8 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  ctasList: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/ctaslist',
-  cta: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/ctaslist/cta1'
+  ctasList: 'ComponentOverlay_/content/howlite-test/pages/CTAs-list-and-CTA/jcr:content/rootcontainer/maincontainer/pagesection/ctaslist',
+  cta: 'ComponentOverlay_/content/howlite-test/pages/CTAs-list-and-CTA/jcr:content/rootcontainer/maincontainer/pagesection/ctaslist/cta1'
 };
 
 const pathpickerInput = 'input[placeholder="Type / to choose a path or enter a value"';

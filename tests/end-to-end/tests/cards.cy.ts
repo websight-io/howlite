@@ -18,9 +18,9 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   cardsList:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/cardslist',
+    'ComponentOverlay_/content/howlite-test/pages/Cards/jcr:content/rootcontainer/maincontainer/pagesection/cardslist',
   cardItem:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/cardslist/card1'
+    'ComponentOverlay_/content/howlite-test/pages/Cards/jcr:content/rootcontainer/maincontainer/pagesection/cardslist/card1'
 };
 
 describe('Cards lists and card item component', function () {

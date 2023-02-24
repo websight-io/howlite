@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  quote: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/quote'
+  quote: 'ComponentOverlay_/content/howlite-test/pages/Quote/jcr:content/rootcontainer/maincontainer/pagesection/quote'
 };
 
 describe('Quote component', () => {

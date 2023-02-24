@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  pageSection: 'ComponentOverlay_rootcontainer/maincontainer/pagesection'
+  pageSection: 'ComponentOverlay_/content/howlite-test/pages/Page-Section/jcr:content/rootcontainer/maincontainer/pagesection'
 };
 
 describe('Page Section component', function () {
