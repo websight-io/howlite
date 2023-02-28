@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  title: 'ComponentOverlay_rootcontainer/maincontainer/pagesection/title'
+  title: 'ComponentOverlay_/content/howlite-test/pages/Title/jcr:content/rootcontainer/maincontainer/pagesection/title'
 };
 
 describe('Title component', function () {

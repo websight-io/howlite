@@ -18,7 +18,7 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   logoCloud:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/logoscloud'
+    'ComponentOverlay_/content/howlite-test/pages/Logo-cloud/jcr:content/rootcontainer/maincontainer/pagesection/logoscloud'
 };
 
 describe('Logo cloud component', function () {

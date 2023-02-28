@@ -17,7 +17,7 @@ import { selectors, testIds } from '../support/consts';
 
 const paths = {
   imagePlaceholder:
-    'ComponentOverlay_rootcontainer/maincontainer/pagesection/image_1'
+    'ComponentOverlay_/content/howlite-test/pages/Image/jcr:content/rootcontainer/maincontainer/pagesection/image_1'
 };
 
 describe('Image component', function () {
