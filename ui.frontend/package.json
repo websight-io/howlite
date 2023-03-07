@@ -33,7 +33,7 @@
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "cssnano": "^5.1.15",
-    "eslint": "^8.34.0",
+    "eslint": "^8.35.0",
     "eslint-webpack-plugin": "^4.0.0",
     "filemanager-webpack-plugin": "^8.0.0",
     "glob-import-loader": "^1.2.0",
