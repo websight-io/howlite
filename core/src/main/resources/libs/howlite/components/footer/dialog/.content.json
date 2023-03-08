@@ -113,12 +113,19 @@
     "copyrightTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Copyrights",
-      "ws:disallowedContext": ["edit:panel"],
-      "copyright": {
+      "dialogCopyright": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "copyright",
         "label": "Copyrights",
+        "ws:disallowedContext": ["edit:panel"],
         "configuration": "howlite/components/common/rte/configuration/simple"
+      },
+      "panelCopyright": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "copyright",
+        "label": "Copyrights",
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "howlite/components/common/rte/configuration/sidepanel"
       }
     }
   }
