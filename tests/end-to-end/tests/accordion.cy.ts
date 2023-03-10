@@ -55,8 +55,10 @@ describe('Accordion component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('Input_Title-container').clear().type('Title');
-    cy.get('.ProseMirror').clear().type('Text');
+    cy.getByTestId('ModalDialog_AccordionItem')
+      .findByTestId('Input_Title-container').clear().type('Title');
+    cy.getByTestId('ModalDialog_AccordionItem')
+      .find('.ProseMirror').clear().type('Text');
 
     cy.percySnapshotDialog('Accordion dialog');
 

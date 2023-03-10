@@ -64,15 +64,23 @@ describe('Cards lists and card item component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('Input_Displayasaslider--checkbox-label').click();
-    cy.getByTestId('RadioElement_h3').click();
-    cy.getByTestId('RadioElement_hl-title__heading--size-3').click();
-    cy.getByTestId('Input_Itemsperrow-Sbreakpoint').clear().type('1');
-    cy.getByTestId('Input_Itemsperrow-Mbreakpoint').clear().type('2');
-    cy.getByTestId('Input_Itemsperrow-Lbreakpoint').clear().type('3');
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('Input_Displayasaslider--checkbox-label').click();
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('RadioElement_h3').click();
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('RadioElement_hl-title__heading--size-3').click();
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('Input_Itemsperrow-Sbreakpoint').clear().type('1');
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('Input_Itemsperrow-Mbreakpoint').clear().type('2');
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('Input_Itemsperrow-Lbreakpoint').clear().type('3');
 
-    cy.getByTestId('dialogTab_Style').click();
-    cy.get('div[id^="classes-uid"]').click();
+    cy.getByTestId('ModalDialog_CardsList')
+      .findByTestId('dialogTab_Style').click();
+    cy.getByTestId('ModalDialog_CardsList')
+      .find('div[id^="classes-uid"]').click();
     cy.contains('Numbered').click({ force: true });
 
     cy.percySnapshotDialog('Cards list dialog');
@@ -113,18 +121,27 @@ describe('Cards lists and card item component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('Input_Title').clear().type('Card item title');
-    cy.get('.ProseMirror').clear().type('Sample text');
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('Input_Title').clear().type('Card item title');
+    cy.getByTestId('ModalDialog_CardItem')
+      .find('.ProseMirror').clear().type('Sample text');
 
-    cy.getByTestId('dialogTab_Image').click();
-    cy.getByTestId('Input_Alttext').clear().type('Image of the card item');
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('dialogTab_Image').click();
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('Input_Alttext').clear().type('Image of the card item');
 
-    cy.getByTestId('dialogTab_CTA').click();
-    cy.getByTestId('Input_Displayname').clear().type('Link title');
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('dialogTab_CTA').click();
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('Input_Displayname').clear().type('Link title');
 
-    cy.get('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
-    cy.getByTestId('Input_Openlinkinanewtab--checkbox-label').click();
-    cy.getByTestId('Input_Showicon--checkbox-label').click();
+    cy.getByTestId('ModalDialog_CardItem')
+      .find('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('Input_Openlinkinanewtab--checkbox-label').click();
+    cy.getByTestId('ModalDialog_CardItem')
+      .findByTestId('Input_Showicon--checkbox-label').click();
 
     cy.contains('Text Link').click();
     cy.contains('Small Button').click({ force: true });

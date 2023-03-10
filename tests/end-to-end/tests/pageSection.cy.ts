@@ -51,15 +51,18 @@ describe('Page Section component', function () {
 
     cy.getByTestId('SidebarElement_Assets').click();
     cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+        'ModalDialog_PageSection',
       'Input_Backgroundimage-Lbreakpoint',
       { forceDrop: true }
     );
 
     cy.getByTestId('AssetItem_portrait_jpg').dragByTestId(
+        'ModalDialog_PageSection',
       'Input_Backgroundimage-Mbreakpoint',
       { forceDrop: true }
     );
     cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+        'ModalDialog_PageSection',
       'Input_Backgroundimage-Sbreakpoint',
       { forceDrop: true }
     );

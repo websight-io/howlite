@@ -27,6 +27,7 @@ declare global {
       getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
       findByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
       dragByTestId(
+        targetContextTestId: string,
         targetTestId: string,
         options?: { forceDrop: boolean }
       ): void;

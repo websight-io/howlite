@@ -58,23 +58,30 @@ describe('Image component', function () {
 
     cy.getByTestId('SidebarElement_Assets').click();
     cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+        'ModalDialog_Image',
       'Input_Chooseimage-Lbreakpoint',
       { forceDrop: true }
     );
 
     cy.getByTestId('AssetItem_portrait_jpg').dragByTestId(
+        'ModalDialog_Image',
       'Input_Chooseimage-Mbreakpoint',
       { forceDrop: true }
     );
     cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
+        'ModalDialog_Image',
       'Input_Chooseimage-Sbreakpoint',
       { forceDrop: true }
     );
 
-    cy.getByTestId('Input_Alttext').clear().type('Image of a logo');
-    cy.getByTestId('Input_Link--toggle-check-icon').click();
-    cy.get('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
-    cy.getByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
+    cy.getByTestId('ModalDialog_Image')
+      .findByTestId('Input_Alttext').clear().type('Image of a logo');
+    cy.getByTestId('ModalDialog_Image')
+      .findByTestId('Input_Link--toggle-check-icon').click();
+    cy.getByTestId('ModalDialog_Image')
+      .find('input[placeholder="Type / to choose a path or enter a value"]').clear().type('#');
+    cy.getByTestId('ModalDialog_Image')
+      .findByTestId('Input_Openlinkinanewtab--toggle-cross-icon').click();
 
     cy.percySnapshotDialog('Image dialog');
 
