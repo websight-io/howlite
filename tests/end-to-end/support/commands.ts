@@ -57,14 +57,12 @@ Cypress.Commands.add(
     prevSubject: 'element'
   },
   (subject, targetContextTestId, targetTestId, options) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-
     const contextSelector =
         targetContextTestId ? `[data-testid=${prepareTestId(targetContextTestId)}]` : '';
-
     const targetSelector = `${contextSelector} [data-testid=${prepareTestId(targetTestId)}]`;
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     cy.wrap(subject).drag(targetSelector, {
       target: {
         force: true,
