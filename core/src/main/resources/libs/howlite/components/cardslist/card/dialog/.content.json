@@ -21,7 +21,7 @@
         "name": "content",
         "label": "Content",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "howlite/components/common/rte/configuration/sidepanel"
+        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
       }
     },
     "imageTab": {
