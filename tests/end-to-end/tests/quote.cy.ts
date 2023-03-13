@@ -49,17 +49,23 @@ describe('Quote component', () => {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.get('.ProseMirror').should('have.text', 'Default quote component.');
-    cy.getByTestId('Input_Author’sname').clear().type('John Doe');
-    cy.getByTestId('Input_Author’sdescription')
+    cy.getByTestId('ModalDialog_Quote')
+      .find('.ProseMirror').should('have.text', 'Default quote component.');
+    cy.getByTestId('ModalDialog_Quote')
+      .findByTestId('Input_Author’sname').clear().type('John Doe');
+    cy.getByTestId('ModalDialog_Quote')
+      .findByTestId('Input_Author’sdescription')
       .clear()
       .type('Automated tester');
-    cy.getByTestId('Input_Author’simage')
-      .getByTestId('Input_Author’simage--toggle-cross-icon')
+    cy.getByTestId('ModalDialog_Quote')
+      .findByTestId('Input_Author’simage')
+      .findByTestId('Input_Author’simage--toggle-cross-icon')
       .click();
-    cy.getByTestId('Input_Author’simage--input').get('[value="true"]');
+    cy.getByTestId('ModalDialog_Quote')
+      .findByTestId('Input_Author’simage--input').get('[value="true"]');
     //TODO: Asset uploading should be tested in image.cy.ts
-    cy.getByTestId('Input_Alttext').clear().type('Image from John Doe');
+    cy.getByTestId('ModalDialog_Quote')
+      .findByTestId('Input_Alttext').clear().type('Image from John Doe');
 
     cy.percySnapshotDialog('Quote dialog');
 

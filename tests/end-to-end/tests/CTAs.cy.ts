@@ -20,7 +20,7 @@ const paths = {
   cta: 'ComponentOverlay_/content/howlite-test/pages/CTAs-list-and-CTA/jcr:content/rootcontainer/maincontainer/pagesection/ctaslist/cta1'
 };
 
-const pathpickerInput = 'input[placeholder="Type / to choose a path or enter a value"';
+const pathpickerInput = '[data-testid="ModalDialog_CTA"] input[placeholder="Type / to choose a path or enter a value"';
 
 describe('CTA components and CTA list component', function () {
   beforeEach(() => {
@@ -56,7 +56,8 @@ describe('CTA components and CTA list component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('Input_Text').clear().type('new value');
+    cy.getByTestId('ModalDialog_CTA')
+      .findByTestId('Input_Text').clear().type('new value');
 
     cy.get(pathpickerInput)
       .clear()
@@ -82,7 +83,8 @@ describe('CTA components and CTA list component', function () {
       .should('have.value', '/content/howlite-test/pages/Home/')
       .blur();
 
-    cy.getByTestId('Input_Openinnewtab').click({ force: true });
+    cy.getByTestId('ModalDialog_CTA')
+      .findByTestId('Input_Openinnewtab').click({ force: true });
 
     cy.percySnapshotDialog('CTA dialog');
 

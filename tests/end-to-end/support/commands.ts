@@ -56,11 +56,14 @@ Cypress.Commands.add(
   {
     prevSubject: 'element'
   },
-  (subject, targetTestId, options) => {
+  (subject, targetContextTestId, targetTestId, options) => {
+    const contextSelector =
+        targetContextTestId ? `[data-testid=${prepareTestId(targetContextTestId)}]` : '';
+    const targetSelector = `${contextSelector} [data-testid=${prepareTestId(targetTestId)}]`;
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-
-    cy.wrap(subject).drag(`[data-testid=${prepareTestId(targetTestId)}]`, {
+    cy.wrap(subject).drag(targetSelector, {
       target: {
         force: true,
         position: 'top'
@@ -68,13 +71,13 @@ Cypress.Commands.add(
     });
 
     if (options?.forceDrop) {
-      cy.getByTestId(targetTestId)
+      cy.get(targetSelector)
         .trigger('drop', {
           eventConstructor: 'DragEvent',
           force: true
         })
         .then(() => {
-          cy.getByTestId(targetTestId).trigger('mouseup', {
+          cy.get(targetSelector).trigger('mouseup', {
             which: 1,
             button: 0,
             eventConstructor: 'MouseEvent',
