@@ -35,7 +35,7 @@ describe('CTA components and CTA list component', function () {
   it('renders correctly in edit mode and saves a text, path and checkbox property', function () {
     cy.intercept(
       'GET',
-      '**/CTAs-list-and-CTA/jcr:content/rootcontainer.html?wcmmode=edit'
+      '**CTAs-list-and-CTA.websight-pages-editor-service.get-page-data.action'
     ).as('contentRendered');
 
     cy.visit(
