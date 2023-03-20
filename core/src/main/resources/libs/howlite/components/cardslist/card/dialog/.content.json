@@ -21,7 +21,7 @@
         "name": "content",
         "label": "Content",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       }
     },
     "imageTab": {

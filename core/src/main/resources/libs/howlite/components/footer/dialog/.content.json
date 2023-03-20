@@ -125,7 +125,7 @@
         "name": "copyright",
         "label": "Copyrights",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       }
     }
   }
