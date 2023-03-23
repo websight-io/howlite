@@ -40,17 +40,17 @@ describe('Footer component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Footer');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('dialogTab_Sociallinks').click({force: true});
+    cy.getByTestId('dialogTab_Sociallinks').click();
     cy.getByTestId('ModalDialog_Footer')
-      .findByTestId('Button_Multifield_Add').click({force: true});
+      .findByTestId('Button_Multifield_Add').click();
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/title').clear().type('Facebook');
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/url').clear().type('fb.com');
     cy.getByTestId('ModalDialog_Footer')
-      .findByTestId('Input_socialLinks/socialLinkItems/0/nofollow').click({force: true});
+      .findByTestId('Input_socialLinks/socialLinkItems/0/nofollow').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@contentRendered');
