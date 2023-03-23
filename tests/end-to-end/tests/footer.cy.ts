@@ -44,7 +44,7 @@ describe('Footer component', function () {
 
     cy.getByTestId('dialogTab_Sociallinks').click();
     cy.getByTestId('ModalDialog_Footer')
-      .findByTestId('Button_Multifield_Add').click();
+      .findByTestId('Button_Multifield_Add').click({force: true});
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/title').clear().type('Facebook');
     cy.getByTestId('ModalDialog_Footer')
