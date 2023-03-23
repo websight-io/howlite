@@ -46,6 +46,11 @@ public class SingleSocialLinkComponent {
   @Getter
   private String icon;
 
+  @Inject
+  @Getter
+  @Default(booleanValues = false)
+  private boolean nofollow;
+
   public String getUrl() {
     return LinkUtil.handleLink(url, resourceResolver);
   }

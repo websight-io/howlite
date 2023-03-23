@@ -19,7 +19,8 @@
             <sly data-sly-test="${item}">
                 <li>
                     <a class="hl-social-links__link" href="${item.url}"
-                       target="_blank" aria-label="${item.title}">
+                       target="_blank" aria-label="${item.title}"
+                       rel="${item.nofollow ? 'nofollow' : ''}">
                         <i class="hl-icon ${item.icon}">
                         </i>
                     </a>

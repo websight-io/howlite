@@ -40,12 +40,14 @@
         "2": {
           "title": "Title facebook",
           "url": "www.facebook.com",
-          "icon": "facebook"
+          "icon": "facebook",
+          "nofollow" : false
         },
         "3": {
           "title": "Title twitter",
           "url": "http://www.twitter.com",
-          "icon": "twitter"
+          "icon": "twitter",
+          "nofollow" : true
         },
         "4": {
           "title": "Title instagram",
