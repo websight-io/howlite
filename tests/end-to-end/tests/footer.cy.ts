@@ -40,7 +40,7 @@ describe('Footer component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Footer');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.getByTestId(testIds.editIcon).click({force: true});
 
     cy.getByTestId('dialogTab_Sociallinks').click();
     cy.getByTestId('ModalDialog_Footer')
