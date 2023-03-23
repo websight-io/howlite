@@ -109,9 +109,9 @@
           }
         },
         "nofollow": {
-          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
           "name": "nofollow",
-          "label": "Tell Google to ignore this link"
+          "label": "Mark as nofollow"
         }
       }
     },

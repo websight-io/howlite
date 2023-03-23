@@ -50,7 +50,7 @@ describe('Footer component', function () {
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/url').clear().type('fb.com');
     cy.getByTestId('ModalDialog_Footer')
-      .findByTestId('Input_socialLinks/socialLinkItems/0/nofollow').click();
+      .findByTestId('Input_socialLinks/socialLinkItems/0/nofollow--checkbox-label').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@contentRendered');
