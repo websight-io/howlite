@@ -79,21 +79,25 @@ class FooterComponentTest {
     assertThat(model.getSocialLinks().getSocialLinkItems().stream()
         .filter(i -> i.getTitle().equals("Title linkedin") &&
             i.getUrl().equals("http://www.linkedin.com") &&
+            i.isNofollow() == false &&
             i.getIcon().equals("linkedin")).count())
         .isEqualTo(1);
     assertThat(model.getSocialLinks().getSocialLinkItems().stream()
         .filter(i -> i.getTitle().equals("Title facebook") &&
             i.getUrl().equals("http://www.facebook.com") &&
+            i.isNofollow() == false &&
             i.getIcon().equals("facebook")).count())
         .isEqualTo(1);
     assertThat(model.getSocialLinks().getSocialLinkItems().stream()
         .filter(i -> i.getTitle().equals("Title twitter") &&
             i.getUrl().equals("http://www.twitter.com") &&
+            i.isNofollow() == true &&
             i.getIcon().equals("twitter")).count())
         .isEqualTo(1);
     assertThat(model.getSocialLinks().getSocialLinkItems().stream()
         .filter(i -> i.getTitle().equals("Title instagram") &&
             i.getUrl().equals("http://www.instagram.com") &&
+            i.isNofollow() == false &&
             i.getIcon().equals("instagram")).count())
         .isEqualTo(1);
 

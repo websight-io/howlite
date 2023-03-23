@@ -107,6 +107,11 @@
             "label": "Instagram",
             "value": "icon-instagram"
           }
+        },
+        "nofollow": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "nofollow",
+          "label": "Mark as nofollow"
         }
       }
     },
