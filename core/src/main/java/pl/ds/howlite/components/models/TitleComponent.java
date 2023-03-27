@@ -55,6 +55,11 @@ public class TitleComponent implements Styled, Grid {
   @Default(values = "Add your text here")
   private String subtitle;
 
+  @Inject
+  @Getter
+  @Default(values = "Add your anchor-id here")
+  private String anchorId;
+
   @Self
   @Delegate
   private DefaultStyledGridComponent style;

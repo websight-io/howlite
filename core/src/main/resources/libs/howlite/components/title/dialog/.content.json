@@ -20,6 +20,12 @@
         "label": "Heading text",
         "required": true
       },
+      "anchorId": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "anchorId",
+        "default": "Add your #anchorId here",
+        "label": "AnchorId text"
+      },
       "showOverline": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "showSubtitle",
