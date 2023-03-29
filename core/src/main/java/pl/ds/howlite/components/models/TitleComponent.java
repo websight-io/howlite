@@ -27,7 +27,7 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import pl.ds.howlite.components.Grid;
 import pl.ds.howlite.components.Styled;
 
-@Model(adaptables = Resource.class)
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TitleComponent implements Styled, Grid {
 
   @Inject
@@ -57,7 +57,6 @@ public class TitleComponent implements Styled, Grid {
 
   @Inject
   @Getter
-  @Default(values = "Add your anchor-id here")
   private String anchorId;
 
   @Self
