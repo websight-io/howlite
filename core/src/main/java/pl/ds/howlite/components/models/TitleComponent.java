@@ -16,7 +16,7 @@
 
 package pl.ds.howlite.components.models;
 
-import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import javax.inject.Inject;
 import lombok.Getter;
