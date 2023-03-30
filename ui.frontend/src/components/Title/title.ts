@@ -18,7 +18,7 @@ import {
     getCoveringElement,
     getAnchorTargetElement,
     getWindowTopScrollPositionWithVisibleTarget
-} from '../../js/helpers/dom-element';
+} from '../../js/helpers/dom.element';
 
 export class TitleComponent {
     static readonly SELECTOR = 'header.hl-title';
