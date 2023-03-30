@@ -14,58 +14,7 @@
  * limitations under the License.
  */
 
-import {
-    getCoveringElement,
-    getAnchorTargetElement,
-    getWindowTopScrollPositionWithVisibleTarget
-} from '../../js/helpers/dom.element';
-
-export class TitleComponent {
-    static readonly SELECTOR = 'header.hl-title';
-    static readonly DO_OFFSET_IF_COVERED_BY_TAGS = ['NAV', 'HEADER'];
-
-    public readonly componentElement: HTMLElement;
-
-    constructor (element) {
-        this.componentElement = element;
-
-        this.scrollToIfCovered();
-    }
-
-    /**
-     * Decorate scrolling to URL anchor target by offsetting position of the header menu items.
-     *
-     * @example localhost/home.html#test - if id="test" element is covered then scroll it to view
-     *
-     * @see TitleComponent.DO_OFFSET_IF_COVERED_BY_TAGS for list of elements considered a "header menu"
-     *
-     * @todo add automated tests to future-proof the solution (DS WOS-166)
-     */
-    private async scrollToIfCovered () {
-        const anchorTarget = await getAnchorTargetElement();
-
-        // empty (no target)
-        if (!anchorTarget) {
-            return;
-        }
-
-        // target points to another Title Component (not this one)
-        if (anchorTarget.parentElement !== this.componentElement) {
-            return;
-        }
-
-        const coveredBy = await getCoveringElement(anchorTarget, TitleComponent.DO_OFFSET_IF_COVERED_BY_TAGS);
-
-        // not covered, no need to do anything
-        if (!coveredBy) {
-            return;
-        }
-
-        const newPosition = getWindowTopScrollPositionWithVisibleTarget(coveredBy, anchorTarget, 30);
-
-        window.scrollTo(newPosition);
-    }
-}
+import { TitleComponent } from './title.class';
 
 const initTitleComponents = () => {
     document.addEventListener( 'DOMContentLoaded', () => {
