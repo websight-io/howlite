@@ -130,7 +130,7 @@
         "name": "copyright",
         "label": "Copyrights",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "howlite/components/common/rte/configuration/sidepanel"
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       }
     }
   }
