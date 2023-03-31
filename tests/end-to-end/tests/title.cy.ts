@@ -36,6 +36,17 @@ describe('Title component', function () {
       '**/pagesection/title.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
+    // assert initial state before test
+    cy.request(
+      '/content/howlite-test/pages/Title/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
+    )
+      .its('body')
+      .should('deep.eq', {
+          'sling:resourceType': 'howlite/components/title',
+          'jcr:primaryType': 'nt:unstructured',
+      });
+
+    // execute test
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Title::editor'
     );
@@ -65,6 +76,7 @@ describe('Title component', function () {
     cy.getByTestId(testIds.dialogSubmitButton).click();
     cy.wait('@saveProperties');
 
+    // assert model change after test
     cy.request(
       '/content/howlite-test/pages/Title/jcr:content/rootcontainer/maincontainer/pagesection/title.json'
     )
@@ -76,7 +88,8 @@ describe('Title component', function () {
         subtitle: 'New overline text',
         'jcr:primaryType': 'nt:unstructured',
         headingLevel: 'h1',
-        headingSize: 'hl-title__heading--size-2'
+        headingSize: 'hl-title__heading--size-2',
+        'anchorId': '',
       });
   });
 });

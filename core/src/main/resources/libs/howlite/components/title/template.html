@@ -13,11 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<template data-sly-template.title="${ @ title, showSubtitle, subtitle, headingLevel, headingSize, classes}">
+<template data-sly-template.title="${ @ title, anchorId, showSubtitle, subtitle, headingLevel, headingSize, classes}">
     <header class="hl-title ${classes @ join=' '}">
         <sly data-sly-test="${showSubtitle && subtitle}">
             <p class="subtitle">${subtitle}</p>
         </sly>
-        <h2 data-sly-element="${headingLevel}" class="hl-title__heading ${headingSize}">${title}</h2>
+        <h2 id="${anchorId}" data-sly-element="${headingLevel}" class="hl-title__heading ${headingSize}">${title}</h2>
+
     </header>
 </template>

@@ -16,6 +16,8 @@
 
 package pl.ds.howlite.components.models;
 
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+
 import javax.inject.Inject;
 import lombok.Getter;
 import lombok.experimental.Delegate;
@@ -27,7 +29,7 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import pl.ds.howlite.components.Grid;
 import pl.ds.howlite.components.Styled;
 
-@Model(adaptables = Resource.class)
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TitleComponent implements Styled, Grid {
 
   @Inject
@@ -54,6 +56,10 @@ public class TitleComponent implements Styled, Grid {
   @Getter
   @Default(values = "Add your text here")
   private String subtitle;
+
+  @Inject
+  @Getter
+  private String anchorId;
 
   @Self
   @Delegate
