@@ -51,7 +51,7 @@
     "typescript": "^5.0.3",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1",
+    "webpack-dev-server": "^4.13.2",
     "webpack-merge": "^5.8.0",
     "websight-localsync": "^1.2.0"
   },
