@@ -40,7 +40,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.3",
     "postcss": "^8.4.21",
-    "postcss-loader": "^7.0.2",
+    "postcss-loader": "^7.1.0",
     "sass": "^1.60.0",
     "sass-loader": "^13.2.0",
     "source-map-loader": "^4.0.1",
