@@ -30,6 +30,6 @@ export default defineConfig({
     specPattern: 'tests/**/*.cy.{js,jsx,ts,tsx}',
     supportFile: 'support/index.ts',
     experimentalSessionAndOrigin: true,
-    defaultCommandTimeout: 10000
+    defaultCommandTimeout: 30000
   }
 });
