@@ -111,7 +111,7 @@ export class TitleComponent {
         }
 
         // target points to another Title Component (not this one)
-        if (anchorTarget.parentElement !== this.componentElement) {
+        if (anchorTarget !== this.componentElement) {
             return;
         }
 
