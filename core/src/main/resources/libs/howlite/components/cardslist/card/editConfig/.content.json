@@ -1,0 +1,9 @@
+{
+  "inlineEditing": {
+    "config": {
+      "property": "title",
+      "domSelectors": [".card__title"],
+      "editor": "text"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "inlineEditing": {
+    "config": {
+      "property": "label",
+      "editor": "text"
+    }
+  }
+}
