@@ -59,6 +59,7 @@ public class TitleComponent implements Styled, Grid {
 
   @Inject
   @Getter
+  @Default(values = "")
   private String anchorId;
 
   @Self
