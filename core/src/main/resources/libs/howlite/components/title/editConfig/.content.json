@@ -1,0 +1,9 @@
+{
+  "inlineEditing": {
+    "config": {
+      "property": "title",
+      "domSelectors": [".hl-title__heading"],
+      "editor": "text"
+    }
+  }
+}

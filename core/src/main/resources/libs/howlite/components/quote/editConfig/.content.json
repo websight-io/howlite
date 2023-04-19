@@ -1,0 +1,9 @@
+{
+  "inlineEditing": {
+    "config": {
+      "property": "quoteText",
+      "editor": "rich-text",
+      "domSelectors": [".hl-quote__content .hl-rich-text"]
+    }
+  }
+}
