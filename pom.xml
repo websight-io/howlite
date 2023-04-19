@@ -21,7 +21,7 @@
   <groupId>pl.ds.howlite</groupId>
   <artifactId>howlite-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.11-SNAPSHOT</version>
+  <version>1.0.11</version>
   <name>Howlite</name>
   <description>Howlite parent module</description>
 
@@ -47,7 +47,7 @@
     <url>https://github.com/websight-io/howlite</url>
     <connection>scm:git:git://github.com/websight-io/howlite.git</connection>
     <developerConnection>scm:git:git@github.com:websight-io/howlite.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v1.0.11</tag>
   </scm>
 
   <repositories>
@@ -64,7 +64,7 @@
     <!-- generic -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>1681883032</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1681888254</project.build.outputTimestamp>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
