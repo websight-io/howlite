@@ -44,7 +44,7 @@ export class TitleComponent {
     }
 
     static get hashAnchor (): Element | null {
-        return document.querySelector(location.hash);
+        return location.hash ? document.querySelector(location.hash) : null;
     }
 
     /**
