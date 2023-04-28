@@ -9,14 +9,12 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "quoteText",
         "label": "Text",
-        "required": true,
         "ws:disallowedContext": ["edit:panel"]
       },
       "panelQuoteText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "quoteText",
         "label": "Text",
-        "required": true,
         "ws:disallowedContext": ["edit:dialog"],
         "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       },

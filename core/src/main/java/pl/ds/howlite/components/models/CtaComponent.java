@@ -18,6 +18,7 @@ package pl.ds.howlite.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import lombok.experimental.Delegate;
@@ -33,12 +34,14 @@ import pl.ds.howlite.components.utils.LinkUtil;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class CtaComponent implements Styled {
 
+  private static final String DEFAULT_LABEL = "CTA label";
+
   @SlingObject
   private ResourceResolver resourceResolver;
 
   @Getter
   @Inject
-  @Default(values = "CTA label")
+  @Default(values = DEFAULT_LABEL)
   private String label;
 
   @Inject
@@ -57,6 +60,13 @@ public class CtaComponent implements Styled {
   @Self
   @Delegate
   private DefaultStyledComponent styled;
+
+  @PostConstruct
+  private void init() {
+    if (label.isEmpty()) {
+      label = DEFAULT_LABEL;
+    }
+  }
 
   public String getLink() {
     return LinkUtil.handleLink(link, resourceResolver);

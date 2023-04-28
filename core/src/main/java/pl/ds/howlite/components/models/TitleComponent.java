@@ -18,10 +18,10 @@ package pl.ds.howlite.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import lombok.experimental.Delegate;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
@@ -32,9 +32,11 @@ import pl.ds.howlite.components.Styled;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TitleComponent implements Styled, Grid {
 
+  private static final String DEFAULT_TITLE = "Add your heading here";
+
   @Inject
   @Getter
-  @Default(values = "Add your heading here")
+  @Default(values = DEFAULT_TITLE)
   private String title;
 
   @Inject
@@ -65,4 +67,11 @@ public class TitleComponent implements Styled, Grid {
   @Self
   @Delegate
   private DefaultStyledGridComponent style;
+
+  @PostConstruct
+  private void init() {
+    if (title.isEmpty()) {
+      title = DEFAULT_TITLE;
+    }
+  }
 }
