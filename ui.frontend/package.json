@@ -37,7 +37,7 @@
     "eslint-webpack-plugin": "^4.0.0",
     "filemanager-webpack-plugin": "^8.0.0",
     "glob-import-loader": "^1.2.0",
-    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-plugin": "^5.5.1",
     "mini-css-extract-plugin": "^2.7.3",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.2.4",
