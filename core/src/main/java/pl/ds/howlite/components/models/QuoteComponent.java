@@ -38,13 +38,16 @@ import pl.ds.howlite.components.utils.LinkUtil;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class QuoteComponent implements Styled, Grid {
 
+  private static final String DEFAULT_QUOTE_TEXT =
+      "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel "
+          + "dictum eros.</p>";
+
   @SlingObject
   private ResourceResolver resourceResolver;
 
   @Getter
   @Inject
-  @Default(values = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel "
-      + "dictum eros.</p>")
+  @Default(values = DEFAULT_QUOTE_TEXT)
   private String quoteText;
 
   @Getter
@@ -84,6 +87,9 @@ public class QuoteComponent implements Styled, Grid {
 
   @PostConstruct
   private void init() {
+    if ("<p></p>".equals(quoteText)) {
+      quoteText = DEFAULT_QUOTE_TEXT;
+    }
     initQuoteGridClasses();
     initQuoteImageGridClasses();
     initQuoteContentGridClasses();

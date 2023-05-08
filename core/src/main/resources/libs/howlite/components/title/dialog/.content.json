@@ -17,8 +17,7 @@
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "title",
         "default": "Add your heading here",
-        "label": "Heading text",
-        "required": true
+        "label": "Heading text"
       },
       "anchorId": {
         "sling:resourceType": "wcm/dialogs/components/textfield",

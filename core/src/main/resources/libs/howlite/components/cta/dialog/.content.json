@@ -8,8 +8,7 @@
       "labelText": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "label",
-        "label": "Text",
-        "required": true
+        "label": "Text"
       },
       "link": {
         "sling:resourceType": "wcm/dialogs/components/pathpicker",
