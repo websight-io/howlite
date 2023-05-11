@@ -51,7 +51,7 @@ public class RichTextComponent implements Styled, Grid {
 
   @PostConstruct
   private void init() {
-    if ("<p></p>".equals(text)) {
+    if (text.isEmpty()) {
       text = DEFAULT_TEXT;
     }
   }
