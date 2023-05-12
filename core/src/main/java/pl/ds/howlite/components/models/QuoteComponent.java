@@ -87,7 +87,7 @@ public class QuoteComponent implements Styled, Grid {
 
   @PostConstruct
   private void init() {
-    if ("<p></p>".equals(quoteText)) {
+    if (quoteText.isEmpty()) {
       quoteText = DEFAULT_QUOTE_TEXT;
     }
     initQuoteGridClasses();
