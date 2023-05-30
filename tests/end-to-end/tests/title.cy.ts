@@ -82,14 +82,21 @@ describe('Title component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'howlite/components/title',
-        title: 'New heading',
-        showSubtitle: 'true',
-        subtitle: 'New overline text',
         'jcr:primaryType': 'nt:unstructured',
-        headingLevel: 'h1',
+        subtitle: 'New overline text',
+        lgOffset: '',
+        smOffset: '',
+        anchorId: '',
+        lgColSize: '12',
+        title: 'New heading',
         headingSize: 'hl-title__heading--size-2',
-        'anchorId': '',
+        classes: '',
+        'sling:resourceType': 'howlite/components/title',
+        mdColSize: '12',
+        showSubtitle: 'true',
+        headingLevel: 'h1',
+        smColSize: '12',
+        mdOffset: ''
       });
   });
 });

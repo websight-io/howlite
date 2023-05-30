@@ -45,8 +45,8 @@ describe('Cards lists and card item component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Cards::editor'
     );
 
-    testCardsList();
     testCardItem();
+    testCardsList();
   });
 
   function testCardsList() {
@@ -94,15 +94,21 @@ describe('Cards lists and card item component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'howlite/components/cardslist',
         'jcr:primaryType': 'nt:unstructured',
-        isSlider: 'true',
-        classes: 'hl-cards-list--numbered',
-        headingLevel: 'h3',
-        headingSize: 'hl-title__heading--size-3',
-        itemsPerRowSm: '1',
+        lgOffset: '',
+        smOffset: '',
         itemsPerRowLg: '3',
-        itemsPerRowMd: '2'
+        itemsPerRowMd: '2',
+        itemsPerRowSm: '1',
+        isSlider: 'true',
+        lgColSize: '12',
+        headingSize: 'hl-title__heading--size-3',
+        classes: 'hl-cards-list--numbered',
+        'sling:resourceType': 'howlite/components/cardslist',
+        mdColSize: '12',
+        headingLevel: 'h3',
+        smColSize: '12',
+        mdOffset: ''
       });
   }
 

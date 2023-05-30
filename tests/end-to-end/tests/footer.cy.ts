@@ -69,6 +69,7 @@ describe('Footer component', function () {
     .its('body')
     .should('deep.eq', {
       'title': 'Facebook',
+      'icon': 'icon-linkedin',
       'url': 'fb.com',
       'nofollow': 'true',
       'jcr:primaryType': 'nt:unstructured'
