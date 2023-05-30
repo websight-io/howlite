@@ -83,7 +83,14 @@ describe('Quote component', () => {
         imageAlt: 'Image from John Doe',
         quoteText: '<p>Default quote component.</p>',
         authorName: 'John Doe',
-        'jcr:primaryType': 'nt:unstructured'
-      });
+        'jcr:primaryType': 'nt:unstructured',
+        lgOffset: '',
+        smOffset: '',
+        lgColSize: '12',
+        classes: '',
+        mdColSize: '12',
+        smColSize: '12',
+        mdOffset: ''
+  });
   });
 });
