@@ -40,13 +40,20 @@ describe('Cards lists and card item component', function () {
     cy.get('section:last-of-type ul').should('have.class', 'hl-grid-lg-2');
   });
 
-  it('render correctly in edit mode', function () {
+  it('Card List render correctly in edit mode', function () {
+    cy.visit(
+        '/apps/websight/index.html/content/howlite-test/pages/Cards::editor'
+    );
+
+    testCardsList();
+  });
+
+  it('Card Item render correctly in edit mode', function () {
     cy.visit(
       '/apps/websight/index.html/content/howlite-test/pages/Cards::editor'
     );
 
     testCardItem();
-    testCardsList();
   });
 
   function testCardsList() {
