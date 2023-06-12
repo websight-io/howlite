@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "3.6.0",
-    "bootstrap": "5.2.3"
+    "bootstrap": "5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
