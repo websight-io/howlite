@@ -6,6 +6,9 @@
     "smColSize": 12,
     "mdColSize": 12,
     "lgColSize": 6,
+    "smOffset": "",
+    "mdOffset": "",
+    "lgOffset": "",
     "sling:resourceType": "howlite/components/container",
     "title": {
       "jcr:primaryType": "nt:unstructured",
@@ -13,7 +16,15 @@
       "headingLevel": "h1",
       "subtitle": "Add your subtitle here",
       "showSubtitle": true,
-      "sling:resourceType": "howlite/components/title"
+      "sling:resourceType": "howlite/components/title",
+      "headingSize": "hl-title__heading--size-4",
+      "classes": "",
+      "lgColSize": "12",
+      "lgOffset": "",
+      "mdColSize": "12",
+      "mdOffset": "",
+      "smColSize": "12",
+      "smOffset": ""
     },
     "ctaslist": {
       "jcr:primaryType": "nt:unstructured",
@@ -23,14 +34,19 @@
         "link": "https://test.com",
         "label": "Link",
         "classes": "hl-cta--primary",
-        "sling:resourceType": "howlite/components/cta"
+        "sling:resourceType": "howlite/components/cta",
+        "displayIcon": false,
+        "openInNewTab": false
       },
       "cta2": {
         "jcr:primaryType": "nt:unstructured",
         "link": "https://test.com",
         "label": "Link",
         "classes": "hl-cta--text",
-        "sling:resourceType": "howlite/components/cta"
+        "sling:resourceType": "howlite/components/cta",
+        "displayIcon": false,
+        "openInNewTab": false
+
       }
     }
   },
@@ -39,6 +55,9 @@
     "smColSize": 12,
     "mdColSize": 12,
     "lgColSize": 6,
-    "sling:resourceType": "howlite/components/image"
+    "sling:resourceType": "howlite/components/image",
+    "lgOffset": "",
+    "mdOffset": "",
+    "smOffset": ""
   }
 }

@@ -2,10 +2,16 @@
   "jcr:primaryType": "nt:unstructured",
   "cta1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "howlite/components/cta"
+    "sling:resourceType": "howlite/components/cta",
+    "classes": "hl-cta--secondary",
+    "displayIcon": false,
+    "openInNewTab": false
   },
   "cta2": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "howlite/components/cta"
+    "sling:resourceType": "howlite/components/cta",
+    "classes": "hl-cta--secondary",
+    "displayIcon": false,
+    "openInNewTab": false
   }
 }
