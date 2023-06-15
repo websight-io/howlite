@@ -25,7 +25,11 @@
       "smColSize": 12,
       "mdColSize": 12,
       "lgColSize": 6,
-      "sling:resourceType": "howlite/components/richtext"
+      "sling:resourceType": "howlite/components/richtext",
+      "classes": "",
+      "lgOffset": "",
+      "mdOffset": "",
+      "smOffset": ""
     }
   }
 }

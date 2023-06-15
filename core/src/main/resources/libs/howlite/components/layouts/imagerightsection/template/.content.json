@@ -7,13 +7,32 @@
     "smColSize": 12,
     "mdColSize": 6,
     "lgColSize": 5,
+    "lgOffset": "",
+    "mdOffset": "",
+    "smOffset": "",
     "title": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "howlite/components/title"
+      "sling:resourceType": "howlite/components/title",
+      "headingLevel": "h2",
+      "headingSize": "hl-title__heading--size-4",
+      "classes": "",
+      "lgColSize": "12",
+      "lgOffset": "",
+      "mdColSize": "12",
+      "mdOffset": "",
+      "smColSize": "12",
+      "smOffset": ""
     },
     "richtext": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "howlite/components/richtext"
+      "sling:resourceType": "howlite/components/richtext",
+      "classes": "",
+      "lgColSize": "12",
+      "lgOffset": "",
+      "mdColSize": "12",
+      "mdOffset": "",
+      "smColSize": "12",
+      "smOffset": ""
     },
     "cta": {
       "jcr:primaryType": "nt:unstructured",
@@ -31,6 +50,8 @@
     "lgOffset": 1,
     "smColSize": 12,
     "mdColSize": 6,
-    "lgColSize": 6
+    "lgColSize": 6,
+    "mdOffset": "",
+    "smOffset": ""
   }
 }

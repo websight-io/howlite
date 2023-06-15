@@ -6,13 +6,19 @@
     "sling:resourceType": "howlite/components/container",
     "smColSize": 12,
     "mdColSize": 6,
-    "lgColSize": 6
+    "lgColSize": 6,
+    "lgOffset": "",
+    "mdOffset": "",
+    "smOffset": ""
   },
   "container2": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "howlite/components/container",
     "smColSize": 12,
     "mdColSize": 6,
-    "lgColSize": 6
+    "lgColSize": 6,
+    "lgOffset": "",
+    "mdOffset": "",
+    "smOffset": ""
   }
 }
