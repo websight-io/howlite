@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "classes": "hl-cta--secondary",
+  "displayIcon": false,
+  "openInNewTab": false
+}
