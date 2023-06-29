@@ -81,8 +81,7 @@ describe('Page Section component', function () {
         backgroundImageMd: '/content/howlite-test/assets/portrait.jpg',
         'sling:resourceType': 'howlite/components/pagesection',
         'jcr:primaryType': 'nt:unstructured',
-        backgroundImageLg: '/content/howlite-test/assets/landscape.jpg',
-        classes: '',
+        backgroundImageLg: '/content/howlite-test/assets/landscape.jpg'
       });
   });
 

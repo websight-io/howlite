@@ -24,15 +24,18 @@
                         <card1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/cardslist/card"
-                            ctaLabel="Link"/>
+                            ctaLabel="Link"
+                            ctaClasses="hl-cta--text"/>
                         <card2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/cardslist/card"
-                            ctaLabel="Link"/>
+                            ctaLabel="Link"
+                            ctaClasses="hl-cta--text"/>
                         <card3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="howlite/components/cardslist/card"
-                            ctaLabel="Link"/>
+                            ctaLabel="Link"
+                            ctaClasses="hl-cta--text"/>
                     </cardslist>
                 </pagesection>
                 <pagesection_1
