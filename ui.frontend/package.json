@@ -46,7 +46,7 @@
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
-    "ts-loader": "^9.4.2",
+    "ts-loader": "^9.4.4",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "^5.0.4",
     "webpack": "^5.84.1",
