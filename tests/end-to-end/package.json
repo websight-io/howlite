@@ -28,7 +28,7 @@
     "prettier": "^3.0.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.7.0",
-    "typescript": "^5.1.3",
+    "typescript": "^5.1.6",
     "wait-on": "^7.0.1"
   }
 }
