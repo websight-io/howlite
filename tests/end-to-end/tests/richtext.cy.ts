@@ -72,13 +72,7 @@ describe('Rich text editor component', () => {
         classes: 'hl-rich-text--checked-bullet-points',
         'sling:resourceType': 'howlite/components/richtext',
         'jcr:primaryType': 'nt:unstructured',
-        text: `${LIST}<p>${LOREM_IPSUM}</p>`,
-        lgOffset: '',
-        lgColSize: '12',
-        mdOffset: '',
-        mdColSize: '12',
-        smOffset: '',
-        smColSize: '12'
+        text: `${LIST}<p>${LOREM_IPSUM}</p>`
       });
   });
 });

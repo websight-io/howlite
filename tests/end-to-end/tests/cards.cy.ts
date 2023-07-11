@@ -102,20 +102,14 @@ describe('Cards lists and card item component', function () {
       .its('body')
       .should('deep.eq', {
         'jcr:primaryType': 'nt:unstructured',
-        lgOffset: '',
-        smOffset: '',
         itemsPerRowLg: '3',
         itemsPerRowMd: '2',
         itemsPerRowSm: '1',
         isSlider: 'true',
-        lgColSize: '12',
         headingSize: 'hl-title__heading--size-3',
         classes: 'hl-cards-list--numbered',
         'sling:resourceType': 'howlite/components/cardslist',
-        mdColSize: '12',
         headingLevel: 'h3',
-        smColSize: '12',
-        mdOffset: ''
       });
   }
 

@@ -84,19 +84,12 @@ describe('Title component', function () {
       .should('deep.eq', {
         'jcr:primaryType': 'nt:unstructured',
         subtitle: 'New overline text',
-        lgOffset: '',
-        smOffset: '',
         anchorId: '',
-        lgColSize: '12',
         title: 'New heading',
         headingSize: 'hl-title__heading--size-2',
-        classes: '',
         'sling:resourceType': 'howlite/components/title',
-        mdColSize: '12',
         showSubtitle: 'true',
         headingLevel: 'h1',
-        smColSize: '12',
-        mdOffset: ''
       });
   });
 });

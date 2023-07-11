@@ -62,13 +62,7 @@ describe('Logo cloud component', function () {
       .its('body')
       .should('deep.eq', {
         'jcr:primaryType': 'nt:unstructured',
-        'lgOffset': '',
-        'smOffset': '',
-        'lgColSize': '12',
         'sling:resourceType': 'howlite/components/logoscloud',
-        'mdColSize': '12',
-        'smColSize': '12',
-        'mdOffset': ''
       });
   });
 });
