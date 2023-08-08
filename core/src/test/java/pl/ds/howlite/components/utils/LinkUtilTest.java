@@ -106,4 +106,16 @@ class LinkUtilTest {
         Assertions.assertThat(parsedLink).isEqualTo("#someAnchorLink");
     }
 
+    @Test
+    void handleInternalPageLinkWithAnchor() {
+        //given
+        Resource page = context.create().resource(PATH + "/internal/page/#anchorId");
+
+        //when
+        String parsedLink = LinkUtil.handleLink(page.getPath(), context.resourceResolver());
+
+        //then
+        Assertions.assertThat(parsedLink).isEqualTo("/content/test/internal/page.html#anchorId");
+    }
+
 }
