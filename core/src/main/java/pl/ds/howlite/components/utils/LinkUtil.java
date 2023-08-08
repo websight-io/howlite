@@ -73,7 +73,7 @@ public class LinkUtil {
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
-    return Objects.nonNull(getResource(link, resourceResolver));
+    return Objects.nonNull(getResource(removeAnchor(link), resourceResolver));
   }
 
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
@@ -93,6 +93,13 @@ public class LinkUtil {
     }
 
     return StringUtils.removeEnd(link, "/") + ".html" + anchor;
+  }
+
+  private static String removeAnchor(String link) {
+    if (link.contains(ANCHOR_LINK_PREFIX)) {
+      return link.substring(0, link.lastIndexOf(ANCHOR_LINK_PREFIX));
+    }
+    return link;
   }
 
   @Nullable
