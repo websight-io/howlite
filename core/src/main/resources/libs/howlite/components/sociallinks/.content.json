@@ -1,5 +1,5 @@
 {
-  "group": ".hidden",
+  "group": "Howlite",
   "sling:resourceType": "ws:Component",
   "title": "Social Links"
 }
