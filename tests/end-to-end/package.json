@@ -23,7 +23,7 @@
     "cypress": "^12.17.3",
     "eslint": "^8.46.0",
     "eslint-plugin-chai-friendly": "^0.7.2",
-    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-cypress": "^2.14.0",
     "onchange": "^7.1.0",
     "prettier": "^3.0.1",
     "ts-jest": "^29.1.1",
