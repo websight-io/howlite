@@ -150,7 +150,7 @@ describe('Cards lists and card item component', function () {
     cy.getByTestId('ModalDialog_CardItem')
       .findByTestId('Input_Showicon--checkbox-label').click();
 
-    cy.contains('Text Link').click();
+    cy.contains('Text Link').click({ force: true });
     cy.contains('Small Button').click({ force: true });
 
     cy.percySnapshotDialog('Card item dialog');
