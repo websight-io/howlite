@@ -21,7 +21,7 @@
 .hl-rich-text {
   text-align: left;
 
-  + .hl-rich-text {
+  + .hl-rich-text, + .hl-title {
     margin-top: map.get(abstracts.$spacing, 'medium-3');
   }
 
