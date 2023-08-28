@@ -19,10 +19,6 @@
 
 
 .hl-title {
-  + .hl-rich-text {
-    margin-top: map.get(abstracts.$spacing, 'medium-2');
-  }
-
   .subtitle {
     color: var(--color-default);
     line-height: 1.5rem;
