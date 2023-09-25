@@ -37,10 +37,10 @@ public class LinkUtil {
 
   public static String handleLink(String link, ResourceResolver resourceResolver) {
     if (StringUtils.isNotEmpty(link)) {
-      if (isInternal(link, resourceResolver)) {
-        return handleInternalLink(link, resourceResolver);
-      } else if (isAnchorLink(link)) {
+      if (isAnchorLink(link)) {
         return link;
+      } else if (isInternal(link, resourceResolver)) {
+        return handleInternalLink(link, resourceResolver);
       } else {
         return handleExternalLink(link);
       }
