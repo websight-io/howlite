@@ -39,7 +39,7 @@
     "glob-import-loader": "^1.2.0",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "postcss-loader": "^7.3.3",
     "sass": "^1.66.1",
     "sass-loader": "^13.3.2",
