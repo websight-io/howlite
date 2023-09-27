@@ -70,7 +70,7 @@ jobs:
           ./mvnw --batch-mode -s ~/.m2/settings-websight-public.xml release:prepare
           RELEASED_VERSION=$(git describe --tags --abbrev=0)
           echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_ENV
-          echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_OUTPUTS
+          echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_OUTPUT
       - name: Release to Code Artifact
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
