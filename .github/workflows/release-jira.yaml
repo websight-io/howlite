@@ -53,17 +53,19 @@ jobs:
           echo "Previous version: ${PREVIOUS_VERSION}"
           
           COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME})
-          TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," -)
-          echo "Tickets found in commit messages: ${TICKETS}"
+          echo "Commits with tickets: ${COMMITS}"
+          if [ ! -z "${COMMITS}"]; then 
+            TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," -)
+            echo "Tickets found in commit messages: ${TICKETS}"
+          fi
           
-          echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
-          echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
-          
-          if [ -z "${TICKETS}" ]; then
+          if [ ! -z "${TICKETS}" ]; then
+            echo "HAS_TICKETS=true" >> $GITHUB_ENV
+            echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
+            echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
+          else
             echo "HAS_TICKETS=false" >> $GITHUB_ENV
             echo "No tickets found. JIRA release won't be created."
-          else
-            echo "HAS_TICKETS=true" >> $GITHUB_ENV
           fi
 
       - name: Create release
