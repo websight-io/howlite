@@ -56,17 +56,10 @@ jobs:
           TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," - || true)
           echo "Tickets found in commit messages: ${TICKETS}"
           
-          if [ ! -z "${TICKETS}" ]; then
-            echo "HAS_TICKETS=true" >> $GITHUB_ENV
-            echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
-            echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
-          else
-            echo "HAS_TICKETS=false" >> $GITHUB_ENV
-            echo "No tickets found. JIRA release won't be created."
-          fi
+          echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
+          echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
 
       - name: Create release
-        if: ${{ env.HAS_TICKETS == 'true' }}
         uses: armona/jira-release-actions@v2.0.6
         with:
           create: true
