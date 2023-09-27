@@ -25,9 +25,10 @@ permissions:
   contents: read
 
 jobs:
-  build-and-test-latest-websight:
+  release:
     runs-on: ubuntu-latest
-
+    outputs:
+      released-version: ${{ steps.prepare-release.outputs.RELEASED_VERSION }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -55,6 +56,7 @@ jobs:
           export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner ${{ secrets.AWS_ACCOUNT_ID }} --query authorizationToken --output text`
           echo "CODEARTIFACT_AUTH_TOKEN=${CODEARTIFACT_AUTH_TOKEN}" >> $GITHUB_ENV
       - name: Prepare release
+        id: prepare-release
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         run: |
@@ -68,6 +70,7 @@ jobs:
           ./mvnw --batch-mode -s ~/.m2/settings-websight-public.xml release:prepare
           RELEASED_VERSION=$(git describe --tags --abbrev=0)
           echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_ENV
+          echo "RELEASED_VERSION=${RELEASED_VERSION}" >> $GITHUB_OUTPUTS
       - name: Release to Code Artifact
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
@@ -80,3 +83,9 @@ jobs:
           curl -s https://ws-dev-public.s3.eu-central-1.amazonaws.com/settings-s3-publication.xml --output ~/.m2/settings-s3-publication.xml
           git checkout tags/${RELEASED_VERSION}
           ./mvnw --batch-mode -s ~/.m2/settings-s3-publication.xml -P s3-distribution -Dmaven.install.skip=true -DskipTests=true deploy
+  release-jira:
+    needs: release
+    uses: ./.github/workflows/release-jira.yaml
+    secrets: inherit
+    with:
+      tag: ${{ needs.release.outputs.released-version }}
