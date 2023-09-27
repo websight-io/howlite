@@ -50,9 +50,9 @@ jobs:
           echo "Released version: ${RELEASED_VERSION}"
           
           PREVIOUS_VERSION=$(git describe --abbrev=0 ${RELEASED_VERSION}^)
-          echo "Previous version: ${RELEASED_VERSION}"
+          echo "Previous version: ${PREVIOUS_VERSION}"
           
-          COMMITS=$(git log ${RELEASED_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME})
+          COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME})
           TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," -)
           echo "Tickets found in commit messages: ${TICKETS}"
           
