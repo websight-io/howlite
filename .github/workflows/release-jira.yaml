@@ -52,7 +52,7 @@ jobs:
           PREVIOUS_VERSION=$(git describe --abbrev=0 ${RELEASED_VERSION}^)
           echo "Previous version: ${PREVIOUS_VERSION}"
           
-          git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME}
+          git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s"
           COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME})
           echo "Commits with tickets: ${COMMITS}"
           if [ ! -z "${COMMITS}"]; then 
