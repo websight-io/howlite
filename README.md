@@ -34,7 +34,7 @@ docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INIT
 and run howlite-test feature using Sling Launcher from `tests/end-to-end` directory:
 
 ```bash
-java -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-howlite-tests.json
+java --add-opens java.base/java.lang=ALL-UNNAMED -jar target/dependency/org.apache.sling.feature.launcher.jar -f target/slingfeature-tmp/feature-howlite-tests.json
 ```
 
 Instance should start at http://localhost:8080/ in a couple of seconds (default credentials: `wsadmin/wsadmin`).
