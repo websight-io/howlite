@@ -26,7 +26,7 @@
     "@typescript-eslint/parser": "^6.7.0",
     "acorn": "^8.10.0",
     "autoprefixer": "^10.4.16",
-    "browserslist": "^4.21.7",
+    "browserslist": "^4.22.1",
     "chokidar-cli": "^3.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
