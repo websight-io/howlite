@@ -19,7 +19,7 @@
     twitterTitle="\0">
     <rootcontainer
       jcr:primaryType="nt:unstructured"
-      sling:resourceType="howlite/components/rootcontainer">
+      sling:resourceType="howlite/components/rootcontainer/fixedrootcontainer">
       <header
         jcr:primaryType="nt:unstructured"
         sling:resourceType="howlite/components/header"/>
