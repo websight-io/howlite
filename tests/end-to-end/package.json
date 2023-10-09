@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.5",
-    "@percy/cli": "^1.27.2",
+    "@percy/cli": "^1.27.3",
     "@percy/cypress": "^3.1.2",
     "@types/jest": "^29.5.5",
     "@types/node": "^20.8.0",
