@@ -75,7 +75,7 @@
     <sling.install.package.path>/apps/websight-package-manager-service/bin/install</sling.install.package.path>
 
     <!-- plugins -->
-    <bnd.version>6.4.0</bnd.version>
+    <bnd.version>7.0.0</bnd.version>
     <sling.caconfig.bnd.version>1.0.2</sling.caconfig.bnd.version>
     <sling.models.bnd.version>1.0.0</sling.models.bnd.version>
     <sling.scriptbundle.version>0.5.2</sling.scriptbundle.version>
