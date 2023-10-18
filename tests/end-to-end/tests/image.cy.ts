@@ -56,7 +56,13 @@ describe('Image component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
+    cy.intercept('GET', '**/content/howlite-test/assets/landscape.jpg.renditions/thumbnail-200x200.webp/**').as(
+    'assetItemLoaded'
+    );
+
     cy.getByTestId('SidebarElement_Assets').click();
+    cy.wait('@assetItemLoaded', { requestTimeout: 10000, responseTimeout: 10000 });
+
     cy.getByTestId('AssetItem_landscape_jpg').dragByTestId(
         'ModalDialog_Image',
       'Input_Chooseimage-Lbreakpoint',
