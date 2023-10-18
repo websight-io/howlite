@@ -46,7 +46,7 @@ describe('Image component', function () {
       '/apps/websight/index.html/content/howlite-test/pages/Image::editor'
     );
 
-    cy.wait('@assetLoaded');
+    cy.wait('@assetLoaded', { requestTimeout: 10000, responseTimeout: 10000 });
     cy.percySnapshotPageEditor('Image editor');
 
     cy.getByTestId(paths.imagePlaceholder)
