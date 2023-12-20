@@ -79,7 +79,7 @@
     <sling.caconfig.bnd.version>1.0.2</sling.caconfig.bnd.version>
     <sling.models.bnd.version>1.0.0</sling.models.bnd.version>
     <sling.scriptbundle.version>0.5.2</sling.scriptbundle.version>
-    <frontend-maven-plugin.version>1.14.2</frontend-maven-plugin.version>
+    <frontend-maven-plugin.version>1.15.0</frontend-maven-plugin.version>
     <componentGroupName>pl.ds.howlite</componentGroupName>
     <checkstyle.severity.level>warning</checkstyle.severity.level>
 
