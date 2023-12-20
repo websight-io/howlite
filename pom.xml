@@ -344,7 +344,7 @@
       <dependency>
         <groupId>pl.ds.websight</groupId>
         <artifactId>websight-pages-core-api</artifactId>
-        <version>3.0.7</version>
+        <version>3.0.8</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
