@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.howlite</groupId>
     <artifactId>howlite-tests</artifactId>
-    <version>1.0.20-SNAPSHOT</version>
+    <version>1.0.20</version>
   </parent>
 
   <artifactId>howlite-tests-e2e</artifactId>
