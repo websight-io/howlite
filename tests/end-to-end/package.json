@@ -22,7 +22,7 @@
     "chai": "^5.0.0",
     "cypress": "^13.6.2",
     "eslint": "^8.56.0",
-    "eslint-plugin-chai-friendly": "^0.7.3",
+    "eslint-plugin-chai-friendly": "^0.7.4",
     "eslint-plugin-cypress": "^2.15.1",
     "onchange": "^7.1.0",
     "prettier": "^3.2.4",
