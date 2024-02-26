@@ -350,7 +350,7 @@
       <dependency>
         <groupId>pl.ds.websight</groupId>
         <artifactId>websight-assets-core-api</artifactId>
-        <version>1.0.5</version>
+        <version>1.0.6</version>
         <scope>provided</scope>
       </dependency>
 
