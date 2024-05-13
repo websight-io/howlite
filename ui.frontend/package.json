@@ -43,7 +43,7 @@
     "postcss-loader": "^8.0.0",
     "sass": "^1.71.1",
     "sass-loader": "^14.1.1",
-    "source-map-loader": "^4.0.2",
+    "source-map-loader": "^5.0.0",
     "style-loader": "^3.3.4",
     "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
