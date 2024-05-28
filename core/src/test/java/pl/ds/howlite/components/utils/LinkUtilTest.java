@@ -63,23 +63,26 @@ class LinkUtilTest {
     void handleInternalAssetLink() {
         //given
         ResourceResolver resourceResolver = mock(ResourceResolver.class);
-        Resource assetResource = mock(Resource.class);
-        ValueMap valueMap = mock(ValueMap.class);
-        Asset asset = mock(Asset.class);
-        Rendition originalRendition = mock(Rendition.class);
-        when(resourceResolver.getResource(PATH + "/internal/asset/")).thenReturn(assetResource);
-        when(assetResource.adaptTo(Asset.class)).thenReturn(asset);
-        when(assetResource.getPath()).thenReturn(PATH + "/internal/asset/");
-        when(assetResource.getValueMap()).thenReturn(valueMap);
-        when(valueMap.get("jcr:primaryType", String.class)).thenReturn(AssetsConstants.NT_ASSET);
-        when(asset.getOriginalRendition()).thenReturn(originalRendition);
-        when(originalRendition.getPath()).thenReturn(PATH + "/internal/asset/renditions/original.png");
+        Resource assetResource = mockInternalAsset(resourceResolver);
 
         //when
         String parsedLink = LinkUtil.handleLink(assetResource.getPath(), resourceResolver);
 
         //then
         Assertions.assertThat(parsedLink).isEqualTo("/content/test/internal/asset/renditions/original.png");
+    }
+
+    @Test
+    void handleInternalPublishedAssetLink() {
+        //given
+        ResourceResolver resourceResolver = mock(ResourceResolver.class);
+        Resource assetResource = mockInternalAsset(resourceResolver);
+
+        //when
+        String parsedLink = LinkUtil.handleLink("/published/test/internal/asset/", resourceResolver);
+
+        //then
+        Assertions.assertThat(parsedLink).isEqualTo("/published/test/internal/asset/renditions/original.png");
     }
 
     @Test
@@ -116,6 +119,22 @@ class LinkUtilTest {
 
         //then
         Assertions.assertThat(parsedLink).isEqualTo("/content/test/internal/page.html#anchorId");
+    }
+
+    private Resource mockInternalAsset(ResourceResolver resourceResolver) {
+        Resource assetResource = mock(Resource.class);
+        ValueMap valueMap = mock(ValueMap.class);
+        Asset asset = mock(Asset.class);
+        Rendition originalRendition = mock(Rendition.class);
+        when(resourceResolver.getResource(PATH + "/internal/asset/")).thenReturn(assetResource);
+        when(assetResource.adaptTo(Asset.class)).thenReturn(asset);
+        when(assetResource.getPath()).thenReturn(PATH + "/internal/asset/");
+        when(assetResource.getValueMap()).thenReturn(valueMap);
+        when(valueMap.get("jcr:primaryType", String.class)).thenReturn(AssetsConstants.NT_ASSET);
+        when(asset.getOriginalRendition()).thenReturn(originalRendition);
+        when(originalRendition.getPath()).thenReturn(PATH + "/internal/asset/renditions/original.png");
+
+        return assetResource;
     }
 
 }
