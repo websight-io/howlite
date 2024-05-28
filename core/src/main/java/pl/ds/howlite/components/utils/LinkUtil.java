@@ -23,6 +23,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.jetbrains.annotations.Nullable;
 import pl.ds.websight.assets.core.api.Asset;
 import pl.ds.websight.assets.core.api.AssetsConstants;
+import pl.ds.websight.assets.core.api.Rendition;
 
 public class LinkUtil {
 
@@ -35,39 +36,43 @@ public class LinkUtil {
   }
 
   public static String handleLink(String link, ResourceResolver resourceResolver) {
-    if (StringUtils.isNotEmpty(link)) {
-      if (isAnchorLink(link)) {
-        return link;
-      }
-      if (isInternal(link, resourceResolver)) {
-        return handleInternalLink(link, resourceResolver);
-      }
+    if (isInternal(link, resourceResolver)) {
+      return handleInternalLink(link, resourceResolver);
     }
-
     return link;
   }
 
   private static String handleInternalLink(String link, ResourceResolver resourceResolver) {
-    if (isAsset(link, resourceResolver)) {
-      Asset asset = getAssetForProvidedLink(link, resourceResolver);
-      if (asset != null && asset.getOriginalRendition() != null) {
-        return isPublished(link) ? StringUtils.replaceFirst(asset.getOriginalRendition().getPath(),
-            CONTENT,
-            PUBLISHED) : asset.getOriginalRendition().getPath();
-      }
+    if (!isAsset(link, resourceResolver)) {
+      return addHtmlExtensionSuffixToLink(link);
+    }
 
+    Asset asset = getAssetForProvidedLink(link, resourceResolver);
+    if (asset == null) {
       return null;
     }
 
-    return addHtmlExtensionSuffixToLink(link);
+    Rendition originalRendition = asset.getOriginalRendition();
+    if (originalRendition == null) {
+      return null;
+    }
+
+    if (isPublished(link)) {
+      return StringUtils.replaceFirst(originalRendition.getPath(),
+          CONTENT,
+          PUBLISHED);
+    }
+
+    return originalRendition.getPath();
+  }
+
+  public static boolean isInternal(String link, ResourceResolver resourceResolver) {
+    return StringUtils.isNotEmpty(link) && !isAnchorLink(link)
+        && Objects.nonNull(getResource(removeAnchor(link), resourceResolver));
   }
 
   public static boolean isAnchorLink(String link) {
     return StringUtils.startsWith(link, ANCHOR_LINK_PREFIX);
-  }
-
-  public static boolean isInternal(String link, ResourceResolver resourceResolver) {
-    return Objects.nonNull(getResource(removeAnchor(link), resourceResolver));
   }
 
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
@@ -103,7 +108,7 @@ public class LinkUtil {
   }
 
   public static Resource getResource(String link, ResourceResolver resourceResolver) {
-    if (StringUtils.startsWith(link, PUBLISHED)) {
+    if (isPublished(link)) {
       return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
     }
     return resourceResolver.getResource(link);

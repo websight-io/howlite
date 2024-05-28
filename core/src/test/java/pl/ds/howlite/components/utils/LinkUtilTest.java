@@ -48,6 +48,18 @@ class LinkUtilTest {
     }
 
     @Test
+    void handleInternalPublishedPageLink() {
+        //given
+        Resource page = context.create().resource(PATH + "/internal/page/");
+
+        //when
+        String parsedLink = LinkUtil.handleLink("/published/test/internal/page", context.resourceResolver());
+
+        //then
+        Assertions.assertThat(parsedLink).isEqualTo("/published/test/internal/page.html");
+    }
+
+    @Test
     void handleInternalAssetLink() {
         //given
         ResourceResolver resourceResolver = mock(ResourceResolver.class);
@@ -71,7 +83,7 @@ class LinkUtilTest {
     }
 
     @Test
-    void handleExternalLinkWithProtocol() {
+    void handleExternalLink() {
         //given
         String link = "https://ds.pl";
 
