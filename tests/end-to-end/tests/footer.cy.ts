@@ -48,7 +48,7 @@ describe('Footer component', function () {
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/title').clear().type('Facebook');
     cy.getByTestId('ModalDialog_Footer')
-      .findByTestId('Input_socialLinks/socialLinkItems/0/url').clear().type('fb.com');
+      .findByTestId('Input_socialLinks/socialLinkItems/0/url').clear().type('http://fb.com');
     cy.getByTestId('ModalDialog_Footer')
       .findByTestId('Input_socialLinks/socialLinkItems/0/nofollow--checkbox-label').click();
 
@@ -69,7 +69,7 @@ describe('Footer component', function () {
     .its('body')
     .should('deep.eq', {
       'title': 'Facebook',
-      'url': 'fb.com',
+      'url': 'http://fb.com',
       'nofollow': 'true',
       'jcr:primaryType': 'nt:unstructured'
     });

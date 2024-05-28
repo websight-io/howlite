@@ -17,13 +17,13 @@
 package pl.ds.howlite.components.utils;
 
 import java.util.Objects;
-import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.jetbrains.annotations.Nullable;
 import pl.ds.websight.assets.core.api.Asset;
 import pl.ds.websight.assets.core.api.AssetsConstants;
+import pl.ds.websight.assets.core.api.Rendition;
 
 public class LinkUtil {
 
@@ -36,53 +36,48 @@ public class LinkUtil {
   }
 
   public static String handleLink(String link, ResourceResolver resourceResolver) {
-    if (StringUtils.isNotEmpty(link)) {
-      if (isAnchorLink(link)) {
-        return link;
-      } else if (isInternal(link, resourceResolver)) {
-        return handleInternalLink(link, resourceResolver);
-      } else {
-        return handleExternalLink(link);
-      }
+    if (isInternal(link, resourceResolver)) {
+      return handleInternalLink(link, resourceResolver);
     }
-
     return link;
   }
 
   private static String handleInternalLink(String link, ResourceResolver resourceResolver) {
-    if (isAsset(link, resourceResolver)) {
-      Asset asset = getAssetForProvidedLink(link, resourceResolver);
-      if (asset != null && asset.getOriginalRendition() != null) {
-        return isPublished(link) ? RegExUtils.replaceFirst(asset.getOriginalRendition().getPath(),
-            CONTENT,
-            PUBLISHED) : asset.getOriginalRendition().getPath();
-      }
+    if (!isAsset(link, resourceResolver)) {
+      return addHtmlExtensionSuffixToLink(link);
+    }
 
+    Asset asset = getAssetForProvidedLink(link, resourceResolver);
+    if (asset == null) {
       return null;
     }
 
-    return addHtmlExtensionSuffixToLink(link);
-  }
+    Rendition originalRendition = asset.getOriginalRendition();
+    if (originalRendition == null) {
+      return null;
+    }
 
-  private static boolean isAnchorLink(String link) {
-    return link.startsWith(ANCHOR_LINK_PREFIX);
-  }
+    if (isPublished(link)) {
+      return StringUtils.replaceFirst(originalRendition.getPath(),
+          CONTENT,
+          PUBLISHED);
+    }
 
-  private static String handleExternalLink(String link) {
-    return addProtocolPrefixToLink(link);
+    return originalRendition.getPath();
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
-    return Objects.nonNull(getResource(removeAnchor(link), resourceResolver));
+    return StringUtils.isNotEmpty(link) && !isAnchorLink(link)
+        && Objects.nonNull(getResource(removeAnchor(link), resourceResolver));
+  }
+
+  public static boolean isAnchorLink(String link) {
+    return StringUtils.startsWith(link, ANCHOR_LINK_PREFIX);
   }
 
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
     Resource resource = getResource(link, resourceResolver);
     return AssetsConstants.NT_ASSET.equals(getPrimaryType(resource));
-  }
-
-  private static String addProtocolPrefixToLink(String link) {
-    return link.startsWith("http") ? link : "http://" + link;
   }
 
   private static String addHtmlExtensionSuffixToLink(String link) {
@@ -113,14 +108,14 @@ public class LinkUtil {
   }
 
   public static Resource getResource(String link, ResourceResolver resourceResolver) {
-    if (link.startsWith(PUBLISHED)) {
+    if (isPublished(link)) {
       return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
     }
     return resourceResolver.getResource(link);
   }
 
   public static boolean isPublished(String link) {
-    return link.startsWith(PUBLISHED);
+    return StringUtils.startsWith(link, PUBLISHED);
   }
 
   private static String getPrimaryType(Resource resource) {

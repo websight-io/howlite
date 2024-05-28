@@ -24,7 +24,7 @@
         "2": {
           "jcr:primaryType": "nt:unstructured",
           "label": "Navigation item 2",
-          "link": "www.navigate-to-link-2.com",
+          "link": "http://www.navigate-to-link-2.com",
           "openInNewTab": "false"
         }
       }
@@ -39,7 +39,7 @@
         },
         "2": {
           "title": "Title facebook",
-          "url": "www.facebook.com",
+          "url": "http://www.facebook.com",
           "icon": "facebook",
           "nofollow" : false
         },

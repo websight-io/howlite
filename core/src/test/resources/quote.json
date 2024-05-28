@@ -9,7 +9,7 @@
     "quoteText": "Sample Quote",
     "authorName": "Author Name",
     "authorDescription": "Author Description",
-    "authorImage": "content/author/image",
+    "authorImage": "http://content/author/image",
     "imageAlt": "Author profile image"
   }
 }
