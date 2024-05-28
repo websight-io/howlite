@@ -83,9 +83,3 @@ jobs:
           curl -s https://ws-dev-public.s3.eu-central-1.amazonaws.com/settings-s3-publication.xml --output ~/.m2/settings-s3-publication.xml
           git checkout tags/${RELEASED_VERSION}
           ./mvnw --batch-mode -s ~/.m2/settings-s3-publication.xml -P s3-distribution -Dmaven.install.skip=true -DskipTests=true deploy
-  release-jira:
-    needs: release
-    uses: ./.github/workflows/release-jira.yaml
-    secrets: inherit
-    with:
-      tag: ${{ needs.release.outputs.released-version }}
