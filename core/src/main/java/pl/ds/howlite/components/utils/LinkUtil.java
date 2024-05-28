@@ -17,7 +17,6 @@
 package pl.ds.howlite.components.utils;
 
 import java.util.Objects;
-import org.apache.commons.lang3.RegExUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -39,10 +38,9 @@ public class LinkUtil {
     if (StringUtils.isNotEmpty(link)) {
       if (isAnchorLink(link)) {
         return link;
-      } else if (isInternal(link, resourceResolver)) {
+      }
+      if (isInternal(link, resourceResolver)) {
         return handleInternalLink(link, resourceResolver);
-      } else {
-        return handleExternalLink(link);
       }
     }
 
@@ -53,7 +51,7 @@ public class LinkUtil {
     if (isAsset(link, resourceResolver)) {
       Asset asset = getAssetForProvidedLink(link, resourceResolver);
       if (asset != null && asset.getOriginalRendition() != null) {
-        return isPublished(link) ? RegExUtils.replaceFirst(asset.getOriginalRendition().getPath(),
+        return isPublished(link) ? StringUtils.replaceFirst(asset.getOriginalRendition().getPath(),
             CONTENT,
             PUBLISHED) : asset.getOriginalRendition().getPath();
       }
@@ -64,12 +62,8 @@ public class LinkUtil {
     return addHtmlExtensionSuffixToLink(link);
   }
 
-  private static boolean isAnchorLink(String link) {
-    return link.startsWith(ANCHOR_LINK_PREFIX);
-  }
-
-  private static String handleExternalLink(String link) {
-    return addProtocolPrefixToLink(link);
+  public static boolean isAnchorLink(String link) {
+    return StringUtils.startsWith(link, ANCHOR_LINK_PREFIX);
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
@@ -79,10 +73,6 @@ public class LinkUtil {
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
     Resource resource = getResource(link, resourceResolver);
     return AssetsConstants.NT_ASSET.equals(getPrimaryType(resource));
-  }
-
-  private static String addProtocolPrefixToLink(String link) {
-    return link.startsWith("http") ? link : "http://" + link;
   }
 
   private static String addHtmlExtensionSuffixToLink(String link) {
@@ -113,14 +103,14 @@ public class LinkUtil {
   }
 
   public static Resource getResource(String link, ResourceResolver resourceResolver) {
-    if (link.startsWith(PUBLISHED)) {
+    if (StringUtils.startsWith(link, PUBLISHED)) {
       return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
     }
     return resourceResolver.getResource(link);
   }
 
   public static boolean isPublished(String link) {
-    return link.startsWith(PUBLISHED);
+    return StringUtils.startsWith(link, PUBLISHED);
   }
 
   private static String getPrimaryType(Resource resource) {

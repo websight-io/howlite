@@ -71,18 +71,6 @@ class LinkUtilTest {
     }
 
     @Test
-    void handleExternalLinkWithoutProtocol() {
-        //given
-        String link = "ds.pl";
-
-        //when
-        String parsedLink = LinkUtil.handleLink(link, context.resourceResolver());
-
-        //then
-        Assertions.assertThat(parsedLink).isEqualTo("http://ds.pl");
-    }
-
-    @Test
     void handleExternalLinkWithProtocol() {
         //given
         String link = "https://ds.pl";
