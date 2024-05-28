@@ -41,7 +41,7 @@
     "mini-css-extract-plugin": "^2.7.7",
     "postcss": "^8.4.38",
     "postcss-loader": "^8.1.1",
-    "sass": "^1.71.1",
+    "sass": "^1.77.2",
     "sass-loader": "^14.1.1",
     "source-map-loader": "^5.0.0",
     "style-loader": "^4.0.0",
