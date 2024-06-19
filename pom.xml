@@ -51,10 +51,10 @@
   </scm>
 
   <distributionManagement>
-    <snapshotRepository>
+    <repository>
       <id>artifact-registry</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/websight-io/websight-maven-snapshots</url>
-    </snapshotRepository>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/websight-io/websight-maven-releases</url>
+    </repository>
   </distributionManagement>
 
   <repositories>
@@ -84,7 +84,7 @@
     <!-- generic -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.build.outputTimestamp>1716906608</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1718795653</project.build.outputTimestamp>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 
