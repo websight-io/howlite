@@ -1,0 +1,14 @@
+<!--/*
+  Copyright (c) 2023 Dynamic Solutions sp. z o.o. sp. k.
+
+  Use of this software is governed by the Business Source License included
+  in the LICENSE file.
+*/-->
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+  <extension>
+    <groupId>com.google.cloud.artifactregistry</groupId>
+    <artifactId>artifactregistry-maven-wagon</artifactId>
+    <version>2.2.1</version>
+  </extension>
+</extensions>
