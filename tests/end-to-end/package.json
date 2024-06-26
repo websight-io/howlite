@@ -17,7 +17,7 @@
     "@percy/cli": "^1.28.7",
     "@percy/cypress": "^3.1.2",
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.0",
+    "@types/node": "^20.14.2",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
     "chai": "^5.1.1",
     "cypress": "^13.11.0",
