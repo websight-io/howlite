@@ -463,7 +463,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.2</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
